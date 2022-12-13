@@ -12,7 +12,21 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Tekkon Auction")),
-      body: const Center(child: Text("Welcome")),
+      body: Column(
+        children: [
+          const Center(child: Text("Welcome")),
+          SizedBox(
+            height: 30,
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pushNamedAndRemoveUntil(
+                  context, '/live', (Route<dynamic> route) => false);
+            },
+            child: Text('navigate'),
+          )
+        ],
+      ),
     );
   }
 }
