@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 // Project imports:
 
 import 'common/app_config.dart';
-import 'common/resource/theme_data.dart';
+import 'resource/theme_data.dart';
 import 'core/route_manager.dart';
 import 'service/locator.dart';
 
