@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tekction/home/ui/screen/home_page.dart';
+import 'package:tekction/home/ui/screen/live_page.dart';
+import 'package:tekction/home/ui/screen/live_with_chat.dart';
 import 'package:tekction/login/ui/login.dart';
 import 'package:tekction/splash/splash_screen.dart';
 
@@ -7,6 +9,8 @@ class Routes {
   static const String splashRoute = "/";
   static const String loginView = "/login";
   static const String homeView = "/home";
+  static const String liveView = "/live";
+  static const String liveWithChat = "/live-with-chat";
 }
 
 class RouteGenerator {
@@ -22,6 +26,12 @@ class RouteGenerator {
 
       case Routes.homeView:
         return MaterialPageRoute(builder: (_) => const HomePage());
+
+      case Routes.liveView:
+        return MaterialPageRoute(builder: (_) => const LivePage());
+
+      case Routes.liveWithChat:
+        return MaterialPageRoute(builder: (_) => const LiveWithChat());
 
       default:
         return unDefinedRoute();
