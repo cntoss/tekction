@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tekction/core/route_manager.dart';
 
 // Project imports:
 import '../../environments/envConfig.dart';
@@ -16,7 +17,7 @@ class SplashScreen extends StatefulWidget {
   static const String id = 'splash_page';
 
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
@@ -35,15 +36,13 @@ class _SplashScreenState extends State<SplashScreen> {
     if (token != null) {
       Future.delayed(
         const Duration(milliseconds: 500),
-        () => Navigator.of(context).pushReplacementNamed(
-          '/home',
-        ),
+        () => Navigator.of(context).pushReplacementNamed(Routes.homeView),
       );
     } else {
       Future.delayed(
           const Duration(seconds: 1),
           () => Navigator.of(context).pushNamedAndRemoveUntil(
-              '/login', (Route<dynamic> route) => false));
+              Routes.loginView, (Route<dynamic> route) => false));
     }
   }
 
@@ -60,7 +59,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Padding(
               padding: const EdgeInsets.only(top: 50.0),
               child: Text(
-                'Welcome to Glimo',
+                'Welcome to TechCtion',
                 style: TextStyle(
                   color: Colors.pink[900],
                   fontWeight: FontWeight.bold,

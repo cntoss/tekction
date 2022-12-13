@@ -5,21 +5,21 @@ import 'package:flutter/material.dart';
 import '../../../repository/api_exception.dart';
 import '../../service/locator.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginScreenState extends State<LoginScreen> {
   bool _isLoading = false;
   bool _showPassword = false;
   final LoginRepository _loginRepository = locator<LoginRepository>();
   final UiHelper _uiHelper = locator<UiHelper>();
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  
-  _signIn(String phone, pass) async {
+
+  _signIn(context, String phone, pass) async {
     Map<String, dynamic> data = {
       'phoneNumber': phone,
       'password': pass,
@@ -29,8 +29,8 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         _isLoading = false;
       });
-      Navigator.of(context)
-          .pushNamedAndRemoveUntil('/home', (Route<dynamic> route) => false);
+      Navigator.pushNamedAndRemoveUntil(
+          context, '/home', (Route<dynamic> route) => false);
       _uiHelper.showToast(msg: message);
     } on AppApiException catch (e) {
       setState(() {
@@ -79,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
     return Container(
       margin: const EdgeInsets.only(top: 50.0),
       padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
-      child: const Text("Welcome to UG Bazaar",
+      child: const Text("Welcome to Tekction",
           style: TextStyle(
               color: Colors.white70,
               fontSize: 40.0,
@@ -153,16 +153,22 @@ class _LoginPageState extends State<LoginPage> {
             backgroundColor: MaterialStateProperty.all(Colors.pink),
           ),
           onPressed: () async {
+            Navigator.pushNamedAndRemoveUntil(
+                context,
+                '/home',
+                (Route<dynamic> route) =>
+                    false); /* 
             if (phoneController.text != "" || passwordController.text != "") {
               setState(() {
                 _isLoading = true;
               });
               _uiHelper.hideKeyboard(context);
               _signIn(
+                context,
                 phoneController.text,
                 passwordController.text,
               );
-            }
+            } */
           },
           child: const Text("Login", style: TextStyle(color: Colors.white70)),
         ),

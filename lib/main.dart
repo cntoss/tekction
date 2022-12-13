@@ -5,11 +5,9 @@ import 'package:flutter/material.dart';
 // Project imports:
 
 import 'common/app_config.dart';
-
-import 'home/ui/screen/home_page.dart';
-import 'login/ui/login.dart';
+import 'common/resource/theme_data.dart';
+import 'core/route_manager.dart';
 import 'service/locator.dart';
-import 'splash/splash_screen.dart';
 
 void main() async {
   setLocator();
@@ -54,16 +52,9 @@ class _TekctionState extends State<Tekction> {
   Widget build(BuildContext context) {
     return MaterialApp(
       navigatorKey: AppConfig.navigatorKey,
-      home: const SplashScreen(),
-      initialRoute: '/',
-
-      // onGenerateRoute: RouteGenerator.generateRoute,
-
-      routes: {
-        '/': (context) => const SplashScreen(),
-        '/login': (context) => const LoginPage(),
-        '/home': (context) => const HomePage(),
-      },
+      theme: getApplicationTheme(context),
+      onGenerateRoute: RouteGenerator.getRoute,
+      initialRoute: Routes.splashRoute,
     );
   }
 }
