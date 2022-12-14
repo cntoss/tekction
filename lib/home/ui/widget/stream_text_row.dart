@@ -7,8 +7,14 @@ import '../../../resource/color_manager.dart';
 import '../../../service/locator.dart';
 
 class StreamTextRow extends StatelessWidget {
-  StreamTextRow({super.key});
+  StreamTextRow({super.key, this.onSendPressed, this.commentController});
   final _sizeConfig = locator<SizeConfig>();
+
+  /// Callback when send button is pressed
+  final VoidCallback? onSendPressed;
+
+  /// Comment controller.
+  final TextEditingController? commentController;
 
   @override
   Widget build(BuildContext context) {
@@ -26,26 +32,30 @@ class StreamTextRow extends StatelessWidget {
             width: _sizeConfig.safeBlockW * 60,
             height: 55,
             child: TextField(
-                enabled: false,
-                decoration: InputDecoration(
-                  fillColor: ColorManager.darkBlue,
-                  filled: true,
-                  hintText: 'Write a comment...',
-                  hintStyle: TextStyle(color: ColorManager.formTextColor),
-                  suffixIconConstraints:
-                      const BoxConstraints(minHeight: 19, minWidth: 19),
-                  suffixIcon: Padding(
+              controller: commentController,
+              decoration: InputDecoration(
+                fillColor: ColorManager.darkBlue,
+                filled: true,
+                hintText: 'Write a comment...',
+                hintStyle: TextStyle(color: ColorManager.formTextColor),
+                suffixIconConstraints:
+                    const BoxConstraints(minHeight: 19, minWidth: 19),
+                suffixIcon: GestureDetector(
+                  onTap: onSendPressed,
+                  child: Padding(
                     padding: const EdgeInsets.only(right: 10.0),
                     child: SvgPicture.asset(
                       SvgAsset.sendRight,
                     ),
                   ),
-                  border: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(40),
-                    ),
+                ),
+                border: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(40),
                   ),
-                )),
+                ),
+              ),
+            ),
           ),
           const SizedBox(
             width: 10,

@@ -18,6 +18,28 @@ class LiveStreaming extends StatefulWidget {
 
 class _LiveStreamingState extends State<LiveStreaming> {
   final _sizeConfig = locator<SizeConfig>();
+
+  final commentController = TextEditingController();
+
+  List<String> chatList = [
+    'name1',
+    'Amazinggg!!',
+    'jiminfan',
+    'Show us the model in black',
+    'karla18',
+    'Can i get it resized?',
+    'Karla18 just joined',
+    'Karla18 just joined',
+    'Karla18 just joined',
+    'Karla18 just joined',
+    'Karla18 just joined',
+    'Karla18 just joined',
+    'Karla18 just joined',
+    'Karla18 just joined',
+    'Karla18 just joined',
+    'Karla18 just joined',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,13 +90,31 @@ class _LiveStreamingState extends State<LiveStreaming> {
                 ],
               ),
             ),
-            Expanded(child: StreamTextRow())
+            Expanded(
+              child: StreamTextRow(
+                commentController: commentController,
+                onSendPressed: () {
+                  setState(() {
+                    chatList.add(commentController.text.trim());
+                    commentController.clear();
+                  });
+                },
+              ),
+            )
           ],
         ),
       ),
     );
   }
 
-  Widget get _chat =>
-      const Positioned(bottom: 0, left: 0, child: ChatListview());
+  Widget get _chat => Positioned(
+        bottom: 0,
+        left: 0,
+        child: SizedBox(
+          height: _sizeConfig.screenH / 3,
+          child: ChatListView(
+            chatList: chatList,
+          ),
+        ),
+      );
 }
