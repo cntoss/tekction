@@ -21,6 +21,27 @@ class _LiveStreamingState extends State<LiveStreaming> {
   final _sizeConfig = locator<SizeConfig>();
   bool isChatPage = true;
 
+  final commentController = TextEditingController();
+
+  List<String> chatList = [
+    'name1',
+    'Amazinggg!!',
+    'jiminfan',
+    'Show us the model in black',
+    'karla18',
+    'Can i get it resized?',
+    'Karla18 just joined',
+    'Karla18 just joined',
+    'Karla18 just joined',
+    'Karla18 just joined',
+    'Karla18 just joined',
+    'Karla18 just joined',
+    'Karla18 just joined',
+    'Karla18 just joined',
+    'Karla18 just joined',
+    'Karla18 just joined',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,68 +49,86 @@ class _LiveStreamingState extends State<LiveStreaming> {
       body: Padding(
         padding:
             EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-        child: Stack(
+        child: Column(
           children: [
-            Column(
-              children: [
-                SizedBox(
-                  height: _sizeConfig.blockSizeH * 85,
-                  child: Image.asset(
-                    ImageAssets.girlLive,
-                    fit: BoxFit.fitWidth,
-                    width: _sizeConfig.screenW,
+            SizedBox(
+              height: isChatPage
+                  ? _sizeConfig.blockSizeH * 88
+                  : _sizeConfig.screenH,
+              child: Stack(
+                children: [
+                  Column(
+                    children: [
+                      Image.asset(
+                        ImageAssets.girlLive,
+                        fit: BoxFit.fitWidth,
+                        width: _sizeConfig.screenW,
+                        height: _sizeConfig.blockSizeH * 88,
+                      ),
+                    ],
                   ),
-                ),
-                if (isChatPage) Expanded(child: StreamTextRow())
-              ],
+                  PageView(
+                    onPageChanged: (int page) {
+                      setState(() {
+                        isChatPage = page == 0;
+                      });
+                    },
+                    children: [
+                      Stack(
+                        children: [
+                          const Positioned(
+                              top: 0,
+                              left: 0,
+                              right: 0,
+                              child: TopBar(
+                                showLiveInfo: true,
+                                showGlass: true,
+                              )),
+                          _blueOverlay,
+                          const Positioned(
+                            bottom: 0,
+                            right: horizontalPadding,
+                            child: BasketWidget(),
+                          ),
+                          _chat
+                        ],
+                      ),
+                      Stack(
+                        children: [
+                          _blueOverlay,
+                          const Positioned(
+                              top: 0,
+                              left: 0,
+                              right: 0,
+                              child: TopBar(
+                                showLiveInfo: true,
+                                showGlass: false,
+                                showReport: false,
+                              )),
+                          Positioned(
+                              top: _sizeConfig.screenH / 2,
+                              left: 0,
+                              right: 0,
+                              child: const LiveProductWidget())
+                        ],
+                      )
+                    ],
+                  ),
+                ],
+              ),
             ),
-            PageView(
-              onPageChanged: (int page) {
-                setState(() {
-                  isChatPage = page == 0;
-                });
-              },
-              children: [
-                Stack(
-                  children: [
-                    const Positioned(
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        child: TopBar(
-                          showLiveInfo: true,
-                          showGlass: true,
-                        )),
-                    _blueOverlay,
-                    Positioned(
-                      top: _sizeConfig.safeBlockH * 92,
-                      right: horizontalPadding,
-                      child: const BasketWidget(),
-                    ),
-                    _chat
-                  ],
+            if (isChatPage)
+              Expanded(
+                child: StreamTextRow(
+                  commentController: commentController,
+                  onSendPressed: () {
+                    setState(() {
+                      chatList.add(commentController.text.trim());
+                      commentController.clear();
+                    });
+                  },
                 ),
-                Stack(
-                  children: [
-                    _blueOverlay,
-                    const Positioned(
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        child: TopBar(
-                          showLiveInfo: true,
-                          showGlass: false,
-                          showReport: false,
-                        )),
-                    Positioned(
-                        top: _sizeConfig.screenH / 2,
-                        left: 0,
-                        right: 0,
-                        child: const LiveProductWidget())
-                  ],
-                )
-              ],
-            ),
+              )
           ],
         ),
       ),
@@ -97,9 +136,9 @@ class _LiveStreamingState extends State<LiveStreaming> {
   }
 
   Widget get _blueOverlay => Positioned(
-        bottom: _sizeConfig.blockSizeH * 15,
+        bottom: 0,
         left: 0,
-        top: _sizeConfig.blockSizeH * 50,
+        top: _sizeConfig.blockSizeH * 60,
         right: 0,
         child: Container(
           height: _sizeConfig.screenH,
@@ -111,6 +150,15 @@ class _LiveStreamingState extends State<LiveStreaming> {
           )),
         ),
       );
+
   Widget get _chat => Positioned(
-      top: _sizeConfig.screenH / 1.5, left: 0, child: ChatListview());
+        bottom: 0,
+        left: 0,
+        child: SizedBox(
+          height: _sizeConfig.screenH / 3,
+          child: ChatListView(
+            chatList: chatList,
+          ),
+        ),
+      );
 }

@@ -20,10 +20,6 @@ class _HomePageState extends State<HomePage> {
         children: [
           const Center(child: Text("Welcome")),
           const SizedBox(height: 30),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8.0),
-            child: Product(),
-          ),
           const SizedBox(height: 30),
           ElevatedButton(
             onPressed: () {
