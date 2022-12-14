@@ -54,7 +54,7 @@ class _TekctionState extends State<Tekction> {
       navigatorKey: AppConfig.navigatorKey,
       theme: getApplicationTheme(context),
       onGenerateRoute: RouteGenerator.getRoute,
-      initialRoute: Routes.splashRoute,
+      initialRoute: Routes.homeView,
     );
   }
 }

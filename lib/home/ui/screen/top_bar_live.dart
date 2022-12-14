@@ -6,11 +6,16 @@ import '../widget/live_info.dart';
 import '../widget/primary_button.dart';
 
 class TopBar extends StatelessWidget {
-  const TopBar({super.key, required this.showLiveInfo, this.showGlass = false});
+  const TopBar(
+      {super.key,
+      required this.showLiveInfo,
+      this.showGlass = false,
+      this.showReport = true});
 
   /// Live info.
   final bool showLiveInfo;
   final bool showGlass;
+  final bool showReport;
 
   @override
   Widget build(BuildContext context) {
@@ -72,32 +77,33 @@ class TopBar extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 15),
-                    Container(
-                      padding: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.2),
-                        borderRadius: BorderRadius.circular(11),
-                      ),
-                      child: Row(
-                        children: const [
-                          Icon(
-                            Icons.flag_outlined,
-                            color: Colors.white,
-                            size: 22,
-                          ),
-                          SizedBox(width: 8),
-                          Text(
-                            'Report',
-                            style: TextStyle(
+                    if (showReport) const SizedBox(height: 15),
+                    if (showReport)
+                      Container(
+                        padding: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(11),
+                        ),
+                        child: Row(
+                          children: const [
+                            Icon(
+                              Icons.flag_outlined,
                               color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
+                              size: 22,
                             ),
-                          ),
-                        ],
+                            SizedBox(width: 8),
+                            Text(
+                              'Report',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
                     if (showGlass)
                       Column(
                         children: [
