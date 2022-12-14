@@ -7,3 +7,4 @@ const usernameKey = "username";
 const profileImageKey = "profileImage";
 const emailKey = "email";
 const phoneNumberKey = "phoneNumber";
+const horizontalPadding = 30.0;

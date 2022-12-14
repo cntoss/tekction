@@ -9,7 +9,7 @@ import 'resource/theme_data.dart';
 import 'core/route_manager.dart';
 import 'service/locator.dart';
 
-void main() async {
+void main() {
   setLocator();
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MainApp());

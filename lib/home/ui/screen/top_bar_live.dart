@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../resource/asset_manager.dart';
 import '../../../resource/color_manager.dart';
-import 'live_page.dart';
+import '../widget/live_info.dart';
+import '../widget/primary_button.dart';
 
 class TopBar extends StatelessWidget {
   const TopBar({super.key, required this.showLiveInfo, this.showGlass = false});

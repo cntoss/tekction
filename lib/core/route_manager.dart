@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tekction/home/ui/screen/home_page.dart';
 import 'package:tekction/home/ui/screen/live_page.dart';
-import 'package:tekction/home/ui/screen/live_with_chat.dart';
+import 'package:tekction/home/ui/screen/live_streaming.dart';
 import 'package:tekction/login/ui/login.dart';
 import 'package:tekction/splash/splash_screen.dart';
 
@@ -31,7 +31,7 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const LivePage());
 
       case Routes.liveWithChat:
-        return MaterialPageRoute(builder: (_) => const LiveWithChat());
+        return MaterialPageRoute(builder: (_) => const LiveStreaming());
 
       default:
         return unDefinedRoute();
