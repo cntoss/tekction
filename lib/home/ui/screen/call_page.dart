@@ -26,9 +26,6 @@ class _CallPageState extends State<CallPage> {
   }
 
   Future<void> initAgora() async {
-    // retrieve permissions
-    await [Permission.microphone, Permission.camera].request();
-
     //create the engine
     _engine = createAgoraRtcEngine();
     await _engine.initialize(const RtcEngineContext(
@@ -61,6 +58,13 @@ class _CallPageState extends State<CallPage> {
           debugPrint(
               '[onTokenPrivilegeWillExpire] connection: ${connection.toJson()}, token: $token');
         },
+        onLeaveChannel: (connection, stats) {
+          debugPrint(
+              '[onLeaveChannel] connection: ${connection.toJson()}, token: $token');
+          setState(() {
+            _remoteUid = null;
+          });
+        },
       ),
     );
 
@@ -81,20 +85,21 @@ class _CallPageState extends State<CallPage> {
   // Create UI with local view and remote view
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Agora Video Call'),
       ),
       body: Stack(
         children: [
-          Center(
-            child: _remoteVideo(widget.channel),
-          ),
+          // Center(
+          //   child: _remoteVideo(widget.channel),
+          // ),
           Align(
             alignment: Alignment.topLeft,
             child: SizedBox(
-              width: 100,
-              height: 150,
+              width: size.width,
+              height: size.height,
               child: Center(
                 child: _localUserJoined
                     ? AgoraVideoView(

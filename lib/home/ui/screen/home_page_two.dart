@@ -22,8 +22,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ? _validateError = true
           : _validateError = false;
     });
-    await Permission.camera.request();
-    await Permission.microphone.request();
+    // retrieve permissions
+    await [Permission.microphone, Permission.camera].request();
 
     Navigator.push(
         context,
