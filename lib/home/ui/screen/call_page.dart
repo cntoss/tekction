@@ -28,10 +28,15 @@ class _CallPageState extends State<CallPage> {
   Future<void> initAgora() async {
     //create the engine
     _engine = createAgoraRtcEngine();
-    await _engine.initialize(const RtcEngineContext(
-      appId: appID,
-      channelProfile: ChannelProfileType.channelProfileLiveBroadcasting,
-    ));
+
+    await _engine.initialize(
+      const RtcEngineContext(
+        appId: appID,
+
+        /// REMOVE CHANNEL PROFILE IF AUDIENCE
+        channelProfile: ChannelProfileType.channelProfileLiveBroadcasting,
+      ),
+    );
 
     _engine.registerEventHandler(
       RtcEngineEventHandler(
@@ -68,9 +73,7 @@ class _CallPageState extends State<CallPage> {
       ),
     );
 
-    await _engine.setClientRole(
-      role: ClientRoleType.clientRoleBroadcaster,
-    );
+    /// COMMENET VIDEO AND PREVIEW IF AUDIENCE
     await _engine.enableVideo();
     await _engine.startPreview();
 
@@ -78,7 +81,11 @@ class _CallPageState extends State<CallPage> {
       token: token,
       channelId: widget.channel,
       uid: 0,
-      options: ChannelMediaOptions(),
+
+      /// set client role to audience if user is audience
+      options: ChannelMediaOptions(
+        clientRoleType: ClientRoleType.clientRoleBroadcaster,
+      ),
     );
   }
 
@@ -92,9 +99,11 @@ class _CallPageState extends State<CallPage> {
       ),
       body: Stack(
         children: [
+          /// UNCOMMENT FOR AUDIENCE
           // Center(
           //   child: _remoteVideo(widget.channel),
           // ),
+          /// COMMENT FOR BROADCASTER
           Align(
             alignment: Alignment.topLeft,
             child: SizedBox(
