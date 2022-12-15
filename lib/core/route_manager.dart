@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tekction/home/ui/screen/home_page.dart';
+import 'package:tekction/home/ui/screen/home_page_two.dart';
 import 'package:tekction/home/ui/screen/live_page.dart';
 import 'package:tekction/home/ui/screen/live_streaming.dart';
 import 'package:tekction/login/ui/login.dart';
@@ -25,7 +26,7 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const LoginScreen());
 
       case Routes.homeView:
-        return MaterialPageRoute(builder: (_) => const HomePage());
+        return MaterialPageRoute(builder: (_) => const MyHomePage());
 
       case Routes.liveView:
         return MaterialPageRoute(builder: (_) => const LivePage());

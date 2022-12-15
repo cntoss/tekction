@@ -22,6 +22,8 @@ dependencies:
   rxdart: ^0.27.7
   fluttertoast: ^8.1.2
   flutter_svg: ^1.1.6
+  agora_rtc_engine: ^6.0.0
+  permission_handler: ^10.2.0
 
 dev_dependencies:
   flutter_test:
