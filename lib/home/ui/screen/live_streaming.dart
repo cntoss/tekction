@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tekction/home/ui/screen/call_page.dart';
 import 'package:tekction/home/ui/widget/basket_widget.dart';
 import 'package:tekction/home/ui/widget/chat_listview.dart';
@@ -8,11 +7,10 @@ import 'package:tekction/resource/color_manager.dart';
 import 'package:tekction/service/locator.dart';
 
 import '../../../common/app_constant.dart';
-import '../../../resource/asset_manager.dart';
-import 'top_bar_live.dart';
 
 class LiveStreaming extends StatefulWidget {
-  const LiveStreaming({super.key});
+  final bool? isBroadCaster;
+  const LiveStreaming({super.key, this.isBroadCaster});
 
   @override
   State<LiveStreaming> createState() => _LiveStreamingState();
@@ -22,8 +20,6 @@ class _LiveStreamingState extends State<LiveStreaming> {
   final _sizeConfig = locator<SizeConfig>();
 
   final commentController = TextEditingController();
-
-  var isBroadCaster;
 
   List<String> chatList = [
     'name1',
@@ -46,15 +42,7 @@ class _LiveStreamingState extends State<LiveStreaming> {
 
   @override
   void initState() {
-    checkBroadcaster();
     super.initState();
-  }
-
-  checkBroadcaster() async {
-    SharedPreferences _sharedPref = await SharedPreferences.getInstance();
-    setState(() {
-      isBroadCaster = _sharedPref.getBool(broadcasterKey) ?? false;
-    });
   }
 
   @override
@@ -72,7 +60,7 @@ class _LiveStreamingState extends State<LiveStreaming> {
                 children: [
                   CallPage(
                     channel: channel,
-                    isBroadcaster: isBroadCaster,
+                    isBroadcaster: widget.isBroadCaster ?? false,
                   ),
                   Positioned(
                     bottom: 0,

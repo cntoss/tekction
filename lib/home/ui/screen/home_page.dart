@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tekction/common/app_constant.dart';
 import 'package:tekction/core/route_manager.dart';
+import 'package:tekction/helper/logout_helper.dart';
+
+import '../widget/auction_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -29,36 +32,57 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Auction")),
-      backgroundColor: Colors.indigo,
-      body: SizedBox(
-        width: MediaQuery.of(context).size.width,
-        child: Column(
-          children: [
-            if (isBroadCaster) ...[
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, Routes.liveWithChat);
-                },
-                child: const Text('Go to live'),
-              )
-            ] else ...[
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/live');
-                },
-                child: const Text('RSVP page'),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, Routes.liveWithChat);
-                },
-                child: const Text('Join live'),
-              )
-            ]
-          ],
-        ),
+      appBar: AppBar(
+        title: const Text("Auction"),
+        actions: [
+          IconButton(
+              onPressed: () => LogoutHelper().logOuts(context),
+              icon: const Icon(Icons.output_outlined))
+        ],
       ),
+      // backgroundColor: Colors.indigo,
+      body: isBroadCaster == null
+          ? const Center(
+              child: CircularProgressIndicator(),
+            )
+          : SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: isBroadCaster
+                  ? Center(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, Routes.liveWithChat, arguments: true);
+                        },
+                        child: const Text('Go to live'),
+                      ),
+                    )
+                  : Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(children: [
+                        AcutionCard(
+                          imageUrl: 'https://picsum.photos/300/300',
+                          vendor: 'jackyoung',
+                          name: 'Product to start\nyour yoga journey',
+                          onRsvpPressed: () {
+                            Navigator.pushNamed(context, '/live');
+                          },
+                        ),
+                        const SizedBox(
+                          width: 8,
+                        ),
+                        AcutionCard(
+                          imageUrl: 'https://picsum.photos/300/300',
+                          vendor: 'jackyoung',
+                          name: 'Summer outfits under\n 100\$',
+                          isLive: true,
+                          onLivePressed: () {
+                            print('on live');
+                            Navigator.pushNamed(context, Routes.liveWithChat, arguments: false);
+                          },
+                        ),
+                      ]),
+                    ),
+            ),
     );
   }
 }

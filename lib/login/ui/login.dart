@@ -68,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Container(
       margin: const EdgeInsets.only(top: 50.0),
       padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
-      child: const Text("Welcome to Tekction",
+      child: const Text("Welcome", //to Tekction",
           style: TextStyle(
               color: Colors.white70,
               fontSize: 40.0,
@@ -82,13 +82,13 @@ class _LoginScreenState extends State<LoginScreen> {
       child: Column(
         children: <Widget>[
           TextField(
-            keyboardType: TextInputType.phone,
+            keyboardType: TextInputType.emailAddress,
             controller: emailController,
             cursorColor: Colors.white,
             style: const TextStyle(color: Colors.white70),
             decoration: const InputDecoration(
-              icon: Icon(Icons.phone_android, color: Colors.white70),
-              hintText: "Phone Number",
+              icon: Icon(Icons.mail, color: Colors.white70),
+              hintText: "Email",
               border: UnderlineInputBorder(
                   borderSide: BorderSide(color: Colors.white70)),
               hintStyle: TextStyle(color: Colors.white70),
@@ -142,17 +142,17 @@ class _LoginScreenState extends State<LoginScreen> {
             backgroundColor: MaterialStateProperty.all(Colors.pink),
           ),
           onPressed: () async {
-            if (emailController.text != "" || passwordController.text != "") {
+            /*  if (emailController.text != "" || passwordController.text != "") {
               setState(() {
                 _isLoading = true;
-              });
-              _uiHelper.hideKeyboard(context);
-              _signIn(
-                context,
-                emailController.text,
-                passwordController.text,
-              );
-            }
+              }); */
+            _uiHelper.hideKeyboard(context);
+            _signIn(
+              context,
+              emailController.text,
+              passwordController.text,
+            );
+            // }
           },
           child: const Text("Login", style: TextStyle(color: Colors.white70)),
         ),

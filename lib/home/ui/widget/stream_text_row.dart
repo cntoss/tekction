@@ -29,7 +29,7 @@ class StreamTextRow extends StatelessWidget {
         width: _sizeConfig.screenW,
         child: Row(children: [
           SizedBox(
-            width: _sizeConfig.safeBlockW * 60,
+            width: _sizeConfig.safeBlockW * 56,
             height: 55,
             child: TextField(
               controller: commentController,

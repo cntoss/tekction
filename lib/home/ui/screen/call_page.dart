@@ -32,13 +32,6 @@ class _CallPageState extends State<CallPage> {
     initAgora();
   }
 
-  @override
-  void dispose() {
-    super.dispose();
-    _engine.leaveChannel();
-    _engine.release();
-  }
-
   Future<void> initAgora() async {
     //create the engine
     _engine = createAgoraRtcEngine();
@@ -108,45 +101,47 @@ class _CallPageState extends State<CallPage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: Stack(
-        children: [
-          widget.isBroadcaster
-              ? Align(
-                  alignment: Alignment.topLeft,
-                  child: SizedBox(
-                    width: size.width,
-                    height: size.height,
-                    child: Center(
-                      child: _localUserJoined
-                          ? AgoraVideoView(
-                              controller: VideoViewController(
-                                rtcEngine: _engine,
-                                canvas: const VideoCanvas(uid: 0),
-                              ),
-                            )
-                          : const CircularProgressIndicator(),
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
+        body: Stack(
+          children: [
+            widget.isBroadcaster
+                ? Align(
+                    alignment: Alignment.topLeft,
+                    child: SizedBox(
+                      width: size.width,
+                      height: size.height,
+                      child: Center(
+                        child: _localUserJoined
+                            ? AgoraVideoView(
+                                controller: VideoViewController(
+                                  rtcEngine: _engine,
+                                  canvas: const VideoCanvas(uid: 0),
+                                ),
+                              )
+                            : const CircularProgressIndicator(),
+                      ),
                     ),
+                  )
+                : Center(
+                    child: _remoteVideo(widget.channel),
                   ),
-                )
-              : Center(
-                  child: _remoteVideo(widget.channel),
-                ),
-          Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
-              child: TopBar(
-                showLiveInfo: true,
-                showGlass: true,
-                onBackPressed: () {
-                  super.dispose();
-                  _engine.leaveChannel();
-                  _engine.release();
-                  Navigator.pop(context);
-                },
-              )),
-        ],
+            Positioned(
+                top: 0,
+                left: 0,
+                right: 0,
+                child: TopBar(
+                  showLiveInfo: true,
+                  showGlass: true,
+                  onBackPressed: () {
+                    _engine.leaveChannel();
+                    _engine.release();
+                    Navigator.pop(context);
+                  },
+                )),
+          ],
+        ),
       ),
     );
   }
