@@ -12,7 +12,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Tekkon Auction")),
+      appBar: AppBar(title: const Text("Auction")),
       backgroundColor: Colors.indigo,
       body: Column(
         children: [

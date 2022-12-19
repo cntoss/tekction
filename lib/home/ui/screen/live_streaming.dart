@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tekction/home/ui/screen/call_page.dart';
 import 'package:tekction/home/ui/widget/basket_widget.dart';
 import 'package:tekction/home/ui/widget/chat_listview.dart';
 import 'package:tekction/home/ui/widget/stream_text_row.dart';
@@ -21,6 +23,8 @@ class _LiveStreamingState extends State<LiveStreaming> {
 
   final commentController = TextEditingController();
 
+  var isBroadCaster;
+
   List<String> chatList = [
     'name1',
     'Amazinggg!!',
@@ -41,6 +45,19 @@ class _LiveStreamingState extends State<LiveStreaming> {
   ];
 
   @override
+  void initState() {
+    checkBroadcaster();
+    super.initState();
+  }
+
+  checkBroadcaster() async {
+    SharedPreferences _sharedPref = await SharedPreferences.getInstance();
+    setState(() {
+      isBroadCaster = _sharedPref.getBool(broadcasterKey) ?? false;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorManager.blue,
@@ -53,19 +70,10 @@ class _LiveStreamingState extends State<LiveStreaming> {
               height: _sizeConfig.safeBlockH * 92,
               child: Stack(
                 children: [
-                  Image.asset(
-                    ImageAssets.girlLive,
-                    fit: BoxFit.fitWidth,
-                    width: _sizeConfig.screenW,
+                  CallPage(
+                    channel: channel,
+                    isBroadcaster: isBroadCaster,
                   ),
-                  const Positioned(
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      child: TopBar(
-                        showLiveInfo: true,
-                        showGlass: true,
-                      )),
                   Positioned(
                     bottom: 0,
                     left: 0,

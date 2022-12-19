@@ -30,6 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
         MaterialPageRoute(
           builder: (context) => CallPage(
             channel: myController.text.trim(),
+            isBroadcaster: true,
           ),
         ));
   }

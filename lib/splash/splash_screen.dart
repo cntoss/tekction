@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     await EnvConfig.initialize();
 
-    var token = sharedPreferences.getString(tokenKey);
+    var token = sharedPreferences.getBool(broadcasterKey);
     if (token != null) {
       Future.delayed(
         const Duration(milliseconds: 500),

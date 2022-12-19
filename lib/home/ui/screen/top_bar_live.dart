@@ -6,11 +6,17 @@ import '../widget/live_info.dart';
 import '../widget/primary_button.dart';
 
 class TopBar extends StatelessWidget {
-  const TopBar({super.key, required this.showLiveInfo, this.showGlass = false});
+  const TopBar(
+      {super.key,
+      required this.showLiveInfo,
+      this.showGlass = false,
+      required this.onBackPressed});
 
   /// Live info.
   final bool showLiveInfo;
   final bool showGlass;
+
+  final VoidCallback onBackPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +30,7 @@ class TopBar extends StatelessWidget {
           Row(
             children: [
               InkWell(
-                onTap: () => Navigator.pop(context),
+                onTap: onBackPressed,
                 child: const Icon(
                   Icons.arrow_back_ios,
                   color: Colors.white,

@@ -1,5 +1,8 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tekction/common/app_constant.dart';
+import 'package:tekction/common/user_constant.dart';
 
 // Project imports:
 import '../../../repository/api_exception.dart';
@@ -16,33 +19,19 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _showPassword = false;
   final LoginRepository _loginRepository = locator<LoginRepository>();
   final UiHelper _uiHelper = locator<UiHelper>();
-  final TextEditingController phoneController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  _signIn(context, String phone, pass) async {
-    Map<String, dynamic> data = {
-      'phoneNumber': phone,
-      'password': pass,
-    };
-    try {
-      var message = await _loginRepository.login(data);
-      setState(() {
-        _isLoading = false;
-      });
-      Navigator.pushNamedAndRemoveUntil(
-          context, '/home', (Route<dynamic> route) => false);
-      _uiHelper.showToast(msg: message);
-    } on AppApiException catch (e) {
-      setState(() {
-        _isLoading = false;
-      });
-      _uiHelper.showToast(msg: e.message ?? 'Server Error');
-    } catch (e) {
-      setState(() {
-        _isLoading = false;
-      });
-      _uiHelper.showToast(msg: e.toString());
+  _signIn(context, String email, pass) async {
+    SharedPreferences _sharedPref = await SharedPreferences.getInstance();
+    if (email == broadcasterUser['email']) {
+      _sharedPref.setBool(broadcasterKey, true);
+    } else {
+      _sharedPref.setBool(broadcasterKey, false);
     }
+
+    Navigator.pushNamedAndRemoveUntil(
+        context, '/home', (Route<dynamic> route) => false);
   }
 
   @override
@@ -94,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
         children: <Widget>[
           TextField(
             keyboardType: TextInputType.phone,
-            controller: phoneController,
+            controller: emailController,
             cursorColor: Colors.white,
             style: const TextStyle(color: Colors.white70),
             decoration: const InputDecoration(
@@ -153,22 +142,17 @@ class _LoginScreenState extends State<LoginScreen> {
             backgroundColor: MaterialStateProperty.all(Colors.pink),
           ),
           onPressed: () async {
-            Navigator.pushNamedAndRemoveUntil(
-                context,
-                '/home',
-                (Route<dynamic> route) =>
-                    false); /* 
-            if (phoneController.text != "" || passwordController.text != "") {
+            if (emailController.text != "" || passwordController.text != "") {
               setState(() {
                 _isLoading = true;
               });
               _uiHelper.hideKeyboard(context);
               _signIn(
                 context,
-                phoneController.text,
+                emailController.text,
                 passwordController.text,
               );
-            } */
+            }
           },
           child: const Text("Login", style: TextStyle(color: Colors.white70)),
         ),

@@ -26,7 +26,7 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const LoginScreen());
 
       case Routes.homeView:
-        return MaterialPageRoute(builder: (_) => const MyHomePage());
+        return MaterialPageRoute(builder: (_) => const HomePage());
 
       case Routes.liveView:
         return MaterialPageRoute(builder: (_) => const LivePage());
