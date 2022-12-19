@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:agora_rtc_engine/agora_rtc_engine.dart';
 import 'package:tekction/home/ui/screen/top_bar_live.dart';
@@ -36,14 +38,18 @@ class _CallPageState extends State<CallPage> {
     //create the engine
     _engine = createAgoraRtcEngine();
 
-    await _engine.initialize(
-      RtcEngineContext(
-        appId: appID,
-        channelProfile: widget.isBroadcaster
-            ? ChannelProfileType.channelProfileLiveBroadcasting
-            : null,
-      ),
-    );
+    if (widget.isBroadcaster) {
+      await _engine.initialize(
+        const RtcEngineContext(
+          appId: appID,
+          channelProfile: ChannelProfileType.channelProfileLiveBroadcasting,
+        ),
+      );
+    } else {
+      await _engine.initialize(
+        const RtcEngineContext(appId: appID),
+      );
+    }
 
     _engine.registerEventHandler(
       RtcEngineEventHandler(
@@ -80,21 +86,30 @@ class _CallPageState extends State<CallPage> {
       ),
     );
 
+    await _engine.enableVideo();
     if (widget.isBroadcaster) {
-      await _engine.enableVideo();
       await _engine.startPreview();
     }
 
-    await _engine.joinChannel(
-      token: token,
-      channelId: widget.channel,
-      uid: 0,
-      options: ChannelMediaOptions(
-        clientRoleType: widget.isBroadcaster
-            ? ClientRoleType.clientRoleBroadcaster
-            : ClientRoleType.clientRoleAudience,
-      ),
-    );
+    if (widget.isBroadcaster) {
+      await _engine.joinChannel(
+        token: token,
+        channelId: widget.channel,
+        uid: 0,
+        options: const ChannelMediaOptions(
+          clientRoleType: ClientRoleType.clientRoleBroadcaster,
+        ),
+      );
+    } else {
+      await _engine.joinChannel(
+        token: token,
+        channelId: widget.channel,
+        uid: 0,
+        options: const ChannelMediaOptions(
+          clientRoleType: ClientRoleType.clientRoleAudience,
+        ),
+      );
+    }
   }
 
   // Create UI with local view and remote view
@@ -106,26 +121,23 @@ class _CallPageState extends State<CallPage> {
       child: Scaffold(
         body: Stack(
           children: [
-            widget.isBroadcaster
-                ? Align(
-                    alignment: Alignment.topLeft,
-                    child: SizedBox(
-                      width: size.width,
-                      height: size.height,
-                      child: Center(
-                        child: _localUserJoined
-                            ? AgoraVideoView(
-                                controller: VideoViewController(
-                                  rtcEngine: _engine,
-                                  canvas: const VideoCanvas(uid: 0),
-                                ),
-                              )
-                            : const CircularProgressIndicator(),
-                      ),
-                    ),
-                  )
-                : Center(
+            !widget.isBroadcaster
+                ? Center(
                     child: _remoteVideo(widget.channel),
+                  )
+                : SizedBox(
+                    width: size.width,
+                    height: size.height,
+                    child: Center(
+                      child: _localUserJoined
+                          ? AgoraVideoView(
+                              controller: VideoViewController(
+                                rtcEngine: _engine,
+                                canvas: const VideoCanvas(uid: 0),
+                              ),
+                            )
+                          : const CircularProgressIndicator(),
+                    ),
                   ),
             Positioned(
                 top: 0,
@@ -158,7 +170,7 @@ class _CallPageState extends State<CallPage> {
       );
     } else {
       return const Text(
-        'Please wait for remote user to join',
+        'Please wait for host to join',
         textAlign: TextAlign.center,
       );
     }
