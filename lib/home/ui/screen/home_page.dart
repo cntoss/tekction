@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tekction/common/app_constant.dart';
 import 'package:tekction/core/route_manager.dart';
@@ -23,6 +24,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   checkBroadcaster() async {
+    await [Permission.microphone, Permission.camera].request();
     SharedPreferences _sharedPref = await SharedPreferences.getInstance();
     setState(() {
       isBroadCaster = _sharedPref.getBool(broadcasterKey) ?? false;
@@ -51,7 +53,8 @@ class _HomePageState extends State<HomePage> {
                   ? Center(
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, Routes.liveWithChat, arguments: true);
+                          Navigator.pushNamed(context, Routes.liveWithChat,
+                              arguments: true);
                         },
                         child: const Text('Go to live'),
                       ),
@@ -77,7 +80,8 @@ class _HomePageState extends State<HomePage> {
                           isLive: true,
                           onLivePressed: () {
                             print('on live');
-                            Navigator.pushNamed(context, Routes.liveWithChat, arguments: false);
+                            Navigator.pushNamed(context, Routes.liveWithChat,
+                                arguments: false);
                           },
                         ),
                       ]),
