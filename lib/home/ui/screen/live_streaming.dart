@@ -41,11 +41,6 @@ class _LiveStreamingState extends State<LiveStreaming> {
   ];
 
   @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorManager.blue,

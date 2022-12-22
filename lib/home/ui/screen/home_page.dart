@@ -15,7 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var isBroadCaster;
+  bool? isBroadCaster;
 
   @override
   void initState() {
@@ -25,9 +25,9 @@ class _HomePageState extends State<HomePage> {
 
   checkBroadcaster() async {
     await [Permission.microphone, Permission.camera].request();
-    SharedPreferences _sharedPref = await SharedPreferences.getInstance();
+    SharedPreferences sharedPref = await SharedPreferences.getInstance();
     setState(() {
-      isBroadCaster = _sharedPref.getBool(broadcasterKey) ?? false;
+      isBroadCaster = sharedPref.getBool(broadcasterKey) ?? false;
     });
   }
 
@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
             )
           : SizedBox(
               width: MediaQuery.of(context).size.width,
-              child: isBroadCaster
+              child: isBroadCaster!
                   ? Center(
                       child: ElevatedButton(
                         onPressed: () {
@@ -79,7 +79,6 @@ class _HomePageState extends State<HomePage> {
                           name: 'Summer outfits under\n 100\$',
                           isLive: true,
                           onLivePressed: () {
-                            print('on live');
                             Navigator.pushNamed(context, Routes.liveWithChat,
                                 arguments: false);
                           },

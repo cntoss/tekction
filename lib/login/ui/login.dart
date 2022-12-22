@@ -4,30 +4,27 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tekction/common/app_constant.dart';
 import 'package:tekction/common/user_constant.dart';
 
-// Project imports:
-import '../../../repository/api_exception.dart';
 import '../../service/locator.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends StatefulWidget {     
   const LoginScreen({Key? key}) : super(key: key);
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  bool _isLoading = false;
+  bool isLoading = false;
   bool _showPassword = false;
-  final LoginRepository _loginRepository = locator<LoginRepository>();
   final UiHelper _uiHelper = locator<UiHelper>();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
   _signIn(context, String email, pass) async {
-    SharedPreferences _sharedPref = await SharedPreferences.getInstance();
+    SharedPreferences sharedPref = await SharedPreferences.getInstance();
     if (email == broadcasterUser['email']) {
-      _sharedPref.setBool(broadcasterKey, true);
+      sharedPref.setBool(broadcasterKey, true);
     } else {
-      _sharedPref.setBool(broadcasterKey, false);
+      sharedPref.setBool(broadcasterKey, false);
     }
 
     Navigator.pushNamedAndRemoveUntil(
@@ -47,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter),
           ),
-          child: _isLoading
+          child: isLoading
               ? const Center(
                   child: CircularProgressIndicator(
                   color: Colors.white,

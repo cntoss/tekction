@@ -6,7 +6,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tekction/core/route_manager.dart';
 
 // Project imports:
-import '../../environments/envConfig.dart';
 import '../common/app_constant.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -30,7 +29,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
   checkLoginStatus() async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    await EnvConfig.initialize();
 
     var token = sharedPreferences.getBool(broadcasterKey);
     if (token != null) {
