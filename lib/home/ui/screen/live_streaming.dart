@@ -18,6 +18,7 @@ class LiveStreaming extends StatefulWidget {
 
 class _LiveStreamingState extends State<LiveStreaming> {
   final _sizeConfig = locator<SizeConfig>();
+  bool isChatPage = true;
 
   final commentController = TextEditingController();
 
@@ -50,7 +51,9 @@ class _LiveStreamingState extends State<LiveStreaming> {
         child: Column(
           children: [
             SizedBox(
-              height: _sizeConfig.safeBlockH * 92,
+              height: isChatPage
+                  ? _sizeConfig.blockSizeH * 88
+                  : _sizeConfig.screenH,
               child: Stack(
                 children: [
                   CallPage(
@@ -72,31 +75,42 @@ class _LiveStreamingState extends State<LiveStreaming> {
                       )),
                     ),
                   ),
-                  const Positioned(
-                    bottom: 0,
-                    right: horizontalPadding,
-                    child: BasketWidget(),
-                  ),
-                  _chat
                 ],
               ),
             ),
-            Expanded(
-              child: StreamTextRow(
-                commentController: commentController,
-                onSendPressed: () {
-                  setState(() {
-                    chatList.add(commentController.text.trim());
-                    commentController.clear();
-                  });
-                },
-              ),
-            )
+            if (isChatPage)
+              Expanded(
+                child: StreamTextRow(
+                  commentController: commentController,
+                  onSendPressed: () {
+                    setState(() {
+                      chatList.add(commentController.text.trim());
+                      commentController.clear();
+                    });
+                  },
+                ),
+              )
           ],
         ),
       ),
     );
   }
+
+  Widget get _blueOverlay => Positioned(
+        bottom: 0,
+        left: 0,
+        top: _sizeConfig.blockSizeH * 60,
+        right: 0,
+        child: Container(
+          height: _sizeConfig.screenH,
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Colors.transparent, Color(0xff03174c)],
+          )),
+        ),
+      );
 
   Widget get _chat => Positioned(
         bottom: 0,

@@ -7,6 +7,8 @@ import 'package:tekction/helper/logout_helper.dart';
 
 import '../widget/auction_card.dart';
 
+import '../widget/product_card.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 

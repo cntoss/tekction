@@ -28,30 +28,32 @@ class StreamTextRow extends StatelessWidget {
       child: SizedBox(
         width: _sizeConfig.screenW,
         child: Row(children: [
-          SizedBox(
-            width: _sizeConfig.safeBlockW * 56,
-            height: 55,
-            child: TextField(
-              controller: commentController,
-              decoration: InputDecoration(
-                fillColor: ColorManager.darkBlue,
-                filled: true,
-                hintText: 'Write a comment...',
-                hintStyle: TextStyle(color: ColorManager.formTextColor),
-                suffixIconConstraints:
-                    const BoxConstraints(minHeight: 19, minWidth: 19),
-                suffixIcon: GestureDetector(
-                  onTap: onSendPressed,
-                  child: Padding(
-                    padding: const EdgeInsets.only(right: 10.0),
-                    child: SvgPicture.asset(
-                      SvgAsset.sendRight,
+          Flexible(
+            child: SizedBox(
+              width: _sizeConfig.safeBlockW * 60,
+              height: 55,
+              child: TextField(
+                controller: commentController,
+                decoration: InputDecoration(
+                  fillColor: ColorManager.darkBlue,
+                  filled: true,
+                  hintText: 'Write a comment...',
+                  hintStyle: TextStyle(color: ColorManager.formTextColor),
+                  suffixIconConstraints:
+                      const BoxConstraints(minHeight: 19, minWidth: 19),
+                  suffixIcon: GestureDetector(
+                    onTap: onSendPressed,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 10.0),
+                      child: SvgPicture.asset(
+                        SvgAsset.sendRight,
+                      ),
                     ),
                   ),
-                ),
-                border: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(40),
+                  border: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(40),
+                    ),
                   ),
                 ),
               ),
