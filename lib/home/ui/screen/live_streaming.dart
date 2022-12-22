@@ -7,6 +7,7 @@ import 'package:tekction/resource/color_manager.dart';
 import 'package:tekction/service/locator.dart';
 
 import '../../../common/app_constant.dart';
+import '../widget/live_product.dart';
 
 class LiveStreaming extends StatefulWidget {
   final bool? isBroadCaster;
@@ -60,7 +61,54 @@ class _LiveStreamingState extends State<LiveStreaming> {
                     channel: channel,
                     isBroadcaster: widget.isBroadCaster ?? false,
                   ),
-                  Positioned(
+                  PageView(
+                    onPageChanged: (int page) {
+                      setState(() {
+                        isChatPage = page == 0;
+                      });
+                    },
+                    children: [
+                      Stack(
+                        children: [
+                          /* Positioned(
+                              top: 0,
+                              left: 0,
+                              right: 0,
+                              child: TopBar(
+                                showLiveInfo: true,
+                                showGlass: true,
+                              )), */
+                          _blueOverlay,
+                          const Positioned(
+                            bottom: 0,
+                            right: horizontalPadding,
+                            child: BasketWidget(),
+                          ),
+                          _chat
+                        ],
+                      ),
+                      Stack(
+                        children: [
+                          _blueOverlay,
+                          /* const Positioned(
+                              top: 0,
+                              left: 0,
+                              right: 0,
+                              child: TopBar(
+                                showLiveInfo: true,
+                                showGlass: false,
+                                showReport: false,
+                              )), */
+                          Positioned(
+                              top: _sizeConfig.screenH / 2,
+                              left: 0,
+                              right: 0,
+                              child: const LiveProductWidget())
+                        ],
+                      )
+                    ],
+                  ),
+                  /* Positioned(
                     bottom: 0,
                     left: 0,
                     top: _sizeConfig.screenH / 2,
@@ -74,7 +122,7 @@ class _LiveStreamingState extends State<LiveStreaming> {
                         colors: [Colors.transparent, Color(0xff03174c)],
                       )),
                     ),
-                  ),
+                  ), */
                 ],
               ),
             ),

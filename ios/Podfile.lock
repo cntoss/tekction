@@ -49,13 +49,17 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/shared_preferences_ios/ios"
 
 SPEC CHECKSUMS:
-  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  agora_rtc_engine: 732f1a488865cff9094bb29fe15f6889ba0d49ea
+  AgoraIrisEventFlutter_iOS: a5ade1ea532633e8c26496f3eee87a3810ac92b0
+  AgoraIrisRTC_iOS: 2e0dc9de177fc33c2071804c1fea67dbf25715ba
+  AgoraRtcEngine_Special_iOS: bbbcbc64de68a7bdfc8fa46b4e945dcfbed0e408
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   fluttertoast: eb263d302cc92e04176c053d2385237e9f43fad0
   iris_event: bc3ca64765be2fca08816b7231beee12e344a2b9
   permission_handler_apple: 44366e37eaf29454a1e7b1b7d736c2cceaeb17ce
   shared_preferences_ios: 548a61f8053b9b8a49ac19c1ffbc8b92c50d68ad
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 7368163408c647b7eb699d0d788ba6718e18fb8d
+PODFILE CHECKSUM: c4b4e9185fe782b7442009526fdc320e17eb026a
 
 COCOAPODS: 1.11.3

@@ -10,6 +10,7 @@ class TopBar extends StatelessWidget {
       {super.key,
       required this.showLiveInfo,
       this.showGlass = false,
+      this.showReport = false,
       required this.onBackPressed});
 
   /// Live info.
