@@ -10,12 +10,14 @@ class TopBar extends StatelessWidget {
       {super.key,
       required this.showLiveInfo,
       this.showGlass = false,
-      this.showReport = true});
+      required this.onBackPressed});
 
   /// Live info.
   final bool showLiveInfo;
   final bool showGlass;
   final bool showReport;
+
+  final VoidCallback onBackPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class TopBar extends StatelessWidget {
           Row(
             children: [
               InkWell(
-                onTap: () => Navigator.pop(context),
+                onTap: onBackPressed,
                 child: const Icon(
                   Icons.arrow_back_ios,
                   color: Colors.white,

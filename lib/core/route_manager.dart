@@ -31,7 +31,10 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const LivePage());
 
       case Routes.liveWithChat:
-        return MaterialPageRoute(builder: (_) => const LiveStreaming());
+        return MaterialPageRoute(
+            builder: (_) => LiveStreaming(
+                  isBroadCaster: routeSettings.arguments as bool?,
+                ));
 
       default:
         return unDefinedRoute();

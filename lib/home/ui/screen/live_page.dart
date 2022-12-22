@@ -25,7 +25,10 @@ class _LivePageState extends State<LivePage> {
           ),
           Column(
             children: [
-              const TopBar(showLiveInfo: true),
+              TopBar(
+                showLiveInfo: true,
+                onBackPressed: () => Navigator.pop(context),
+              ),
               // TopBar(showLiveInfo: false),
               const Spacer(),
               RsvpContainer(
@@ -53,5 +56,3 @@ class _LivePageState extends State<LivePage> {
     );
   }
 }
-
-

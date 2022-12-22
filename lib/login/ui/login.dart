@@ -1,48 +1,34 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tekction/common/app_constant.dart';
+import 'package:tekction/common/user_constant.dart';
 
-// Project imports:
-import '../../../repository/api_exception.dart';
 import '../../service/locator.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends StatefulWidget {     
   const LoginScreen({Key? key}) : super(key: key);
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  bool _isLoading = false;
+  bool isLoading = false;
   bool _showPassword = false;
-  final LoginRepository _loginRepository = locator<LoginRepository>();
   final UiHelper _uiHelper = locator<UiHelper>();
-  final TextEditingController phoneController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  _signIn(context, String phone, pass) async {
-    Map<String, dynamic> data = {
-      'phoneNumber': phone,
-      'password': pass,
-    };
-    try {
-      var message = await _loginRepository.login(data);
-      setState(() {
-        _isLoading = false;
-      });
-      Navigator.pushNamedAndRemoveUntil(
-          context, '/home', (Route<dynamic> route) => false);
-      _uiHelper.showToast(msg: message);
-    } on AppApiException catch (e) {
-      setState(() {
-        _isLoading = false;
-      });
-      _uiHelper.showToast(msg: e.message ?? 'Server Error');
-    } catch (e) {
-      setState(() {
-        _isLoading = false;
-      });
-      _uiHelper.showToast(msg: e.toString());
+  _signIn(context, String email, pass) async {
+    SharedPreferences sharedPref = await SharedPreferences.getInstance();
+    if (email == broadcasterUser['email']) {
+      sharedPref.setBool(broadcasterKey, true);
+    } else {
+      sharedPref.setBool(broadcasterKey, false);
     }
+
+    Navigator.pushNamedAndRemoveUntil(
+        context, '/home', (Route<dynamic> route) => false);
   }
 
   @override
@@ -58,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter),
           ),
-          child: _isLoading
+          child: isLoading
               ? const Center(
                   child: CircularProgressIndicator(
                   color: Colors.white,
@@ -79,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Container(
       margin: const EdgeInsets.only(top: 50.0),
       padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
-      child: const Text("Welcome to Tekction",
+      child: const Text("Welcome", //to Tekction",
           style: TextStyle(
               color: Colors.white70,
               fontSize: 40.0,
@@ -93,13 +79,13 @@ class _LoginScreenState extends State<LoginScreen> {
       child: Column(
         children: <Widget>[
           TextField(
-            keyboardType: TextInputType.phone,
-            controller: phoneController,
+            keyboardType: TextInputType.emailAddress,
+            controller: emailController,
             cursorColor: Colors.white,
             style: const TextStyle(color: Colors.white70),
             decoration: const InputDecoration(
-              icon: Icon(Icons.phone_android, color: Colors.white70),
-              hintText: "Phone Number",
+              icon: Icon(Icons.mail, color: Colors.white70),
+              hintText: "Email",
               border: UnderlineInputBorder(
                   borderSide: BorderSide(color: Colors.white70)),
               hintStyle: TextStyle(color: Colors.white70),
@@ -153,22 +139,17 @@ class _LoginScreenState extends State<LoginScreen> {
             backgroundColor: MaterialStateProperty.all(Colors.pink),
           ),
           onPressed: () async {
-            Navigator.pushNamedAndRemoveUntil(
-                context,
-                '/home',
-                (Route<dynamic> route) =>
-                    false); /* 
-            if (phoneController.text != "" || passwordController.text != "") {
+            /*  if (emailController.text != "" || passwordController.text != "") {
               setState(() {
                 _isLoading = true;
-              });
-              _uiHelper.hideKeyboard(context);
-              _signIn(
-                context,
-                phoneController.text,
-                passwordController.text,
-              );
-            } */
+              }); */
+            _uiHelper.hideKeyboard(context);
+            _signIn(
+              context,
+              emailController.text,
+              passwordController.text,
+            );
+            // }
           },
           child: const Text("Login", style: TextStyle(color: Colors.white70)),
         ),
