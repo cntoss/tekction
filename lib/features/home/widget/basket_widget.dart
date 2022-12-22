@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../resource/asset_manager.dart';
+import '../../../utils/asset_manager.dart';
 
 class BasketWidget extends StatelessWidget {
   const BasketWidget({super.key});

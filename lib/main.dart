@@ -1,13 +1,13 @@
 // Flutter imports:
 
+import 'package:data_config/data_config.dart';
 import 'package:flutter/material.dart';
 import 'package:injection/injection.dart';
 
 // Project imports:
 
-import 'common/app_config.dart';
 import 'navigation/route_manager.dart';
-import 'resource/theme_data.dart';
+import 'utils/theme_data.dart';
 
 void main() {
   setLocator();

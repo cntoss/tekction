@@ -1,6 +1,5 @@
+import 'package:data_config/data_config.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../common/app_constant.dart';
 
 class ChatListView extends StatelessWidget {
   const ChatListView({

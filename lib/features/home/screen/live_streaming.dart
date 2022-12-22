@@ -5,9 +5,8 @@ import 'package:tekction/features/home/screen/call_page.dart';
 import 'package:tekction/features/home/widget/basket_widget.dart';
 import 'package:tekction/features/home/widget/chat_listview.dart';
 import 'package:tekction/features/home/widget/stream_text_row.dart';
-import 'package:tekction/resource/color_manager.dart';
+import 'package:tekction/utils/color_manager.dart';
 
-import '../../../common/app_constant.dart';
 import '../widget/live_product.dart';
 
 class LiveStreaming extends StatefulWidget {

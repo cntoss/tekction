@@ -1,7 +1,6 @@
 import 'package:data_config/data_config.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:tekction/common/app_constant.dart';
 import 'package:tekction/navigation/route_manager.dart';
 
 import '../widget/auction_card.dart';

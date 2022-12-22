@@ -2,8 +2,6 @@
 import 'package:data_config/data_config.dart';
 import 'package:flutter/material.dart';
 import 'package:injection/injection.dart';
-import 'package:tekction/common/app_constant.dart';
-import 'package:tekction/common/user_constant.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);

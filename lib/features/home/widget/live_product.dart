@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tekction/features/home/widget/basket_widget.dart';
 import 'package:tekction/features/home/widget/product_card.dart';
-import 'package:tekction/resource/color_manager.dart';
+import 'package:tekction/utils/color_manager.dart';
 
 class LiveProductWidget extends StatelessWidget {
   const LiveProductWidget({super.key});
