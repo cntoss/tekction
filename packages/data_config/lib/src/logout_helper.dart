@@ -43,11 +43,5 @@ class LogoutHelper {
     showDialog(context: context, builder: (_) => alertDialog);
   }
 
-  logOuts(BuildContext context) async {
-    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    sharedPreferences.clear();
-    Future.delayed(Duration.zero, () {
-      context.router.replaceNamed(AppRoutes.loginPath);
-    });
-  }
+  logOuts(BuildContext context) async {}
 }

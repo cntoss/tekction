@@ -1,4 +1,6 @@
 // Flutter imports:
+import 'dart:developer';
+
 import 'package:data_config/data_config.dart';
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  _signIn(context, String email, pass) async {
+  _signIn(String email, pass) async {
     SharedPreferences sharedPref = await SharedPreferences.getInstance();
     if (email == broadcasterUser['email']) {
       sharedPref.setBool(broadcasterKey, true);
@@ -26,8 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
       sharedPref.setBool(broadcasterKey, false);
     }
 
-    Navigator.pushNamedAndRemoveUntil(
-        context, '/home', (Route<dynamic> route) => false);
+    context.router.replaceNamed(AppRoutes.mainTabPath);
   }
 
   @override
@@ -144,7 +145,6 @@ class _LoginScreenState extends State<LoginScreen> {
               }); */
             _uiHelper.hideKeyboard(context);
             _signIn(
-              context,
               emailController.text,
               passwordController.text,
             );

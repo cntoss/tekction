@@ -2,18 +2,17 @@ import 'package:data_config/data_config.dart';
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:tekction/navigation/route_manager.dart';
 
 import '../widget/auction_card.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeScreenState extends State<HomeScreen> {
   bool? isBroadCaster;
 
   @override
@@ -33,14 +32,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Auction"),
-        actions: [
-          IconButton(
-              onPressed: () => LogoutHelper().logOuts(context),
-              icon: const Icon(Icons.output_outlined))
-        ],
-      ),
       // backgroundColor: Colors.indigo,
       body: isBroadCaster == null
           ? const Center(
@@ -52,8 +43,7 @@ class _HomePageState extends State<HomePage> {
                   ? Center(
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, Routes.liveWithChat,
-                              arguments: true);
+                          context.router.pushNamed(AppRoutes.liveChatPath);
                         },
                         child: const Text('Go to live'),
                       ),
@@ -66,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                           vendor: 'jackyoung',
                           name: 'Product to start\nyour yoga journey',
                           onRsvpPressed: () {
-                            Navigator.pushNamed(context, '/live');
+                            context.router.pushNamed(AppRoutes.livePath);
                           },
                         ),
                         const SizedBox(
@@ -78,8 +68,7 @@ class _HomePageState extends State<HomePage> {
                           name: 'Summer outfits under\n 100\$',
                           isLive: true,
                           onLivePressed: () {
-                            Navigator.pushNamed(context, Routes.liveWithChat,
-                                arguments: false);
+                            context.router.pushNamed(AppRoutes.liveChatPath);
                           },
                         ),
                       ]),

@@ -1,7 +1,6 @@
 import 'package:data_config/data_config.dart';
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
-import 'package:tekction/features/login/login.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({
@@ -28,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
     var token = sharedPreferences.getBool(broadcasterKey);
     if (token != null) {
       Future.delayed(const Duration(milliseconds: 500),
-          () => context.router.replaceNamed(AppRoutes.homePath));
+          () => context.router.replaceNamed(AppRoutes.mainTabPath));
     } else {
       Future.delayed(const Duration(seconds: 1),
           () => context.router.replaceNamed(AppRoutes.loginPath));
