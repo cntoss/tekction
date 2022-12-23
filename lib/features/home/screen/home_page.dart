@@ -1,4 +1,5 @@
 import 'package:data_config/data_config.dart';
+import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:tekction/navigation/route_manager.dart';

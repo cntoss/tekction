@@ -1,12 +1,7 @@
-// Flutter imports:
 import 'package:data_config/data_config.dart';
+import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
-
-// Package imports:
-import 'package:shared_preferences/shared_preferences.dart';
-
-// Project imports:
-import '../../navigation/route_manager.dart';
+import 'package:tekction/features/login/login.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({
@@ -32,15 +27,11 @@ class _SplashScreenState extends State<SplashScreen> {
 
     var token = sharedPreferences.getBool(broadcasterKey);
     if (token != null) {
-      Future.delayed(
-        const Duration(milliseconds: 500),
-        () => Navigator.of(context).pushReplacementNamed(Routes.homeView),
-      );
+      Future.delayed(const Duration(milliseconds: 500),
+          () => context.router.replaceNamed(AppRoutes.homePath));
     } else {
-      Future.delayed(
-          const Duration(seconds: 1),
-          () => Navigator.of(context).pushNamedAndRemoveUntil(
-              Routes.loginView, (Route<dynamic> route) => false));
+      Future.delayed(const Duration(seconds: 1),
+          () => context.router.replaceNamed(AppRoutes.loginPath));
     }
   }
 
@@ -57,7 +48,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Padding(
               padding: const EdgeInsets.only(top: 50.0),
               child: Text(
-                'Welcome to TechCtion',
+                'Welcome to Tekction',
                 style: TextStyle(
                   color: Colors.pink[900],
                   fontWeight: FontWeight.bold,

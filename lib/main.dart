@@ -1,13 +1,7 @@
-// Flutter imports:
-
-import 'package:data_config/data_config.dart';
 import 'package:flutter/material.dart';
-import 'package:injection/injection.dart';
-
-// Project imports:
-
-import 'navigation/route_manager.dart';
-import 'utils/theme_data.dart';
+import 'package:tekction/locator.dart';
+import 'package:tekction/navigation/router.gr.dart';
+import 'package:tekction/utils/theme_data.dart';
 
 void main() {
   setLocator();
@@ -50,11 +44,14 @@ class Tekction extends StatefulWidget {
 class _TekctionState extends State<Tekction> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      navigatorKey: AppConfig.navigatorKey,
+    final AppRouter appRouter = locator<AppRouter>();
+
+    return MaterialApp.router(
+      title: 'Tekction',
       theme: getApplicationTheme(context),
-      onGenerateRoute: RouteGenerator.getRoute,
-      initialRoute: Routes.homeView,
+      routerDelegate: appRouter.delegate(),
+      routeInformationParser: appRouter.defaultRouteParser(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

@@ -8,27 +8,31 @@ environment:
   sdk: ">=2.17.2 <3.0.0"
 
 dependencies:
+  agora_rtc_engine: ^6.0.0
+  cupertino_icons: ^1.0.2
+  flutter_svg: ^1.1.6
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
-  agora_rtc_engine: ^6.0.0
+  get_it: ^7.2.0
   permission_handler: ^10.2.0
-  flutter_svg: ^1.1.6
 
   data_config:
     path: packages/data_config
   data_api:
     path: packages/data_api
+  dependencies:
+    path: packages/dependencies
   domain:
     path: packages/domain
-  injection:
-    path: packages/injection
 
 dev_dependencies:
+  auto_route_generator: ^5.0.3
+  build_runner:
   flutter_test:
     sdk: flutter
-
+  
   flutter_lints: ^2.0.0
+  freezed: ^2.1.0+1
 
 flutter:
   uses-material-design: true

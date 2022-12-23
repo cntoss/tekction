@@ -1,10 +1,10 @@
 import 'package:data_config/data_config.dart';
 import 'package:flutter/material.dart';
-import 'package:injection/injection.dart';
 import 'package:tekction/features/home/screen/call_page.dart';
 import 'package:tekction/features/home/widget/basket_widget.dart';
 import 'package:tekction/features/home/widget/chat_listview.dart';
 import 'package:tekction/features/home/widget/stream_text_row.dart';
+import 'package:tekction/locator.dart';
 import 'package:tekction/utils/color_manager.dart';
 
 import '../widget/live_product.dart';

@@ -1,7 +1,7 @@
 import 'package:data_config/data_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:injection/injection.dart';
+import 'package:tekction/locator.dart';
 import 'package:tekction/utils/asset_manager.dart';
 
 class AuctionCard extends StatelessWidget {
@@ -44,11 +44,13 @@ class AuctionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final sizeConfig = locator<SizeConfig>();
+
     return ClipRRect(
       borderRadius: BorderRadius.circular(12.0),
       child: Container(
         color: const Color(0xff36374080),
-        width: locator<SizeConfig>().screenW / 2.2,
+        width: sizeConfig.screenW / 2.2,
         height: 280,
         child: Stack(
           children: [

@@ -1,8 +1,9 @@
+import 'package:data_config/src/app_routes.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:dependencies/dependencies.dart';
 
 class LogoutHelper {
-  void loggedOutAert(context) {
+  void loggedOutAlert(context) {
     AlertDialog alertDialog = AlertDialog(
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(30.0))),
@@ -46,8 +47,7 @@ class LogoutHelper {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     sharedPreferences.clear();
     Future.delayed(Duration.zero, () {
-      Navigator.of(context)
-          .pushNamedAndRemoveUntil('/login', (Route<dynamic> route) => false);
+      context.router.replaceNamed(AppRoutes.loginPath);
     });
   }
 }

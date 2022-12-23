@@ -1,6 +1,6 @@
 import 'package:data_config/data_config.dart';
 import 'package:flutter/material.dart';
-import 'package:injection/injection.dart';
+import 'package:tekction/locator.dart';
 
 ThemeData getApplicationTheme(context) {
   final SizeConfig sizeConfig = locator<SizeConfig>();

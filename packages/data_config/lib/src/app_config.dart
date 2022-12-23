@@ -1,5 +1,5 @@
+import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 /// Declare globals that are used frequently in application
 class AppConfig {

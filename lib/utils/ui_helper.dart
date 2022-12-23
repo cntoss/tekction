@@ -1,8 +1,8 @@
-import 'package:data_config/src/size_config.dart';
+import 'package:data_config/data_config.dart';
+import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
-import 'package:injection/injection.dart';
+import '../locator.dart';
 
 final SizeConfig _sizeConfig = locator<SizeConfig>();
 

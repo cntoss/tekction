@@ -1,7 +1,9 @@
 // Flutter imports:
 import 'package:data_config/data_config.dart';
+import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
-import 'package:injection/injection.dart';
+import 'package:tekction/locator.dart';
+import 'package:tekction/utils/ui_helper.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
