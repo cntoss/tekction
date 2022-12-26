@@ -1,4 +1,4 @@
-package com.tekkon.auction.tekction
+package com.tekkon.tekction
 
 import io.flutter.embedding.android.FlutterActivity
 

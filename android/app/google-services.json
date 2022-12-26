@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "765102064979",
+    "project_id": "tekction",
+    "storage_bucket": "tekction.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765102064979:android:65d394d67f507407a20da6",
+        "android_client_info": {
+          "package_name": "com.tekkon.tekction"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "765102064979-nnbijieiqmhlkipqobc2jrjb25bid8er.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxNSo1j2__AXsrlS918vibrq5WDAZJLNA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "765102064979-nnbijieiqmhlkipqobc2jrjb25bid8er.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

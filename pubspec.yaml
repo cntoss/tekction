@@ -24,6 +24,7 @@ dependencies:
     path: packages/dependencies
   domain:
     path: packages/domain
+  firebase_core: ^2.4.0
 
 dev_dependencies:
   auto_route_generator: ^5.0.3
