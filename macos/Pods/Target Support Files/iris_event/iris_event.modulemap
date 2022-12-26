@@ -1,6 +1,0 @@
-framework module iris_event {
-  umbrella header "iris_event-umbrella.h"
-
-  export *
-  module * { export * }
-}
