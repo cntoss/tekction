@@ -7,9 +7,9 @@ import 'package:tekction/utils/theme_data.dart';
 import 'firebase_options.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   setLocator();
   initializeDefault();
-  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MainApp());
 }
 

@@ -1,6 +1,7 @@
-import 'package:data_config/src/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:dependencies/dependencies.dart';
+
+import '../navigation/router.gr.dart';
 
 class LogoutHelper {
   void loggedOutAlert(context) {
@@ -43,5 +44,9 @@ class LogoutHelper {
     showDialog(context: context, builder: (_) => alertDialog);
   }
 
-  logOuts(BuildContext context) async {}
+  logOuts(BuildContext context) async {
+    await FirebaseAuth.instance.signOut();
+    context.router.pop();
+    context.router.replace(const SplashRoute());
+  }
 }

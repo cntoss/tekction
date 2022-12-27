@@ -1,7 +1,8 @@
-import 'package:data_config/data_config.dart';
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
 import 'package:tekction/navigation/router.gr.dart';
+
+import '../utils/logout_helper.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -39,7 +40,7 @@ class MainPage extends StatelessWidget {
             tabsRouter.activeIndex == 0
                 ? IconButton(
                     onPressed: () async {
-                      context.router.replace(const LoginRoute());
+                      LogoutHelper().loggedOutAlert(context);
                       // SharedPreferences sharedPreferences =
                       //     await SharedPreferences.getInstance();
                       // sharedPreferences.clear();

@@ -63,6 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '765102064979',
     projectId: 'tekction',
     storageBucket: 'tekction.appspot.com',
+    androidClientId: '765102064979-lr9m80ktol3t0sd80s5dfcj9jh0nen3h.apps.googleusercontent.com',
     iosClientId: '765102064979-pqhnrh2u0jqhi0r0vu86hmi3q66u05jf.apps.googleusercontent.com',
     iosBundleId: 'com.tekkon.tekction',
   );

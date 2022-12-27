@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "765102064979-lr9m80ktol3t0sd80s5dfcj9jh0nen3h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tekkon.tekction",
+            "certificate_hash": "0ac52da8a9eb25e96e8ef58dc0ed495e92824a06"
+          }
+        },
+        {
           "client_id": "765102064979-nnbijieiqmhlkipqobc2jrjb25bid8er.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,6 +37,13 @@
             {
               "client_id": "765102064979-nnbijieiqmhlkipqobc2jrjb25bid8er.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "765102064979-pqhnrh2u0jqhi0r0vu86hmi3q66u05jf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tekkon.tekction"
+              }
             }
           ]
         }

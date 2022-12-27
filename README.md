@@ -5,3 +5,5 @@ Auction live streaming app on flutter
 ## Getting Started
 
 Contact Tekkon Technologies for further details.
+
+flutter packages pub run build_runner build --delete-conflicting-outputs  
