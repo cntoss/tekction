@@ -7,6 +7,7 @@ import 'package:tekction/features/home/screen/home_screen.dart';
 import 'package:tekction/features/home/screen/live_streaming.dart';
 import 'package:tekction/features/login/login_screen.dart';
 import 'package:tekction/features/splash/splash_screen.dart';
+import 'package:tekction/navigation/arguments_route.dart';
 
 @AdaptiveAutoRouter(
   replaceInRouteName: 'Page|Screen,Route,Dialog',
@@ -41,12 +42,12 @@ import 'package:tekction/features/splash/splash_screen.dart';
                 AutoRoute(
                   path: AppRoutes.livePath,
                   page: LivePage,
-                  meta: {'hideToolbar': true},
+                  meta: {ArgumentsRoute.hideToolbar: true},
                 ),
                 AutoRoute(
                   path: AppRoutes.liveChatPath,
                   page: LiveStreaming,
-                  meta: {'hideToolbar': true},
+                  meta: {ArgumentsRoute.hideToolbar: true},
                 ),
                 RedirectRoute(path: '*', redirectTo: ''),
               ],
