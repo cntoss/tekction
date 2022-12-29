@@ -2,6 +2,7 @@ import 'package:data_config/data_config.dart';
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:tekction/navigation/router.gr.dart';
 
 import '../widget/auction_card.dart';
 
@@ -39,11 +40,12 @@ class _HomeScreenState extends State<HomeScreen> {
             )
           : SizedBox(
               width: MediaQuery.of(context).size.width,
-              child: isBroadCaster!
+              child: !isBroadCaster!
                   ? Center(
                       child: ElevatedButton(
                         onPressed: () {
-                          context.router.pushNamed(AppRoutes.liveChatPath);
+                          context.router
+                              .push(LiveStreamingRoute(isBroadCaster: true));
                         },
                         child: const Text('Go to live'),
                       ),

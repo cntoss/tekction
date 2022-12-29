@@ -7,8 +7,8 @@ const profileImageKey = "profileImage";
 const emailKey = "email";
 const phoneNumberKey = "phoneNumber";
 const horizontalPadding = 30.0;
-const appID = '7be8c92885c4450fad47f796f95be65d';
+const appID = '80403565e67b41cc8902a6c82803026c';
 const token =
-    "007eJxTYLi1Wi7p/b5Qi3f6B2epSzB9X2X4/2XbyptXkvJlN/T++T9TgcE8KdUi2dLIwsI02cTE1CAtMcXEPM3c0izN0jQp1cw0JfTF/OSGQEYG2e9/mRkZIBDE52BILE0uyczPK2ZgAADJnCTc";
+    "007eJxTYNCaHlxs6P43QmhP3wbNnF8Z287aXd2WKPJ7XZ0ec5XIQTcFBgsDEwNjUzPTVDPzJBPD5GQLSwOjRLNkCyMLA2MDI7Nkf/W1yQ2BjAzbH65nYmSAQBCfgyGxNLkkMz+vmIEBAHBqH/Y=";
 const channel = 'auctions';
 const broadcasterKey = 'isBroadcaster';
