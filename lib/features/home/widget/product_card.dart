@@ -74,7 +74,6 @@ class Product extends StatelessWidget {
             ],
           ),
           Container(
-            width: 268,
             padding:
                 const EdgeInsets.only(left: 26, right: 16, top: 12, bottom: 12),
             child: Column(
@@ -106,12 +105,15 @@ class Product extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      price ?? '1.250.00 TND',
+                      price ?? 'NPR 1250.00',
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w700,
                         color: Colors.white,
                       ),
+                    ),
+                    const SizedBox(
+                      width: 10,
                     ),
                     InkWell(
                       onTap: onBuyPressed,

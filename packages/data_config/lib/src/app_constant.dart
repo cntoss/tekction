@@ -12,3 +12,6 @@ const token =
     "007eJxTYNCaHlxs6P43QmhP3wbNnF8Z287aXd2WKPJ7XZ0ec5XIQTcFBgsDEwNjUzPTVDPzJBPD5GQLSwOjRLNkCyMLA2MDI7Nkf/W1yQ2BjAzbH65nYmSAQBCfgyGxNLkkMz+vmIEBAHBqH/Y=";
 const channel = 'auctions';
 const broadcasterKey = 'isBroadcaster';
+const currency = 'Rs';
+const userModel = 'Users';
+const rawImage = "https://kshamadevigroup.com/public/img/no-product-found.jpg";

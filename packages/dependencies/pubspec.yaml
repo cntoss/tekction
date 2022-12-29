@@ -10,11 +10,15 @@ environment:
 dependencies:
   agora_rtc_engine: ^6.0.0
   auto_route: ^5.0.4
+  cached_network_image: ^3.2.3
   cupertino_icons: ^1.0.2
   flutter_svg: ^1.1.6
   fluttertoast: ^8.1.2
   flutterfire_ui: ^0.4.3+20
   firebase_auth: ^4.2.3
+  firebase_database:
+  firebase_storage:
+  image_picker:
   flutter:
     sdk: flutter
   intl: ^0.17.0

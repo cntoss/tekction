@@ -106,7 +106,7 @@ class Product extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      price ?? '1.250.00 TND',
+                      price ?? 'NPR 1250.00',
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w700,

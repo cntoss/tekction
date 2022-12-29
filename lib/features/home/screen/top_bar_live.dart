@@ -123,7 +123,7 @@ class TopBar extends StatelessWidget {
                                   height: 40,
                                   child: Center(
                                     child: Text(
-                                      '73.00 TND',
+                                      'NPR 1000 ',
                                       style: TextStyle(color: Colors.white),
                                     ),
                                   ),

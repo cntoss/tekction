@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
             )
           : SizedBox(
               width: MediaQuery.of(context).size.width,
-              child: !isBroadCaster!
+              child: isBroadCaster!
                   ? Center(
                       child: ElevatedButton(
                         onPressed: () {
