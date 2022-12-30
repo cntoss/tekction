@@ -147,7 +147,7 @@ class TopBar extends StatelessWidget {
                             ),
                             child: const Center(
                                 child: Text(
-                              'Acheter',
+                              'Buy',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,

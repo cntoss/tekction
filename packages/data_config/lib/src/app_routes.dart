@@ -19,4 +19,17 @@ class AppRoutes {
 
   static const String livePath = 'live';
   static const String liveRouteName = 'liveRoute';
+
+  static const String profilePath = 'profile';
+  static const String profileRouteName = 'profileRoute';
+
+  static const String profileEditPath = 'profileEdit';
+  static const String profileEditRouteName = 'profileEditRoute';
+
+  static const String productDetailPath = 'productDetail';
+  static const String productDetailRouteName = 'productDetailRoute';
+
+
+  static const String productListPath = 'productList';
+  static const String productListRouteName = 'productListRoute';
 }

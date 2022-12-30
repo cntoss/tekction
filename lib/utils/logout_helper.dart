@@ -44,8 +44,10 @@ class LogoutHelper {
     showDialog(context: context, builder: (_) => alertDialog);
   }
 
-  logOuts(BuildContext context) async {
+  logOuts(context) async {
     await FirebaseAuth.instance.signOut();
+    final action = FlutterFireUIAction.ofType<SignedOutAction>(context);
+    action?.callback(context);
     context.router.pop();
     context.router.replace(const SplashRoute());
   }

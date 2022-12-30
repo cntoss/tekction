@@ -17,14 +17,9 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   bool isOffline = false;
-  @override
-  void initState() {
-    super.initState();
-    checkLoginStatus();
-  }
 
-  checkLoginStatus() async {
-    /*  SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+  /* checkLoginStatus() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
 
     var token = sharedPreferences.getBool(broadcasterKey);
     if (token != null) {
@@ -33,8 +28,8 @@ class _SplashScreenState extends State<SplashScreen> {
     } else {
       Future.delayed(const Duration(seconds: 1),
           () => context.router.replaceNamed(AppRoutes.loginPath));
-    } */
-  }
+    }
+  } */
 
   @override
   Widget build(BuildContext context) {

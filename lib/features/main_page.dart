@@ -4,6 +4,7 @@ import 'package:tekction/navigation/arguments_route.dart';
 import 'package:tekction/navigation/router.gr.dart';
 
 import '../utils/logout_helper.dart';
+import '../utils/profile_router_helper.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -33,9 +34,10 @@ class MainPage extends StatelessWidget {
                   tabsRouter.activeIndex == 0
                       ? IconButton(
                           onPressed: () async {
-                            LogoutHelper().loggedOutAlert(context);
+                            checkToProfile(context);
+                            // LogoutHelper().loggedOutAlert(context);
                           },
-                          icon: const Icon(Icons.output_outlined))
+                          icon: const Icon(Icons.person))
                       : Container(),
                 ],
               ),

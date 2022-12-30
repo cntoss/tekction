@@ -9,7 +9,7 @@ const phoneNumberKey = "phoneNumber";
 const horizontalPadding = 30.0;
 const appID = '80403565e67b41cc8902a6c82803026c';
 const token =
-    "007eJxTYNCaHlxs6P43QmhP3wbNnF8Z287aXd2WKPJ7XZ0ec5XIQTcFBgsDEwNjUzPTVDPzJBPD5GQLSwOjRLNkCyMLA2MDI7Nkf/W1yQ2BjAzbH65nYmSAQBCfgyGxNLkkMz+vmIEBAHBqH/Y=";
+    '007eJxTYKhOik6Ybc10x39ZseiRHdyG35V3CcXpshdsnqDBPbuE00GBwcLAxMDY1Mw01cw8ycQwOdnC0sAo0SzZwsjCwNjAyCxZu2pdckMgI4OtxSxGRgYIBPHZGRKTSzLz84oZGABSFBup';
 const channel = 'auctions';
 const broadcasterKey = 'isBroadcaster';
 const currency = 'Rs';
