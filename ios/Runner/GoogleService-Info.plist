@@ -6,6 +6,8 @@
 	<string>765102064979-pqhnrh2u0jqhi0r0vu86hmi3q66u05jf.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
 	<string>com.googleusercontent.apps.765102064979-pqhnrh2u0jqhi0r0vu86hmi3q66u05jf</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>765102064979-lr9m80ktol3t0sd80s5dfcj9jh0nen3h.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyA7Us-CGWrUSoVHocVP3GZS96d_RISJxmk</string>
 	<key>GCM_SENDER_ID</key>
@@ -30,5 +32,7 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:765102064979:ios:23dac42e7ff745b9a20da6</string>
+	<key>DATABASE_URL</key>
+	<string>https://tekction-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

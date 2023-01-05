@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:data_config/data_config.dart';
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
+import 'package:preferences/preferences.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({
@@ -56,8 +57,8 @@ class _SplashScreenState extends State<SplashScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  const FlutterLogo(
-                    size: 40,
+                  SvgPicture.asset(
+                    AssetsPath.iconLogo,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 50.0),

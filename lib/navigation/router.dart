@@ -1,17 +1,25 @@
 import 'package:data_config/data_config.dart';
 import 'package:dependencies/dependencies.dart';
-import 'package:tekction/features/explore/explore_page.dart';
+import 'package:tekction/features/cart/cart_screen.dart';
 import 'package:tekction/features/home/screen/live_page.dart';
 import 'package:tekction/features/main_page.dart';
 import 'package:tekction/features/home/screen/home_screen.dart';
 import 'package:tekction/features/home/screen/live_streaming.dart';
 import 'package:tekction/features/login/login_screen.dart';
 import 'package:tekction/features/product/page/product_detail.dart';
-import 'package:tekction/features/product/page/product_list_screen.dart';
 import 'package:tekction/features/profile/page/edit_profile.dart';
 import 'package:tekction/features/profile/page/profile_page.dart';
 import 'package:tekction/features/splash/splash_screen.dart';
 import 'package:tekction/navigation/arguments_route.dart';
+
+import '../features/cart/checkout_screen.dart';
+import '../features/cart/payment_screen.dart';
+import '../features/cart/successful_payment_screen.dart';
+import '../features/components/see_all/see_all_page.dart';
+import '../features/detail_product/details_product_page.dart';
+import '../features/explore/explore_screen.dart';
+import '../features/explore/recommended_creators_screen.dart';
+import '../features/explore/user_follow/user_follower_page.dart';
 
 @AdaptiveAutoRouter(
   replaceInRouteName: 'Page|Screen,Route,Dialog',
@@ -63,12 +71,11 @@ import 'package:tekction/navigation/arguments_route.dart';
                   page: EditProfileScreen,
                   meta: {ArgumentsRoute.hideToolbar: true},
                 ),
-                 AutoRoute(
+                AutoRoute(
                   path: AppRoutes.productDetailPath,
                   page: ProductDetailScreen,
                   meta: {ArgumentsRoute.hideToolbar: true},
                 ),
-                
                 RedirectRoute(path: '*', redirectTo: ''),
               ],
             ),
@@ -78,11 +85,56 @@ import 'package:tekction/navigation/arguments_route.dart';
               name: AppRoutes.exploreRouteName,
               maintainState: false,
               children: [
-                AutoRoute(path: '', page: ExplorePage),
-                RedirectRoute(path: '*', redirectTo: ''),
+                AutoRoute(
+                  path: '',
+                  page: ExploreScreen,
+                ),
+                AutoRoute(
+                    path: AppRoutes.recommendedScreenPath,
+                    page: RecommendedCreatorsScreen,
+                    name: AppRoutes.recommendedScreenRouteName,
+                    meta: {ArgumentsRoute.hideToolbar: true}),
+                AutoRoute(
+                    path: AppRoutes.userFollowerPagePath,
+                    page: UserFollowerPage,
+                    name: AppRoutes.userFollowerPageRouteName,
+                    meta: {ArgumentsRoute.hideToolbar: true}),
+                AutoRoute(
+                    path: AppRoutes.detailsProductPagePath,
+                    page: DetailsProductPage,
+                    name: AppRoutes.detailsProductPageRouteName,
+                    meta: {ArgumentsRoute.hideToolbar: true}),
+                AutoRoute(
+                    path: AppRoutes.seeAllPagePath,
+                    page: SeeAllPage,
+                    name: AppRoutes.seeAllPageRouteName,
+                    meta: {ArgumentsRoute.hideToolbar: true}),
               ],
             ),
-            
+            AutoRoute(
+              path: AppRoutes.cartPath,
+              page: EmptyRouterPage,
+              name: AppRoutes.cartRouteName,
+              children: [
+                AutoRoute(
+                    path: '', page: CartScreen),
+                AutoRoute(
+                    path: AppRoutes.checkoutPath,
+                    page: CheckoutScreen,
+                    name: AppRoutes.checkoutRouteName,
+                    meta: {ArgumentsRoute.hideToolbar: true}),
+                AutoRoute(
+                    path: AppRoutes.paymentPath,
+                    page: PaymentScreen,
+                    name: AppRoutes.paymentRouteName,
+                    meta: {ArgumentsRoute.hideToolbar: true}),
+                AutoRoute(
+                    path: AppRoutes.successfulPaymentPath,
+                    page: SuccessfulPaymentScreen,
+                    name: AppRoutes.successfulPaymentRouteName,
+                    meta: {ArgumentsRoute.hideToolbar: true}),
+              ],
+            ),
           ],
         ),
       ],

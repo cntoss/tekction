@@ -4,8 +4,8 @@ import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
 import 'package:tekction/utils/logout_helper.dart';
 
-import '../../../model/src/product_model.dart';
-import '../../../model/src/user_model.dart';
+import '../../../data/model/src/product_model.dart';
+import '../../../data/model/src/user_model.dart';
 import '../../../utils/firebase_helper.dart';
 import '../../product/page/add_product.dart';
 

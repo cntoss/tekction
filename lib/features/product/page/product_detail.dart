@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:dependencies/dependencies.dart';
 
-import '../../../model/mode.dart';
+import '../../../data/model/mode.dart';
 import '../../../utils/firebase_helper.dart';
 
 class ProductDetailScreen extends StatefulWidget {

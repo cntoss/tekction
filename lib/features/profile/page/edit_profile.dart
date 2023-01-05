@@ -2,7 +2,7 @@ import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
 import 'package:tekction/utils/firebase_helper.dart';
 
-import '../../../model/mode.dart';
+import '../../../data/model/mode.dart';
 
 class EditProfileScreen extends StatefulWidget {
   final UserModel? user;

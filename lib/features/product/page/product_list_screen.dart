@@ -5,7 +5,7 @@ import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
 import 'package:tekction/features/product/page/product_detail.dart';
 
-import '../../../model/mode.dart';
+import '../../../data/model/mode.dart';
 
 // ignore: must_be_immutable
 class ExplorePage extends StatefulWidget {

@@ -4,8 +4,8 @@ import 'package:data_config/data_config.dart';
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
 
-import '../model/src/product_model.dart';
-import '../model/src/user_model.dart';
+import '../data/model/src/product_model.dart';
+import '../data/model/src/user_model.dart';
 
 class FirebaseHelper {
   FirebaseDatabase database = FirebaseDatabase.instance;

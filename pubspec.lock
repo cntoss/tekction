@@ -854,6 +854,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.5.1"
+  preferences:
+    dependency: "direct main"
+    description:
+      path: "packages/preferences"
+      relative: true
+    source: path
+    version: "0.0.1"
   process:
     dependency: transitive
     description:

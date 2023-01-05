@@ -4,7 +4,7 @@ import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
 import 'package:tekction/utils/firebase_helper.dart';
 
-import '../../../model/mode.dart';
+import '../../../data/model/mode.dart';
 
 class AddProduct extends StatefulWidget {
   final ProductModel? product;

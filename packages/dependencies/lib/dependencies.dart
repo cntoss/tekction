@@ -11,3 +11,4 @@ export 'package:firebase_database/firebase_database.dart';
 export 'package:firebase_storage/firebase_storage.dart';
 export 'package:image_picker/image_picker.dart';
 export 'package:cached_network_image/cached_network_image.dart';
+export 'package:flutter_svg/svg.dart';

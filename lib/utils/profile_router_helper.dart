@@ -5,7 +5,7 @@ import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
 import 'package:tekction/navigation/router.gr.dart';
 
-import '../model/mode.dart';
+import '../data/model/mode.dart' hide User;
 
 checkToProfile(context) async {
   User? user = FirebaseAuth.instance.currentUser;

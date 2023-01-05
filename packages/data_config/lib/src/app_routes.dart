@@ -20,6 +20,33 @@ class AppRoutes {
   static const String livePath = 'live';
   static const String liveRouteName = 'liveRoute';
 
+  static const String userFollowerPagePath = 'UserFollowerPage';
+  static const String userFollowerPageRouteName = 'UserFollowerPageRoute';
+
+  static const String detailsProductPagePath = 'DetailsProductPage';
+  static const String detailsProductPageRouteName = 'DetailsProductPageRoute';
+
+  static const String recommendedScreenPath = 'RecommendedScreen';
+  static const String recommendedScreenRouteName = 'RecommendedScreenRoute';
+
+  static const String seeAllPagePath = 'SeeAllPage';
+  static const String seeAllPageRouteName = 'SeeAllPageRoute';
+
+  static const String cartPath = 'Cart';
+  static const String cartRouteName = 'CartRoute';
+
+/*   static const String shopPath = 'cart';
+  static const String shopRouteName = 'ShopRoute'; */
+
+  static const String checkoutPath = 'Checkout';
+  static const String checkoutRouteName = 'CheckoutRoute';
+
+  static const String paymentPath = 'Payment';
+  static const String paymentRouteName = 'PaymentRoute';
+
+  static const String successfulPaymentPath = 'SuccessfulPayment';
+  static const String successfulPaymentRouteName = 'SuccessfulPaymentRoute';
+
   static const String profilePath = 'profile';
   static const String profileRouteName = 'profileRoute';
 
@@ -28,7 +55,6 @@ class AppRoutes {
 
   static const String productDetailPath = 'productDetail';
   static const String productDetailRouteName = 'productDetailRoute';
-
 
   static const String productListPath = 'productList';
   static const String productListRouteName = 'productListRoute';

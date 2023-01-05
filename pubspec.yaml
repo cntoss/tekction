@@ -22,6 +22,8 @@ dependencies:
   domain:
     path: packages/domain
   firebase_core: ^2.4.0
+  preferences:
+    path: packages/preferences
 
 dev_dependencies:
   auto_route_generator: ^5.0.3
@@ -39,6 +41,7 @@ flutter:
   assets:
     - assets/images/
     - assets/svg/
+    - assets/vectors/
 
   #   - images/a_dot_ham.jpeg
 
