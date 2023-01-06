@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "765102064979",
+    "firebase_url": "https://tekction-default-rtdb.firebaseio.com",
+    "project_id": "tekction",
+    "storage_bucket": "tekction.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765102064979:android:65d394d67f507407a20da6",
+        "android_client_info": {
+          "package_name": "com.tekkon.tekction"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "765102064979-lr9m80ktol3t0sd80s5dfcj9jh0nen3h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tekkon.tekction",
+            "certificate_hash": "0ac52da8a9eb25e96e8ef58dc0ed495e92824a06"
+          }
+        },
+        {
+          "client_id": "765102064979-nnbijieiqmhlkipqobc2jrjb25bid8er.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxNSo1j2__AXsrlS918vibrq5WDAZJLNA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "765102064979-nnbijieiqmhlkipqobc2jrjb25bid8er.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "765102064979-pqhnrh2u0jqhi0r0vu86hmi3q66u05jf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tekkon.tekction"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

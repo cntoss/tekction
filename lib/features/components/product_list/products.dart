@@ -4,13 +4,13 @@ import 'package:tekction/data/model/mode.dart';
 final List<ItemProduct> products = [
   ItemProduct(
     id: '123456',
-    label: 'bbc',
+    label: 'Sasto Jutta',
     description: 'Good on condition',
-    price: 45,
+    price: 4500,
     img: 'https://picsum.photos/200/300.jpg',
     qte: 2,
     sold: 1,
-    brand: '',
+    brand: 'Goldstar',
     ownerId: '',
     addressId: '',
     tagId: '',
@@ -18,7 +18,7 @@ final List<ItemProduct> products = [
     tag: Tag(
       id: '',
       name: 'good',
-      description: '',
+      description: 'Ohooo dami xa hai',
       img: '',
       ref: '',
       status: 1,

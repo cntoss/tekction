@@ -54,6 +54,7 @@ class DefaultFirebaseOptions {
     appId: '1:765102064979:android:65d394d67f507407a20da6',
     messagingSenderId: '765102064979',
     projectId: 'tekction',
+    databaseURL: 'https://tekction-default-rtdb.firebaseio.com',
     storageBucket: 'tekction.appspot.com',
   );
 
@@ -62,6 +63,7 @@ class DefaultFirebaseOptions {
     appId: '1:765102064979:ios:23dac42e7ff745b9a20da6',
     messagingSenderId: '765102064979',
     projectId: 'tekction',
+    databaseURL: 'https://tekction-default-rtdb.firebaseio.com',
     storageBucket: 'tekction.appspot.com',
     androidClientId: '765102064979-lr9m80ktol3t0sd80s5dfcj9jh0nen3h.apps.googleusercontent.com',
     iosClientId: '765102064979-pqhnrh2u0jqhi0r0vu86hmi3q66u05jf.apps.googleusercontent.com',
