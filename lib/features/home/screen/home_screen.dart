@@ -20,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return BasicScaffoldView(
       bodyWidget: SizedBox(
         width: MediaQuery.of(context).size.width,
-        child: widget.isBroadCaster
+        child: !widget.isBroadCaster
             ? Center(
                 child: ElevatedButton(
                   onPressed: () {
