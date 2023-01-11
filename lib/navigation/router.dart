@@ -8,6 +8,7 @@ import 'package:tekction/features/home/screen/live_streaming.dart';
 import 'package:tekction/features/login/login_screen.dart';
 import 'package:tekction/features/product/page/product_detail.dart';
 import 'package:tekction/features/profile/page/edit_profile.dart';
+import 'package:tekction/features/profile/page/product_page.dart';
 import 'package:tekction/features/profile/page/profile_page.dart';
 import 'package:tekction/features/splash/splash_screen.dart';
 import 'package:tekction/navigation/arguments_route.dart';
@@ -67,6 +68,11 @@ import '../features/explore/user_follow/user_follower_page.dart';
                   meta: {ArgumentsRoute.hideToolbar: true},
                 ),
                 AutoRoute(
+                  path: AppRoutes.productPath,
+                  page: ProductPage,
+                  meta: {ArgumentsRoute.hideToolbar: true},
+                ),
+                AutoRoute(
                   path: AppRoutes.profileEditPath,
                   page: EditProfileScreen,
                   meta: {ArgumentsRoute.hideToolbar: true},
@@ -116,8 +122,7 @@ import '../features/explore/user_follow/user_follower_page.dart';
               page: EmptyRouterPage,
               name: AppRoutes.cartRouteName,
               children: [
-                AutoRoute(
-                    path: '', page: CartScreen),
+                AutoRoute(path: '', page: CartScreen),
                 AutoRoute(
                     path: AppRoutes.checkoutPath,
                     page: CheckoutScreen,
