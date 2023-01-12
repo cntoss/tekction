@@ -1,5 +1,5 @@
 import 'package:data_config/data_config.dart';
-import 'package:dependencies/dependencies.dart';
+import 'package:dependencies/dependencies.dart' hide ProfileScreen;
 import 'package:tekction/features/cart/cart_screen.dart';
 import 'package:tekction/features/home/screen/live_page.dart';
 import 'package:tekction/features/main_page.dart';
@@ -9,7 +9,7 @@ import 'package:tekction/features/login/login_screen.dart';
 import 'package:tekction/features/product/page/product_detail.dart';
 import 'package:tekction/features/profile/page/edit_profile.dart';
 import 'package:tekction/features/profile/page/product_page.dart';
-import 'package:tekction/features/profile/page/profile_page.dart';
+import 'package:tekction/features/profile/page/profile_screen.dart';
 import 'package:tekction/features/splash/splash_screen.dart';
 import 'package:tekction/navigation/arguments_route.dart';
 
@@ -60,21 +60,6 @@ import '../features/explore/user_follow/user_follower_page.dart';
                 AutoRoute(
                   path: AppRoutes.liveChatPath,
                   page: LiveStreaming,
-                  meta: {ArgumentsRoute.hideToolbar: true},
-                ),
-                AutoRoute(
-                  path: AppRoutes.profilePath,
-                  page: UserProfileScreen,
-                  meta: {ArgumentsRoute.hideToolbar: true},
-                ),
-                AutoRoute(
-                  path: AppRoutes.productPath,
-                  page: ProductPage,
-                  meta: {ArgumentsRoute.hideToolbar: true},
-                ),
-                AutoRoute(
-                  path: AppRoutes.profileEditPath,
-                  page: EditProfileScreen,
                   meta: {ArgumentsRoute.hideToolbar: true},
                 ),
                 AutoRoute(
@@ -138,6 +123,24 @@ import '../features/explore/user_follow/user_follower_page.dart';
                     page: SuccessfulPaymentScreen,
                     name: AppRoutes.successfulPaymentRouteName,
                     meta: {ArgumentsRoute.hideToolbar: true}),
+              ],
+            ),
+            AutoRoute(
+              path: AppRoutes.profilePath,
+              page: EmptyRouterPage,
+              name: AppRoutes.profileRouteName,
+              children: [
+                AutoRoute(path: '', page: ProfileScreen),
+                AutoRoute(
+                  path: AppRoutes.productPath,
+                  page: ProductPage,
+                  meta: {ArgumentsRoute.hideToolbar: true},
+                ),
+                AutoRoute(
+                  path: AppRoutes.profileEditPath,
+                  page: EditProfileScreen,
+                  meta: {ArgumentsRoute.hideToolbar: true},
+                ),
               ],
             ),
           ],

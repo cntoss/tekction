@@ -47,18 +47,18 @@ class AppRoutes {
   static const String successfulPaymentPath = 'SuccessfulPayment';
   static const String successfulPaymentRouteName = 'SuccessfulPaymentRoute';
 
-  static const String profilePath = 'profile';
-  static const String profileRouteName = 'profileRoute';
+  static const String profilePath = 'Profile';
+  static const String profileRouteName = 'ProfileRoute';
 
-  static const String productPath = 'product';
-  static const String productRouteName = 'productRoute';
+  static const String productPath = 'Product';
+  static const String productRouteName = 'ProductRoute';
 
-  static const String profileEditPath = 'profileEdit';
-  static const String profileEditRouteName = 'profileEditRoute';
+  static const String profileEditPath = 'ProfileEdit';
+  static const String profileEditRouteName = 'ProfileEditRoute';
 
-  static const String productDetailPath = 'productDetail';
-  static const String productDetailRouteName = 'productDetailRoute';
+  static const String productDetailPath = 'ProductDetail';
+  static const String productDetailRouteName = 'ProductDetailRoute';
 
-  static const String productListPath = 'productList';
-  static const String productListRouteName = 'productListRoute';
+  static const String productListPath = 'ProductList';
+  static const String productListRouteName = 'ProductListRoute';
 }

@@ -53,7 +53,7 @@ ThemeData getApplicationTheme(context) {
     ),
 
     //  colorScheme: scheme.copyWith(secondary: secondaryColor),
-    //bottomNavigationBarTheme: bottomNav,
+    bottomNavigationBarTheme: bottomNav,
   );
 }
 
@@ -76,7 +76,7 @@ ChipThemeData chipTheme = ChipThemeData(
 
 BottomNavigationBarThemeData bottomNav = BottomNavigationBarThemeData(
     backgroundColor: backgroundColor,
-    selectedItemColor: primaryColor,
+    selectedItemColor: Colors.white,
     elevation: 4,
     showSelectedLabels: false,
     unselectedLabelStyle: TextStyle(

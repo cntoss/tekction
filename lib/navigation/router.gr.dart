@@ -16,27 +16,27 @@ import 'package:dependencies/dependencies.dart' as _i1;
 import 'package:flutter/material.dart' as _i22;
 import 'package:tekction/core/enum/see_all_type.dart' as _i24;
 import 'package:tekction/data/model/mode.dart' as _i23;
-import 'package:tekction/features/cart/cart_screen.dart' as _i17;
-import 'package:tekction/features/cart/checkout_screen.dart' as _i18;
-import 'package:tekction/features/cart/payment_screen.dart' as _i19;
-import 'package:tekction/features/cart/successful_payment_screen.dart' as _i20;
-import 'package:tekction/features/components/see_all/see_all_page.dart' as _i16;
+import 'package:tekction/features/cart/cart_screen.dart' as _i14;
+import 'package:tekction/features/cart/checkout_screen.dart' as _i15;
+import 'package:tekction/features/cart/payment_screen.dart' as _i16;
+import 'package:tekction/features/cart/successful_payment_screen.dart' as _i17;
+import 'package:tekction/features/components/see_all/see_all_page.dart' as _i13;
 import 'package:tekction/features/detail_product/details_product_page.dart'
-    as _i15;
-import 'package:tekction/features/explore/explore_screen.dart' as _i12;
+    as _i12;
+import 'package:tekction/features/explore/explore_screen.dart' as _i9;
 import 'package:tekction/features/explore/recommended_creators_screen.dart'
-    as _i13;
+    as _i10;
 import 'package:tekction/features/explore/user_follow/user_follower_page.dart'
-    as _i14;
+    as _i11;
 import 'package:tekction/features/home/screen/home_screen.dart' as _i5;
 import 'package:tekction/features/home/screen/live_page.dart' as _i6;
 import 'package:tekction/features/home/screen/live_streaming.dart' as _i7;
 import 'package:tekction/features/login/login_screen.dart' as _i3;
 import 'package:tekction/features/main_page.dart' as _i4;
-import 'package:tekction/features/product/page/product_detail.dart' as _i11;
-import 'package:tekction/features/profile/page/edit_profile.dart' as _i10;
-import 'package:tekction/features/profile/page/product_page.dart' as _i9;
-import 'package:tekction/features/profile/page/profile_page.dart' as _i8;
+import 'package:tekction/features/product/page/product_detail.dart' as _i8;
+import 'package:tekction/features/profile/page/edit_profile.dart' as _i20;
+import 'package:tekction/features/profile/page/product_page.dart' as _i19;
+import 'package:tekction/features/profile/page/profile_screen.dart' as _i18;
 import 'package:tekction/features/splash/splash_screen.dart' as _i2;
 
 class AppRouter extends _i21.RootStackRouter {
@@ -91,6 +91,12 @@ class AppRouter extends _i21.RootStackRouter {
         child: const _i1.EmptyRouterPage(),
       );
     },
+    ProfileRoute.name: (routeData) {
+      return _i21.AdaptivePage<dynamic>(
+        routeData: routeData,
+        child: const _i1.EmptyRouterPage(),
+      );
+    },
     HomeScreenRoute.name: (routeData) {
       final args = routeData.argsAs<HomeScreenRouteArgs>(
           orElse: () => const HomeScreenRouteArgs());
@@ -119,21 +125,101 @@ class AppRouter extends _i21.RootStackRouter {
         ),
       );
     },
-    UserProfileScreenRoute.name: (routeData) {
-      final args = routeData.argsAs<UserProfileScreenRouteArgs>();
+    ProductDetailScreenRoute.name: (routeData) {
+      final args = routeData.argsAs<ProductDetailScreenRouteArgs>();
       return _i21.AdaptivePage<dynamic>(
         routeData: routeData,
-        child: _i8.UserProfileScreen(
+        child: _i8.ProductDetailScreen(
+          key: args.key,
+          product: args.product,
+        ),
+      );
+    },
+    ExploreScreenRoute.name: (routeData) {
+      return _i21.AdaptivePage<dynamic>(
+        routeData: routeData,
+        child: const _i9.ExploreScreen(),
+      );
+    },
+    RecommendedScreenRoute.name: (routeData) {
+      final args = routeData.argsAs<RecommendedScreenRouteArgs>();
+      return _i21.AdaptivePage<dynamic>(
+        routeData: routeData,
+        child: _i10.RecommendedCreatorsScreen(
+          key: args.key,
+          users: args.users,
+        ),
+      );
+    },
+    UserFollowerPageRoute.name: (routeData) {
+      final args = routeData.argsAs<UserFollowerPageRouteArgs>();
+      return _i21.AdaptivePage<dynamic>(
+        routeData: routeData,
+        child: _i11.UserFollowerPage(
           key: args.key,
           user: args.user,
         ),
+      );
+    },
+    DetailsProductPageRoute.name: (routeData) {
+      final args = routeData.argsAs<DetailsProductPageRouteArgs>();
+      return _i21.AdaptivePage<dynamic>(
+        routeData: routeData,
+        child: _i12.DetailsProductPage(
+          key: args.key,
+          product: args.product,
+        ),
+      );
+    },
+    SeeAllPageRoute.name: (routeData) {
+      final args = routeData.argsAs<SeeAllPageRouteArgs>();
+      return _i21.AdaptivePage<dynamic>(
+        routeData: routeData,
+        child: _i13.SeeAllPage(
+          key: args.key,
+          type: args.type,
+        ),
+      );
+    },
+    CartScreenRoute.name: (routeData) {
+      return _i21.AdaptivePage<dynamic>(
+        routeData: routeData,
+        child: const _i14.CartScreen(),
+      );
+    },
+    CheckoutRoute.name: (routeData) {
+      final args = routeData.argsAs<CheckoutRouteArgs>();
+      return _i21.AdaptivePage<dynamic>(
+        routeData: routeData,
+        child: _i15.CheckoutScreen(
+          key: args.key,
+          list: args.list,
+        ),
+      );
+    },
+    PaymentRoute.name: (routeData) {
+      return _i21.AdaptivePage<dynamic>(
+        routeData: routeData,
+        child: const _i16.PaymentScreen(),
+      );
+    },
+    SuccessfulPaymentRoute.name: (routeData) {
+      return _i21.AdaptivePage<dynamic>(
+        routeData: routeData,
+        child: const _i17.SuccessfulPaymentScreen(),
+      );
+    },
+    ProfileScreenRoute.name: (routeData) {
+      return _i21.AdaptivePage<dynamic>(
+        routeData: routeData,
+        child: const _i18.ProfileScreen(),
       );
     },
     ProductPageRoute.name: (routeData) {
       final args = routeData.argsAs<ProductPageRouteArgs>();
       return _i21.AdaptivePage<dynamic>(
         routeData: routeData,
-        child: _i9.ProductPage(
+        child: _i19.ProductPage(
           key: args.key,
           user: args.user,
         ),
@@ -144,94 +230,10 @@ class AppRouter extends _i21.RootStackRouter {
           orElse: () => const EditProfileScreenRouteArgs());
       return _i21.AdaptivePage<dynamic>(
         routeData: routeData,
-        child: _i10.EditProfileScreen(
+        child: _i20.EditProfileScreen(
           key: args.key,
           user: args.user,
         ),
-      );
-    },
-    ProductDetailScreenRoute.name: (routeData) {
-      final args = routeData.argsAs<ProductDetailScreenRouteArgs>();
-      return _i21.AdaptivePage<dynamic>(
-        routeData: routeData,
-        child: _i11.ProductDetailScreen(
-          key: args.key,
-          product: args.product,
-        ),
-      );
-    },
-    ExploreScreenRoute.name: (routeData) {
-      return _i21.AdaptivePage<dynamic>(
-        routeData: routeData,
-        child: const _i12.ExploreScreen(),
-      );
-    },
-    RecommendedScreenRoute.name: (routeData) {
-      final args = routeData.argsAs<RecommendedScreenRouteArgs>();
-      return _i21.AdaptivePage<dynamic>(
-        routeData: routeData,
-        child: _i13.RecommendedCreatorsScreen(
-          key: args.key,
-          users: args.users,
-        ),
-      );
-    },
-    UserFollowerPageRoute.name: (routeData) {
-      final args = routeData.argsAs<UserFollowerPageRouteArgs>();
-      return _i21.AdaptivePage<dynamic>(
-        routeData: routeData,
-        child: _i14.UserFollowerPage(
-          key: args.key,
-          user: args.user,
-        ),
-      );
-    },
-    DetailsProductPageRoute.name: (routeData) {
-      final args = routeData.argsAs<DetailsProductPageRouteArgs>();
-      return _i21.AdaptivePage<dynamic>(
-        routeData: routeData,
-        child: _i15.DetailsProductPage(
-          key: args.key,
-          product: args.product,
-        ),
-      );
-    },
-    SeeAllPageRoute.name: (routeData) {
-      final args = routeData.argsAs<SeeAllPageRouteArgs>();
-      return _i21.AdaptivePage<dynamic>(
-        routeData: routeData,
-        child: _i16.SeeAllPage(
-          key: args.key,
-          type: args.type,
-        ),
-      );
-    },
-    CartScreenRoute.name: (routeData) {
-      return _i21.AdaptivePage<dynamic>(
-        routeData: routeData,
-        child: const _i17.CartScreen(),
-      );
-    },
-    CheckoutRoute.name: (routeData) {
-      final args = routeData.argsAs<CheckoutRouteArgs>();
-      return _i21.AdaptivePage<dynamic>(
-        routeData: routeData,
-        child: _i18.CheckoutScreen(
-          key: args.key,
-          list: args.list,
-        ),
-      );
-    },
-    PaymentRoute.name: (routeData) {
-      return _i21.AdaptivePage<dynamic>(
-        routeData: routeData,
-        child: const _i19.PaymentScreen(),
-      );
-    },
-    SuccessfulPaymentRoute.name: (routeData) {
-      return _i21.AdaptivePage<dynamic>(
-        routeData: routeData,
-        child: const _i20.SuccessfulPaymentScreen(),
       );
     },
   };
@@ -287,26 +289,8 @@ class AppRouter extends _i21.RootStackRouter {
                       meta: <String, dynamic>{'hideToolbar': true},
                     ),
                     _i21.RouteConfig(
-                      UserProfileScreenRoute.name,
-                      path: 'profile',
-                      parent: HomeRoute.name,
-                      meta: <String, dynamic>{'hideToolbar': true},
-                    ),
-                    _i21.RouteConfig(
-                      ProductPageRoute.name,
-                      path: 'product',
-                      parent: HomeRoute.name,
-                      meta: <String, dynamic>{'hideToolbar': true},
-                    ),
-                    _i21.RouteConfig(
-                      EditProfileScreenRoute.name,
-                      path: 'profileEdit',
-                      parent: HomeRoute.name,
-                      meta: <String, dynamic>{'hideToolbar': true},
-                    ),
-                    _i21.RouteConfig(
                       ProductDetailScreenRoute.name,
-                      path: 'productDetail',
+                      path: 'ProductDetail',
                       parent: HomeRoute.name,
                       meta: <String, dynamic>{'hideToolbar': true},
                     ),
@@ -381,6 +365,30 @@ class AppRouter extends _i21.RootStackRouter {
                       SuccessfulPaymentRoute.name,
                       path: 'SuccessfulPayment',
                       parent: CartRoute.name,
+                      meta: <String, dynamic>{'hideToolbar': true},
+                    ),
+                  ],
+                ),
+                _i21.RouteConfig(
+                  ProfileRoute.name,
+                  path: 'Profile',
+                  parent: MainTabRoute.name,
+                  children: [
+                    _i21.RouteConfig(
+                      ProfileScreenRoute.name,
+                      path: '',
+                      parent: ProfileRoute.name,
+                    ),
+                    _i21.RouteConfig(
+                      ProductPageRoute.name,
+                      path: 'Product',
+                      parent: ProfileRoute.name,
+                      meta: <String, dynamic>{'hideToolbar': true},
+                    ),
+                    _i21.RouteConfig(
+                      EditProfileScreenRoute.name,
+                      path: 'ProfileEdit',
+                      parent: ProfileRoute.name,
                       meta: <String, dynamic>{'hideToolbar': true},
                     ),
                   ],
@@ -496,6 +504,19 @@ class CartRoute extends _i21.PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [_i1.EmptyRouterPage]
+class ProfileRoute extends _i21.PageRouteInfo<void> {
+  const ProfileRoute({List<_i21.PageRouteInfo>? children})
+      : super(
+          ProfileRoute.name,
+          path: 'Profile',
+          initialChildren: children,
+        );
+
+  static const String name = 'ProfileRoute';
+}
+
+/// generated route for
 /// [_i5.HomeScreen]
 class HomeScreenRoute extends _i21.PageRouteInfo<HomeScreenRouteArgs> {
   HomeScreenRoute({
@@ -576,111 +597,7 @@ class LiveStreamingRouteArgs {
 }
 
 /// generated route for
-/// [_i8.UserProfileScreen]
-class UserProfileScreenRoute
-    extends _i21.PageRouteInfo<UserProfileScreenRouteArgs> {
-  UserProfileScreenRoute({
-    _i22.Key? key,
-    required _i23.UserModel user,
-  }) : super(
-          UserProfileScreenRoute.name,
-          path: 'profile',
-          args: UserProfileScreenRouteArgs(
-            key: key,
-            user: user,
-          ),
-        );
-
-  static const String name = 'UserProfileScreenRoute';
-}
-
-class UserProfileScreenRouteArgs {
-  const UserProfileScreenRouteArgs({
-    this.key,
-    required this.user,
-  });
-
-  final _i22.Key? key;
-
-  final _i23.UserModel user;
-
-  @override
-  String toString() {
-    return 'UserProfileScreenRouteArgs{key: $key, user: $user}';
-  }
-}
-
-/// generated route for
-/// [_i9.ProductPage]
-class ProductPageRoute extends _i21.PageRouteInfo<ProductPageRouteArgs> {
-  ProductPageRoute({
-    _i22.Key? key,
-    required _i23.UserModel user,
-  }) : super(
-          ProductPageRoute.name,
-          path: 'product',
-          args: ProductPageRouteArgs(
-            key: key,
-            user: user,
-          ),
-        );
-
-  static const String name = 'ProductPageRoute';
-}
-
-class ProductPageRouteArgs {
-  const ProductPageRouteArgs({
-    this.key,
-    required this.user,
-  });
-
-  final _i22.Key? key;
-
-  final _i23.UserModel user;
-
-  @override
-  String toString() {
-    return 'ProductPageRouteArgs{key: $key, user: $user}';
-  }
-}
-
-/// generated route for
-/// [_i10.EditProfileScreen]
-class EditProfileScreenRoute
-    extends _i21.PageRouteInfo<EditProfileScreenRouteArgs> {
-  EditProfileScreenRoute({
-    _i22.Key? key,
-    _i23.UserModel? user,
-  }) : super(
-          EditProfileScreenRoute.name,
-          path: 'profileEdit',
-          args: EditProfileScreenRouteArgs(
-            key: key,
-            user: user,
-          ),
-        );
-
-  static const String name = 'EditProfileScreenRoute';
-}
-
-class EditProfileScreenRouteArgs {
-  const EditProfileScreenRouteArgs({
-    this.key,
-    this.user,
-  });
-
-  final _i22.Key? key;
-
-  final _i23.UserModel? user;
-
-  @override
-  String toString() {
-    return 'EditProfileScreenRouteArgs{key: $key, user: $user}';
-  }
-}
-
-/// generated route for
-/// [_i11.ProductDetailScreen]
+/// [_i8.ProductDetailScreen]
 class ProductDetailScreenRoute
     extends _i21.PageRouteInfo<ProductDetailScreenRouteArgs> {
   ProductDetailScreenRoute({
@@ -688,7 +605,7 @@ class ProductDetailScreenRoute
     required _i23.ProductModel product,
   }) : super(
           ProductDetailScreenRoute.name,
-          path: 'productDetail',
+          path: 'ProductDetail',
           args: ProductDetailScreenRouteArgs(
             key: key,
             product: product,
@@ -715,7 +632,7 @@ class ProductDetailScreenRouteArgs {
 }
 
 /// generated route for
-/// [_i12.ExploreScreen]
+/// [_i9.ExploreScreen]
 class ExploreScreenRoute extends _i21.PageRouteInfo<void> {
   const ExploreScreenRoute()
       : super(
@@ -727,7 +644,7 @@ class ExploreScreenRoute extends _i21.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i13.RecommendedCreatorsScreen]
+/// [_i10.RecommendedCreatorsScreen]
 class RecommendedScreenRoute
     extends _i21.PageRouteInfo<RecommendedScreenRouteArgs> {
   RecommendedScreenRoute({
@@ -762,7 +679,7 @@ class RecommendedScreenRouteArgs {
 }
 
 /// generated route for
-/// [_i14.UserFollowerPage]
+/// [_i11.UserFollowerPage]
 class UserFollowerPageRoute
     extends _i21.PageRouteInfo<UserFollowerPageRouteArgs> {
   UserFollowerPageRoute({
@@ -797,7 +714,7 @@ class UserFollowerPageRouteArgs {
 }
 
 /// generated route for
-/// [_i15.DetailsProductPage]
+/// [_i12.DetailsProductPage]
 class DetailsProductPageRoute
     extends _i21.PageRouteInfo<DetailsProductPageRouteArgs> {
   DetailsProductPageRoute({
@@ -832,7 +749,7 @@ class DetailsProductPageRouteArgs {
 }
 
 /// generated route for
-/// [_i16.SeeAllPage]
+/// [_i13.SeeAllPage]
 class SeeAllPageRoute extends _i21.PageRouteInfo<SeeAllPageRouteArgs> {
   SeeAllPageRoute({
     _i22.Key? key,
@@ -866,7 +783,7 @@ class SeeAllPageRouteArgs {
 }
 
 /// generated route for
-/// [_i17.CartScreen]
+/// [_i14.CartScreen]
 class CartScreenRoute extends _i21.PageRouteInfo<void> {
   const CartScreenRoute()
       : super(
@@ -878,7 +795,7 @@ class CartScreenRoute extends _i21.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i18.CheckoutScreen]
+/// [_i15.CheckoutScreen]
 class CheckoutRoute extends _i21.PageRouteInfo<CheckoutRouteArgs> {
   CheckoutRoute({
     _i22.Key? key,
@@ -912,7 +829,7 @@ class CheckoutRouteArgs {
 }
 
 /// generated route for
-/// [_i19.PaymentScreen]
+/// [_i16.PaymentScreen]
 class PaymentRoute extends _i21.PageRouteInfo<void> {
   const PaymentRoute()
       : super(
@@ -924,7 +841,7 @@ class PaymentRoute extends _i21.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i20.SuccessfulPaymentScreen]
+/// [_i17.SuccessfulPaymentScreen]
 class SuccessfulPaymentRoute extends _i21.PageRouteInfo<void> {
   const SuccessfulPaymentRoute()
       : super(
@@ -933,4 +850,85 @@ class SuccessfulPaymentRoute extends _i21.PageRouteInfo<void> {
         );
 
   static const String name = 'SuccessfulPaymentRoute';
+}
+
+/// generated route for
+/// [_i18.ProfileScreen]
+class ProfileScreenRoute extends _i21.PageRouteInfo<void> {
+  const ProfileScreenRoute()
+      : super(
+          ProfileScreenRoute.name,
+          path: '',
+        );
+
+  static const String name = 'ProfileScreenRoute';
+}
+
+/// generated route for
+/// [_i19.ProductPage]
+class ProductPageRoute extends _i21.PageRouteInfo<ProductPageRouteArgs> {
+  ProductPageRoute({
+    _i22.Key? key,
+    required _i23.UserModel user,
+  }) : super(
+          ProductPageRoute.name,
+          path: 'Product',
+          args: ProductPageRouteArgs(
+            key: key,
+            user: user,
+          ),
+        );
+
+  static const String name = 'ProductPageRoute';
+}
+
+class ProductPageRouteArgs {
+  const ProductPageRouteArgs({
+    this.key,
+    required this.user,
+  });
+
+  final _i22.Key? key;
+
+  final _i23.UserModel user;
+
+  @override
+  String toString() {
+    return 'ProductPageRouteArgs{key: $key, user: $user}';
+  }
+}
+
+/// generated route for
+/// [_i20.EditProfileScreen]
+class EditProfileScreenRoute
+    extends _i21.PageRouteInfo<EditProfileScreenRouteArgs> {
+  EditProfileScreenRoute({
+    _i22.Key? key,
+    _i23.UserModel? user,
+  }) : super(
+          EditProfileScreenRoute.name,
+          path: 'ProfileEdit',
+          args: EditProfileScreenRouteArgs(
+            key: key,
+            user: user,
+          ),
+        );
+
+  static const String name = 'EditProfileScreenRoute';
+}
+
+class EditProfileScreenRouteArgs {
+  const EditProfileScreenRouteArgs({
+    this.key,
+    this.user,
+  });
+
+  final _i22.Key? key;
+
+  final _i23.UserModel? user;
+
+  @override
+  String toString() {
+    return 'EditProfileScreenRouteArgs{key: $key, user: $user}';
+  }
 }

@@ -37,7 +37,7 @@ class _MainPageState extends State<MainPage> {
     return AutoTabsScaffold(
       homeIndex: 0,
       extendBody: true,
-      routes: const [HomeRoute(), ExploreRoute(), CartRoute()],
+      routes: const [ HomeRoute(), ExploreRoute(), CartRoute(), ProfileRoute()],
       builder: (context, child, animation) {
         final tabsRouter = AutoTabsRouter.of(context);
         bool hideToolbar =
@@ -78,14 +78,14 @@ class _MainPageState extends State<MainPage> {
                                   ),
                             ),
                       actions: [
-                        tabsRouter.activeIndex == 0
+                        /*  tabsRouter.activeIndex == 0
                             ? IconButton(
                                 onPressed: () async {
                                   checkToProfile(context);
                                   // LogoutHelper().loggedOutAlert(context);
                                 },
                                 icon: const Icon(Icons.person))
-                            : Container(),
+                            : Container(), */
                         if (tabsRouter.activeIndex == 2)
                           Padding(
                             padding: const EdgeInsets.only(right: 32.0),
@@ -136,6 +136,10 @@ class _MainPageState extends State<MainPage> {
                 BottomNavigationBarItem(
                   icon: Icon(Icons.shopping_cart),
                   label: 'Cart',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.person),
+                  label: 'Profile',
                 ),
               ],
             ),

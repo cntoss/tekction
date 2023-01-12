@@ -4,61 +4,8 @@ import 'package:preferences/preferences.dart';
 import 'package:tekction/data/model/mode.dart';
 import 'package:tekction/navigation/router.gr.dart';
 
-
-// ignore: must_be_immutable
-class UserProfileScreen extends StatefulWidget {
-  UserProfileScreen({Key? key, required this.user}) : super(key: key);
-  UserModel user;
-
-  @override
-  _ProfileScreenState createState() => _ProfileScreenState();
-}
-
-class _ProfileScreenState extends State<UserProfileScreen> {
-  Future<String?> showPopupMenu(context) async {
-    return await showMenu<String>(
-      context: context,
-      position: const RelativeRect.fromLTRB(0, 110, 0, 0),
-      color: Colors.white,
-      shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-              topRight: Radius.circular(8.0),
-              bottomLeft: Radius.circular(8.0),
-              bottomRight: Radius.circular(8.0))),
-      items: [
-        const PopupMenuItem<String>(
-            value: 'french',
-            child: Padding(
-              padding: EdgeInsets.only(left: 8.0),
-              child: Text('Français',
-                  style: TextStyle(color: Colors.brown, fontSize: 14)),
-            )),
-        const PopupMenuItem<String>(
-            value: 'english',
-            child: Padding(
-              padding: EdgeInsets.only(left: 8.0),
-              child: Text('English',
-                  style: TextStyle(color: Colors.brown, fontSize: 14)),
-            )),
-      ],
-      elevation: 8.0,
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(116),
-          child: Padding(
-            padding: EdgeInsets.only(top: 50),
-            child: AppBar(
-              title: const Text('Profile'),
-              centerTitle: true,
-              actions: [
-                IconButton(
-                  onPressed: () async {
+//TODO:logout code
+/* async {
                     // LogoutHelper().loggedOutAlert(context);
                     await FirebaseAuth.instance.signOut();
                     final action =
@@ -66,15 +13,27 @@ class _ProfileScreenState extends State<UserProfileScreen> {
                     action?.callback(context);
                     context.router.pop();
                     context.router.replace(const SplashRoute());
-                  },
-                  icon: const Icon(
-                    Icons.logout_outlined,
-                  ),
-                )
-              ],
-            ),
-          ),
-        ),
+                  }, */
+// ignore: must_be_immutable
+class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key});
+
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  final UserModel _user = UserModel(
+      id: '1234',
+      userDisplayName: 'Thomas Selby',
+      phone: '9829327790',
+      address: 'Lalitpur-15, Patan',
+      profileUrl:
+          'https://i2-prod.mirror.co.uk/incoming/article7861134.ece/ALTERNATES/s615b/Peaky-Blinders-3.jpg');
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -90,45 +49,20 @@ class _ProfileScreenState extends State<UserProfileScreen> {
                   children: [
                     const SizedBox(height: 20),
                     Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        GestureDetector(
-                            /* onTap: () async {
-                            await S.delegate.load(
-                                const Locale.fromSubtags(languageCode: 'fr'));
-                          }, */
-                            onTap: () async {
-                              String? val = await showPopupMenu(context);
-                              if (val != null) {
-                                if (val == 'english') {
-                                  print('English');
-                                }
-                                if (val == 'french') {
-                                  print('French');
-                                }
-                              }
-                              setState(() {});
-                            },
-                            child: Container(
-                              padding: const EdgeInsets.all(13),
-                              decoration: const BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(12)),
-                                  color: StaticColors.bgSetting),
-                              child: const Icon(
-                                Icons.language_rounded,
-                                color: Colors.white,
-                              ),
-                            )),
                         const Spacer(),
                         Container(
-                          height: 72,
-                          width: 72,
+                          height: 80,
+                          width: 80,
                           clipBehavior: Clip.antiAlias,
                           decoration:
                               const BoxDecoration(shape: BoxShape.circle),
                           child: CachedNetworkImage(
-                            imageUrl: 'https://picsum.photos/1000/1000',
+                            imageUrl: _user.profileUrl ??
+                                'https://picsum.photos/1000/1000',
                             fit: BoxFit.cover,
                             fadeInDuration: const Duration(milliseconds: 250),
                             fadeOutDuration: const Duration(milliseconds: 250),
@@ -147,7 +81,6 @@ class _ProfileScreenState extends State<UserProfileScreen> {
                             },
                           ),
                         ),
-                        const Spacer(),
                         Expanded(
                           child: Align(
                             alignment: Alignment.topRight,
@@ -168,7 +101,7 @@ class _ProfileScreenState extends State<UserProfileScreen> {
                     ),
                     const SizedBox(height: 20),
                     Text(
-                      widget.user.userDisplayName ?? "Jack Daniels",
+                      _user.userDisplayName ?? "Jack Daniels",
                       style: ThemeData().textTheme.headline1?.copyWith(
                           fontWeight: FontWeight.w700,
                           fontSize: 24,
@@ -176,7 +109,7 @@ class _ProfileScreenState extends State<UserProfileScreen> {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      "@${widget.user.userDisplayName ?? 'n.a'}",
+                      "@${_user.userDisplayName ?? 'n.a'}",
                       style: ThemeData().textTheme.headline1?.copyWith(
                           fontWeight: FontWeight.w400,
                           fontSize: 16,
@@ -245,7 +178,7 @@ class _ProfileScreenState extends State<UserProfileScreen> {
                 ),
                 leadingIcon: AssetsPath.following,
                 onPressed: () {
-                  context.router.push(ProductPageRoute(user: widget.user));
+                  context.router.push(ProductPageRoute(user: _user));
                 },
               ),
               ProfileCard(
