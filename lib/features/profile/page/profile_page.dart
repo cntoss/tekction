@@ -1,15 +1,9 @@
-import 'dart:convert';
-import 'package:data_config/data_config.dart';
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
 import 'package:preferences/preferences.dart';
+import 'package:tekction/data/model/mode.dart';
 import 'package:tekction/navigation/router.gr.dart';
-import 'package:tekction/utils/logout_helper.dart';
 
-import '../../../data/model/src/product_model.dart';
-import '../../../data/model/src/user_model.dart';
-import '../../../utils/firebase_helper.dart';
-import '../../product/page/add_product.dart';
 
 // ignore: must_be_immutable
 class UserProfileScreen extends StatefulWidget {

@@ -19,7 +19,7 @@ class StaticColors {
   static const Color blueDark = Color(0xFF354570);
   static const Color errorOutOfStock = Color(0xFFFF3333);
   static const Color errorColor = Color(0xFFED7662);
-  static const Color appColor = Color(0xFF03174C);
+  static const Color appColor = Color(0xFF7F00FF);
   static const Color darkBlue = Color(0xFF202E5B);
   static const Color subGray = Color(0xFF9A9BA6);
   static const Color subTitleColorDisableDark = Color(0xFF718096);

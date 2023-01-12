@@ -17,7 +17,6 @@ Future<void> initializeDefault() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  print('Initialized default app');
 }
 
 class MainApp extends StatefulWidget {
