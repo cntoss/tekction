@@ -1,3 +1,4 @@
+import 'package:data_config/data_config.dart';
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
 import 'package:preferences/preferences.dart';
@@ -85,7 +86,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           child: Align(
                             alignment: Alignment.topRight,
                             child: GestureDetector(
-                                onTap: () {},
+                                onTap: () {
+                                  context.router
+                                      .pushNamed(AppRoutes.settingsPath);
+                                },
                                 child: Container(
                                   padding: const EdgeInsets.all(13),
                                   decoration: const BoxDecoration(

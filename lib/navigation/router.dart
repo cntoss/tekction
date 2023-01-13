@@ -10,6 +10,7 @@ import 'package:tekction/features/product/page/product_detail.dart';
 import 'package:tekction/features/profile/page/edit_profile.dart';
 import 'package:tekction/features/profile/page/product_page.dart';
 import 'package:tekction/features/profile/page/profile_screen.dart';
+import 'package:tekction/features/settings/settings_screen.dart';
 import 'package:tekction/features/splash/splash_screen.dart';
 import 'package:tekction/navigation/arguments_route.dart';
 
@@ -131,6 +132,12 @@ import '../features/explore/user_follow/user_follower_page.dart';
               name: AppRoutes.profileRouteName,
               children: [
                 AutoRoute(path: '', page: ProfileScreen),
+                AutoRoute(
+                  path: AppRoutes.settingsPath,
+                  page: SettingsScreen,
+                  name: AppRoutes.settingsRouteName,
+                  meta: {ArgumentsRoute.hideToolbar: true},
+                ),
                 AutoRoute(
                   path: AppRoutes.productPath,
                   page: ProductPage,
