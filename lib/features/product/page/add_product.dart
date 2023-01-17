@@ -25,6 +25,8 @@ class _AddProductState extends State<AddProduct> {
   late TextEditingController _addressController;
   late TextEditingController _priceController;
   bool isLoading = false;
+  String colorVal = 'Black';
+
   @override
   void initState() {
     super.initState();
@@ -48,26 +50,56 @@ class _AddProductState extends State<AddProduct> {
     return ScaffoldMessenger(
       key: _scaffoldMessengerKey,
       child: Scaffold(
-        appBar: AppBar(
-          title: Text(widget.product == null ? "Add Product" : "Edit Product"),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(150),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 80),
+            child: AppBar(
+              leading: IconButton(
+                onPressed: () => context.router.pop(),
+                icon: const Icon(
+                  Icons.arrow_back_ios,
+                  color: Colors.white,
+                ),
+              ),
+              elevation: 0,
+              title: Text(
+                widget.product == null ? "Add Product" : "Edit Product",
+                style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 24,
+                    ),
+              ),
+              centerTitle: false,
+              backgroundColor: Colors.transparent,
+            ),
+          ),
         ),
-        body: InkWell(
-          onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-          child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Stack(children: [
-                IgnorePointer(
-                  ignoring: isLoading,
-                  child: Form(
-                    key: _formKey,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        //name
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8.0),
-                          child: TextFormField(
+        body: Container(
+          height: double.infinity,
+          decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30),
+              )),
+          child: InkWell(
+            onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(32.0),
+                child: Stack(children: [
+                  IgnorePointer(
+                    ignoring: isLoading,
+                    child: Form(
+                      key: _formKey,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text('Product name'),
+                          const SizedBox(height: 8),
+                          TextFormField(
                             controller: _productName,
                             validator: (value) {
                               if (value == null || value == '') {
@@ -78,8 +110,7 @@ class _AddProductState extends State<AddProduct> {
                             },
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: 'Product Name',
-                              hintText: 'What should be product name ..?',
+                              hintText: 'Enter product name',
                               hintStyle: Theme.of(context)
                                   .textTheme
                                   .bodyText1!
@@ -112,16 +143,10 @@ class _AddProductState extends State<AddProduct> {
                                       fontWeight: FontWeight.normal,
                                     ),
                           ),
-                        ),
-
-                        /*   const SizedBox(
-                        height: 8,
-                      ), */
-                        //const Text('Enter Product Description'),
-                        //description
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8.0),
-                          child: TextFormField(
+                          const SizedBox(height: 16),
+                          const Text('Product Description'),
+                          const SizedBox(height: 8),
+                          TextFormField(
                             controller: _productDescription,
                             validator: (value) {
                               if (value == null || value == '') {
@@ -131,10 +156,9 @@ class _AddProductState extends State<AddProduct> {
                               }
                             },
                             obscureText: false,
-                            maxLines: null,
+                            maxLines: 3,
                             decoration: InputDecoration(
-                              labelText: 'Description',
-                              hintText: 'Enter Product description...?',
+                              hintText: 'Enter product description',
                               hintStyle: Theme.of(context)
                                   .textTheme
                                   .bodyText1!
@@ -167,11 +191,11 @@ class _AddProductState extends State<AddProduct> {
                                       fontWeight: FontWeight.normal,
                                     ),
                           ),
-                        ),
-                        //location
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8.0),
-                          child: TextFormField(
+                          const SizedBox(height: 16),
+                          const Text('Product available at'),
+                          const SizedBox(height: 8),
+                          //location
+                          TextFormField(
                             controller: _addressController,
                             validator: (value) {
                               if (value == null || value == '') {
@@ -183,8 +207,7 @@ class _AddProductState extends State<AddProduct> {
                             obscureText: false,
                             maxLines: null,
                             decoration: InputDecoration(
-                              labelText: 'Location',
-                              hintText: 'Product available at...?',
+                              hintText: 'Enter product location',
                               hintStyle: Theme.of(context)
                                   .textTheme
                                   .bodyText1!
@@ -217,11 +240,192 @@ class _AddProductState extends State<AddProduct> {
                                       fontWeight: FontWeight.normal,
                                     ),
                           ),
-                        ),
-                        //price
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8.0),
-                          child: TextFormField(
+                          const SizedBox(height: 16),
+                          const Text('Product dimensions'),
+                          const SizedBox(height: 8),
+
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              SizedBox(
+                                width: 100,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    TextFormField(
+                                      controller: _addressController,
+                                      validator: (value) {
+                                        if (value == null || value == '') {
+                                          return 'Enter height';
+                                        } else {
+                                          return null;
+                                        }
+                                      },
+                                      obscureText: false,
+                                      maxLines: null,
+                                      decoration: InputDecoration(
+                                        hintText: 'Height',
+                                        hintStyle: Theme.of(context)
+                                            .textTheme
+                                            .bodyText1!
+                                            .copyWith(
+                                              fontFamily: 'Lexend Deca',
+                                              color: const Color(0xFF8B97A2),
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.normal,
+                                            ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                            color: Color(0xFFDBE2E7),
+                                            width: 1,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                            color: Color(0xFFDBE2E7),
+                                            width: 1,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                        ),
+                                      ),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyText1!
+                                          .copyWith(
+                                            fontFamily: 'Lexend Deca',
+                                            color: const Color(0xFF090F13),
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                width: 100,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    TextFormField(
+                                      controller: _addressController,
+                                      validator: (value) {
+                                        if (value == null || value == '') {
+                                          return 'Enter Width';
+                                        } else {
+                                          return null;
+                                        }
+                                      },
+                                      obscureText: false,
+                                      maxLines: null,
+                                      decoration: InputDecoration(
+                                        hintText: 'Width',
+                                        hintStyle: Theme.of(context)
+                                            .textTheme
+                                            .bodyText1!
+                                            .copyWith(
+                                              fontFamily: 'Lexend Deca',
+                                              color: const Color(0xFF8B97A2),
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.normal,
+                                            ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                            color: Color(0xFFDBE2E7),
+                                            width: 1,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                            color: Color(0xFFDBE2E7),
+                                            width: 1,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                        ),
+                                      ),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyText1!
+                                          .copyWith(
+                                            fontFamily: 'Lexend Deca',
+                                            color: const Color(0xFF090F13),
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                width: 100,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    TextFormField(
+                                      controller: _addressController,
+                                      validator: (value) {
+                                        if (value == null || value == '') {
+                                          return 'Enter Length';
+                                        } else {
+                                          return null;
+                                        }
+                                      },
+                                      obscureText: false,
+                                      maxLines: null,
+                                      decoration: InputDecoration(
+                                        hintText: 'Length',
+                                        hintStyle: Theme.of(context)
+                                            .textTheme
+                                            .bodyText1!
+                                            .copyWith(
+                                              fontFamily: 'Lexend Deca',
+                                              color: const Color(0xFF8B97A2),
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.normal,
+                                            ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                            color: Color(0xFFDBE2E7),
+                                            width: 1,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                            color: Color(0xFFDBE2E7),
+                                            width: 1,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                        ),
+                                      ),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyText1!
+                                          .copyWith(
+                                            fontFamily: 'Lexend Deca',
+                                            color: const Color(0xFF090F13),
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+
+                          const SizedBox(height: 16),
+                          const Text('Price'),
+                          const SizedBox(height: 8),
+                          //price
+                          TextFormField(
                             controller: _priceController,
                             validator: (value) {
                               if (value == null || value == '') {
@@ -233,8 +437,14 @@ class _AddProductState extends State<AddProduct> {
                             obscureText: false,
                             keyboardType: TextInputType.number,
                             decoration: InputDecoration(
-                              labelText: 'Price',
-                              hintText: 'Product price should be...?',
+                              isDense: true,
+                              prefixIcon: const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Text('NPR'),
+                              ),
+                              prefixIconConstraints: const BoxConstraints(
+                                  minWidth: 0, minHeight: 0),
+                              hintText: 'Enter product price',
                               hintStyle: Theme.of(context)
                                   .textTheme
                                   .bodyText1!
@@ -267,14 +477,58 @@ class _AddProductState extends State<AddProduct> {
                                       fontWeight: FontWeight.normal,
                                     ),
                           ),
-                        ),
-                        if (image != null) _reviewImage(),
-                        ElevatedButton.icon(
-                            onPressed: () => _getImage(context),
-                            icon: const Icon(Icons.camera_alt_outlined),
-                            label: const Text('Upload image')),
+                          const SizedBox(height: 16),
+                          const Text('Color'),
+                          const SizedBox(height: 8),
+                          DropdownButton(
+                            isExpanded: true,
+                            icon: const Icon(Icons.keyboard_arrow_down),
+                            items:
+                                ['Red', 'Black', 'White'].map((String items) {
+                              return DropdownMenuItem(
+                                value: items,
+                                child: Text(items),
+                              );
+                            }).toList(),
+                            value: colorVal,
+                            onChanged: (String? value) {
+                              setState(() {
+                                colorVal = value!;
+                              });
+                            },
+                          ),
 
-                        ElevatedButton(
+                          const SizedBox(height: 50),
+
+                          if (image != null) _reviewImage(),
+                          ...[
+                            InkWell(
+                              onTap: () => _getImage(context),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.blueGrey,
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                                padding: const EdgeInsets.all(16),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: const [
+                                    Icon(
+                                      Icons.camera_alt_outlined,
+                                      color: Colors.white,
+                                    ),
+                                    SizedBox(width: 8),
+                                    Text(
+                                      'Upload image',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                          const SizedBox(height: 8),
+                          ElevatedButton(
                             onPressed: () async {
                               _formKey.currentState!.save();
                               if (_formKey.currentState!.validate()) {
@@ -338,17 +592,22 @@ class _AddProductState extends State<AddProduct> {
                                 }
                               }
                             },
-                            child: const Center(child: Text('Add Product')))
-                      ],
+                            child: const Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Center(child: Text('Add Product')),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                if (isLoading)
-                  Positioned(
-                      top: MediaQuery.of(context).size.height / 3,
-                      left: MediaQuery.of(context).size.width / 2,
-                      child: const Center(child: CircularProgressIndicator()))
-              ]),
+                  if (isLoading)
+                    Positioned(
+                        top: MediaQuery.of(context).size.height / 3,
+                        left: MediaQuery.of(context).size.width / 2,
+                        child: const Center(child: CircularProgressIndicator()))
+                ]),
+              ),
             ),
           ),
         ),
