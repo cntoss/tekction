@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'regular_input.dart';
 
-class PasswordInput extends StatefulWidget {
+class AppPasswordInput extends StatefulWidget {
   final TextEditingController? controller;
   final String? hint;
   final String? label;
@@ -13,7 +13,7 @@ class PasswordInput extends StatefulWidget {
   final ValueChanged<String>? onSubmit;
   final Color? textColor;
   final Widget? prefix;
-  const PasswordInput(
+  const AppPasswordInput(
       {Key? key,
       this.controller,
       this.hint,
@@ -31,7 +31,7 @@ class PasswordInput extends StatefulWidget {
   _PasswordInputState createState() => _PasswordInputState();
 }
 
-class _PasswordInputState extends State<PasswordInput> {
+class _PasswordInputState extends State<AppPasswordInput> {
   bool isVisible = false;
 
   @override

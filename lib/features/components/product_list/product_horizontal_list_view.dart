@@ -65,7 +65,7 @@ class _ProductHorizontalLiveListViewState
         Row(
           mainAxisSize: MainAxisSize.max,
           children: [
-            SizedBox(width: 30),
+           const SizedBox(width: 30),
             Text(
               'Trending Products',
               style: ThemeData().textTheme.headline1?.copyWith(

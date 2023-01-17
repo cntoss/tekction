@@ -1,8 +1,7 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:data_config/data_config.dart';
+import 'package:dependencies/dependencies.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:preferences/preferences.dart';
 import 'package:tekction/utils/widgets/profile_card.dart';
 
@@ -79,7 +78,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   color: StaticColors.blue4,
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                context.router.pushNamed(AppRoutes.changePasswordPath);
+              },
             ),
             const SizedBox(height: 14),
             ProfileCard(

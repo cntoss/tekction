@@ -37,7 +37,7 @@ import 'package:tekction/features/product/page/product_detail.dart' as _i8;
 import 'package:tekction/features/profile/page/edit_profile.dart' as _i21;
 import 'package:tekction/features/profile/page/product_page.dart' as _i20;
 import 'package:tekction/features/profile/page/profile_screen.dart' as _i18;
-import 'package:tekction/features/settings/settings_screen.dart' as _i19;
+import 'package:tekction/features/profile/settings/settings_screen.dart' as _i19;
 import 'package:tekction/features/splash/splash_screen.dart' as _i2;
 
 class AppRouter extends _i22.RootStackRouter {
