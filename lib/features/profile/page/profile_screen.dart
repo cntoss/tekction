@@ -324,7 +324,7 @@ class _ProfileCard extends State<ProfileCard> {
           bottom: 8),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(8)),
-        color: Colors.white,
+        color: StaticColors.profileCardColor,
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.05),

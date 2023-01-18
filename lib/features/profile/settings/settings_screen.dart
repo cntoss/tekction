@@ -3,6 +3,7 @@ import 'package:dependencies/dependencies.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:preferences/preferences.dart';
+import 'package:tekction/utils/logout_helper.dart';
 import 'package:tekction/utils/widgets/profile_card.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -71,7 +72,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 padding: const EdgeInsets.all(8),
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(6)),
-                  color: StaticColors.nextBg,
+                  color: Colors.white38,
                 ),
                 child: SvgPicture.asset(
                   AssetsPath.iconNext,
@@ -105,6 +106,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 scale: 0.8,
                 child: CupertinoSwitch(
                   activeColor: StaticColors.purple,
+                  thumbColor: StaticColors.profileCardColor,
                   value: pushNotification,
                   onChanged: (value) {
                     setState(() {
@@ -154,7 +156,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ],
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    LogoutHelper().loggedOutAlert(context);
+                  },
                 ),
               ),
             ),

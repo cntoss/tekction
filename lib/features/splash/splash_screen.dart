@@ -37,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return StreamBuilder<User?>(
         stream: FirebaseAuth.instance.authStateChanges(),
         initialData: FirebaseAuth.instance.currentUser,
-        builder: (context, snapshot) {
+        builder: (_, snapshot) {
           // User is not signed in
           if (!snapshot.hasData) {
             return SignInScreen(providerConfigs: [

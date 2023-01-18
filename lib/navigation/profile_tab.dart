@@ -29,7 +29,6 @@ const profileTab = AutoRoute(
     AutoRoute(
         path: AppRoutes.changePasswordPath,
         page: ChangePasswordScreen,
-        name: AppRoutes.changePasswordRouteName,
         meta: {ArgumentsRoute.hideToolbar: true}),
   ],
 );

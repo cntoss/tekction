@@ -14,7 +14,8 @@ const Color errorColor = Color(0xFFED7662);
 const Color backgroundColor = StaticColors.appColor;
 const Color secondaryBackgroundColor = Color(0xFFFFFFFF);
 const Color dividerColor = StaticColors.black5;
-const Color inputBackgroundColor = Colors.white;
+// const Color inputBackgroundColor = Colors.white;
+const Color inputBackgroundColor = Color(0xFF354570);
 const Color checkboxColor = StaticColors.activeIcon;
 const Color inputBorderColor = StaticColors.gray5;
 

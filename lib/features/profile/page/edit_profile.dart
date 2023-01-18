@@ -1,6 +1,9 @@
+import 'package:data_config/data_config.dart';
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
+import 'package:tekction/locator.dart';
 import 'package:tekction/utils/firebase_helper.dart';
+import 'package:tekction/utils/ui_helper.dart';
 
 import '../../../data/model/mode.dart';
 
@@ -33,10 +36,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   Widget build(BuildContext context) {
     return ScaffoldMessenger(
       child: Scaffold(
-          appBar: AppBar(
-            title: const Text('Create Profile'),
-            centerTitle: true,
-          ),
+          appBar: locator<UiHelper>().appBar(context,
+              title: widget.user == null ? 'Add Profile' : 'Edit Profile'),
           body: GestureDetector(
             onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
             child: Stack(
@@ -47,45 +48,57 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        TextFormField(
-                          controller: _name,
-                          decoration: const InputDecoration(
-                              labelText: 'Name',
-                              prefixIcon: Icon(Icons.person_outline)),
-                          validator: (value) {
-                            if (value == null || value == '') {
-                              return "Name must not be empty";
-                            } else {
-                              return null;
-                            }
-                          },
+                        const SizedBox(height: 18),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 20, right: 20),
+                          child: TextFormField(
+                            controller: _name,
+                            decoration: const InputDecoration(
+                                labelText: 'Name',
+                                prefixIcon: Icon(Icons.person_outline)),
+                            validator: (value) {
+                              if (value == null || value == '') {
+                                return "Name must not be empty";
+                              } else {
+                                return null;
+                              }
+                            },
+                          ),
                         ),
-                        TextFormField(
-                          controller: _phone,
-                          keyboardType: TextInputType.phone,
-                          decoration: const InputDecoration(
-                              labelText: 'Phone',
-                              prefixIcon: Icon(Icons.phone_android_outlined)),
-                          validator: (value) {
-                            if (value == null || value == '') {
-                              return "Phone number must not be empty";
-                            } else {
-                              return null;
-                            }
-                          },
+                        const SizedBox(height: 18),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 20, right: 20),
+                          child: TextFormField(
+                            controller: _phone,
+                            keyboardType: TextInputType.phone,
+                            decoration: const InputDecoration(
+                                labelText: 'Phone',
+                                prefixIcon: Icon(Icons.phone_android_outlined)),
+                            validator: (value) {
+                              if (value == null || value == '') {
+                                return "Phone number must not be empty";
+                              } else {
+                                return null;
+                              }
+                            },
+                          ),
                         ),
-                        TextFormField(
-                          controller: _address,
-                          decoration: const InputDecoration(
-                              labelText: 'Address',
-                              prefixIcon: Icon(Icons.location_city_outlined)),
-                          validator: (value) {
-                            if (value == null || value == '') {
-                              return "Address must not be empty";
-                            } else {
-                              return null;
-                            }
-                          },
+                        const SizedBox(height: 18),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 20, right: 20),
+                          child: TextFormField(
+                            controller: _address,
+                            decoration: const InputDecoration(
+                                labelText: 'Address',
+                                prefixIcon: Icon(Icons.location_city_outlined)),
+                            validator: (value) {
+                              if (value == null || value == '') {
+                                return "Address must not be empty";
+                              } else {
+                                return null;
+                              }
+                            },
+                          ),
                         ),
                         const SizedBox(
                           height: 20,

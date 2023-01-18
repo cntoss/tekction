@@ -2,7 +2,9 @@ import 'dart:io';
 
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
+import 'package:tekction/locator.dart';
 import 'package:tekction/utils/firebase_helper.dart';
+import 'package:tekction/utils/ui_helper.dart';
 
 import '../../../data/model/mode.dart';
 
@@ -50,31 +52,9 @@ class _AddProductState extends State<AddProduct> {
     return ScaffoldMessenger(
       key: _scaffoldMessengerKey,
       child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(150),
-          child: Padding(
-            padding: const EdgeInsets.only(top: 80),
-            child: AppBar(
-              leading: IconButton(
-                onPressed: () => context.router.pop(),
-                icon: const Icon(
-                  Icons.arrow_back_ios,
-                  color: Colors.white,
-                ),
-              ),
-              elevation: 0,
-              title: Text(
-                widget.product == null ? "Add Product" : "Edit Product",
-                style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 24,
-                    ),
-              ),
-              centerTitle: false,
-              backgroundColor: Colors.transparent,
-            ),
-          ),
+        appBar: locator<UiHelper>().appBar(
+          context,
+          title: widget.product == null ? "Add Product" : "Edit Product",
         ),
         body: Container(
           height: double.infinity,

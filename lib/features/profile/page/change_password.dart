@@ -1,6 +1,9 @@
 import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
 import 'package:preferences/preferences.dart';
+import 'package:tekction/core/helper/change_password_helper.dart';
+import 'package:tekction/locator.dart';
+import 'package:tekction/utils/ui_helper.dart';
 import 'package:tekction/utils/widgets/password_input.dart';
 
 class ChangePasswordScreen extends StatefulWidget {
@@ -24,32 +27,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(150),
-        child: Padding(
-          padding: const EdgeInsets.only(top: 80),
-          child: AppBar(
-            leading: IconButton(
-              onPressed: () => context.router.pop(),
-              icon: const Icon(
-                Icons.arrow_back_ios,
-                color: Colors.white,
-              ),
-            ),
-            elevation: 0,
-            title: Text(
-              'Change password',
-              style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 24,
-                  ),
-            ),
-            centerTitle: false,
-            backgroundColor: Colors.transparent,
-          ),
-        ),
-      ),
+      appBar: locator<UiHelper>().appBar(context, title: 'Change password'),
       body: Padding(
         padding: const EdgeInsets.only(top: 50.0),
         child: SingleChildScrollView(
@@ -141,6 +119,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                         });
                         return;
                       }
+                      ProfileHelper().updatePassword(
+                          newPassword: _newPasswordController.text);
                       setState(() {
                         passwordMatchMessage = null;
                       });
