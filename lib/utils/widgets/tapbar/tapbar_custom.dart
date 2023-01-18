@@ -25,7 +25,7 @@ class TabBarCustom extends StatelessWidget {
       padding: EdgeInsets.all(4),
       height: 48,
       decoration: BoxDecoration(
-        color: StaticColors.dividerColor,
+        color: ColorManager.dividerColor,
         borderRadius: BorderRadius.circular(
           15,
         ),
@@ -39,14 +39,14 @@ class TabBarCustom extends StatelessWidget {
             ),
             color: Colors.white,
           ),
-          labelColor: StaticColors.appColor,
-          unselectedLabelColor: StaticColors.getSubTitleDisabledColor(context),
+          labelColor: ColorManager.appColor,
+          unselectedLabelColor: ColorManager.getSubTitleDisabledColor(context),
           unselectedLabelStyle: Theme.of(context)
               .textTheme
               .subtitle2!
-              .copyWith(fontWeight: FontWeight.w500, color: StaticColors.gray8),
+              .copyWith(fontWeight: FontWeight.w500, color: ColorManager.gray8),
           labelStyle: Theme.of(context).textTheme.subtitle2!.copyWith(
-              fontWeight: FontWeight.w700, color: StaticColors.appColor),
+              fontWeight: FontWeight.w700, color: ColorManager.appColor),
           tabs: listTabs),
     );
   }

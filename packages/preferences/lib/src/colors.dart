@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class StaticColors {
+class ColorManager {
   static const Color black1 = Color(0xFF25282B);
   static const Color black2 = Color(0xFF52575C);
   static const Color black3 = Color(0xFFA0A4A8);
@@ -56,7 +56,7 @@ class StaticColors {
   static const Color cardPurple = Color(0xFFA885D8);
   static const Color pink = Color(0xFFFDEEEE);
   static const Color grayPrice = Color(0xFF8A8A8F);
-  static const Color nextBg = Color(0xFFF6F6F6);
+  static const Color nextBg = Colors.white38;
   static const Color colorBg = Color(0xFFD8D8D8);
   static const Color liveBtn = Color(0x8003174C);
   static const Color gray5 = Color(0xFFC5CEE0);
@@ -65,6 +65,8 @@ class StaticColors {
   static const Color blue3 = Color(0xB803174C);
   static const Color gray9 = Color(0xFF9D9DA8);
   static const Color red3 = Color(0xFFFF3333);
+  static const Color profileCardColor = Colors.white70; //white previous
+
   static const LinearGradient linearGradient = LinearGradient(colors: [
     gradient1,
     gradient2,
@@ -113,7 +115,7 @@ class StaticColors {
   }
 
   //Gradient
-  static const Color gradient1 = StaticColors.activeIcon;
+  static const Color gradient1 = ColorManager.activeIcon;
   static const Color gradient2 = Color(0xFFFFBABA);
   static const Color gradient5 = Color(0xFFFFD9D9);
   static const Color gradient4 = Color(0x78FD6969);
@@ -127,4 +129,7 @@ class StaticColors {
   static const Color gradientWhite2 = Color(0xA3FFFFFF);
   static const Color live2 = Color(0x0003174c);
   static const Color dialogBg = Color(0x8A000000);
+
+  // static Color darkBlue = const Color(0xff354570);
+  static Color formTextColor = const Color(0xffA1A4B2);
 }

@@ -57,7 +57,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   child: Text(
                     'Payment method',
                     style: ThemeData().textTheme.titleMedium?.copyWith(
-                        color: StaticColors.appColor,
+                        color: ColorManager.appColor,
                         fontSize: 16,
                         fontWeight: FontWeight.w600),
                   ),
@@ -70,7 +70,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     ),
                     border: Border.all(
                       width: 1,
-                      color: StaticColors.borderGray,
+                      color: ColorManager.borderGray,
                     ),
                   ),
                   child: ListTile(
@@ -80,11 +80,11 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       style: ThemeData().textTheme.headline1?.copyWith(
                           fontWeight: FontWeight.w600,
                           fontSize: 16,
-                          color: StaticColors.titleColor),
+                          color: ColorManager.titleColor),
                     ),
                     trailing: SvgPicture.asset(
                       AssetsPath.check,
-                      color: StaticColors.borderGray,
+                      color: ColorManager.borderGray,
                     ),
                   ),
                 ),
@@ -96,7 +96,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     ),
                     border: Border.all(
                       width: 1,
-                      color: StaticColors.borderGray,
+                      color: ColorManager.borderGray,
                     ),
                   ),
                   child: ListTile(
@@ -108,7 +108,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           style: ThemeData().textTheme.headline1?.copyWith(
                               fontWeight: FontWeight.w600,
                               fontSize: 16,
-                              color: StaticColors.appColor),
+                              color: ColorManager.appColor),
                         ),
                         const SizedBox(width: 24),
                         Container(
@@ -116,14 +116,14 @@ class _PaymentScreenState extends State<PaymentScreen> {
                               vertical: 10, horizontal: 16),
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(6)),
-                            color: StaticColors.nextBg,
+                            color: ColorManager.nextBg,
                           ),
                           child: Text(
                             "\$ 500",
                             style: ThemeData().textTheme.headline4?.copyWith(
                                   fontWeight: FontWeight.w700,
                                   fontSize: 16,
-                                  color: StaticColors.appColor,
+                                  color: ColorManager.appColor,
                                 ),
                           ),
                         ),
@@ -143,7 +143,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     ),
                     border: Border.all(
                       width: 1,
-                      color: StaticColors.borderGray,
+                      color: ColorManager.borderGray,
                     ),
                   ),
                   child: ListTile(
@@ -153,11 +153,11 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       style: ThemeData().textTheme.headline1?.copyWith(
                           fontWeight: FontWeight.w600,
                           fontSize: 16,
-                          color: StaticColors.titleColor),
+                          color: ColorManager.titleColor),
                     ),
                     trailing: SvgPicture.asset(
                       AssetsPath.check,
-                      color: StaticColors.borderGray,
+                      color: ColorManager.borderGray,
                     ),
                   ),
                 ),
@@ -178,9 +178,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 MaterialState.disabled,
               };
               if (states.any(interactiveStates.contains)) {
-                return StaticColors.disableBtn;
+                return ColorManager.disableBtn;
               }
-              return StaticColors.activeIcon;
+              return ColorManager.activeIcon;
             }),
             padding: MaterialStateProperty.resolveWith<EdgeInsetsGeometry>(
                 (Set<MaterialState> states) {

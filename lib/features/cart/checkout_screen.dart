@@ -51,7 +51,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: StaticColors.appColor,
+      backgroundColor: ColorManager.appColor,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(150),
         child: Padding(
@@ -99,14 +99,14 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     Text(
                       'Products price',
                       style: ThemeData().textTheme.subtitle1?.copyWith(
-                          color: StaticColors.subGray,
+                          color: ColorManager.subGray,
                           fontWeight: FontWeight.w400,
                           fontSize: 14),
                     ),
                     Text(
                       '${widget.list.first.product!.currency!} ${getTotalPrice()}',
                       style: ThemeData().textTheme.subtitle1?.copyWith(
-                            color: StaticColors.appColor,
+                            color: ColorManager.appColor,
                             fontWeight: FontWeight.w500,
                             fontSize: 12,
                           ),
@@ -120,7 +120,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     Text(
                       'Delivery fees',
                       style: ThemeData().textTheme.subtitle1?.copyWith(
-                            color: StaticColors.subGray,
+                            color: ColorManager.subGray,
                             fontWeight: FontWeight.w400,
                             fontSize: 14,
                           ),
@@ -128,7 +128,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     Text(
                       'NPR 100',
                       style: ThemeData().textTheme.subtitle1?.copyWith(
-                            color: StaticColors.appColor,
+                            color: ColorManager.appColor,
                             fontWeight: FontWeight.w500,
                             fontSize: 12,
                           ),
@@ -142,7 +142,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     Text(
                       'Total',
                       style: ThemeData().textTheme.subtitle1?.copyWith(
-                            color: StaticColors.subGray,
+                            color: ColorManager.subGray,
                             fontWeight: FontWeight.w400,
                             fontSize: 14,
                           ),
@@ -150,7 +150,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                     Text(
                       'NPR 245.55',
                       style: ThemeData().textTheme.subtitle1?.copyWith(
-                            color: StaticColors.appColor,
+                            color: ColorManager.appColor,
                             fontWeight: FontWeight.w500,
                             fontSize: 12,
                           ),
@@ -174,9 +174,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 MaterialState.disabled,
               };
               if (states.any(interactiveStates.contains)) {
-                return StaticColors.disableBtn;
+                return ColorManager.disableBtn;
               }
-              return StaticColors.activeIcon;
+              return ColorManager.activeIcon;
             }),
             padding: MaterialStateProperty.resolveWith<EdgeInsetsGeometry>(
                 (Set<MaterialState> states) {

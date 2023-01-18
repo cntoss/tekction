@@ -1,8 +1,8 @@
-import 'package:dependencies/dependencies.dart';
-import 'package:flutter/material.dart';
 // ignore: implementation_imports
 import 'package:auto_route/src/router/controller/pageless_routes_observer.dart'
     show PagelessRoutesObserver;
+import 'package:dependencies/dependencies.dart';
+import 'package:flutter/material.dart';
 
 import '../dialog/custom_auto_dialog.dart';
 

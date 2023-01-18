@@ -33,7 +33,7 @@ class _ProfileCard extends State<ProfileCard> {
           bottom: 8),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(8)),
-        color: Colors.white,
+        color: Colors.white70,
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.05),
@@ -52,11 +52,11 @@ class _ProfileCard extends State<ProfileCard> {
                   width: 44,
                   padding: const EdgeInsets.all(8),
                   decoration: const BoxDecoration(
-                      shape: BoxShape.circle, color: StaticColors.bgColor),
+                      shape: BoxShape.circle, color: ColorManager.bgColor),
                   child: SvgPicture.asset(
                     widget.leadingIcon ?? "",
                     color: (widget.leadingIcon == AssetsPath.iconNotification)
-                        ? StaticColors.purple
+                        ? ColorManager.purple
                         : null,
                   ),
                 )
@@ -66,7 +66,7 @@ class _ProfileCard extends State<ProfileCard> {
             style: ThemeData().textTheme.headline1?.copyWith(
                 fontWeight: FontWeight.w600,
                 fontSize: 16,
-                color: StaticColors.titleColor),
+                color: ColorManager.titleColor),
           ),
           trailing: widget.trailing),
     );

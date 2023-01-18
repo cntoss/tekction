@@ -44,7 +44,7 @@ class _SeeAllPageState extends _SeeAllPageProps with _SeeAllPageWidgets {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarColor: StaticColors.appColor,
+      statusBarColor: ColorManager.appColor,
     ));
     return WillPopScope(
         onWillPop: () async => true,
@@ -64,7 +64,7 @@ class _SeeAllPageState extends _SeeAllPageProps with _SeeAllPageWidgets {
                       width: 16,
                     ),
                     const AutoBackCustom(
-                      color: StaticColors.appColor,
+                      color: ColorManager.appColor,
                     ),
                     SizedBox(
                       width: 16,
@@ -76,7 +76,7 @@ class _SeeAllPageState extends _SeeAllPageProps with _SeeAllPageWidgets {
                               ? 'Trending products'
                               : 'Recommended Shops',
                       style: ThemeData().textTheme.headline1?.copyWith(
-                            color: StaticColors.appColor,
+                            color: ColorManager.appColor,
                             fontSize: 24,
                             fontWeight: FontWeight.w600,
                           ),

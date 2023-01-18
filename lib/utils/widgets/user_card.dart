@@ -54,7 +54,7 @@ class UsersCard extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.only(left: 15),
         decoration: const BoxDecoration(
-          color: StaticColors.white,
+          color: ColorManager.white,
           borderRadius: BorderRadius.all(Radius.circular(8)),
         ),
         child: Stack(
@@ -78,8 +78,8 @@ class UsersCard extends StatelessWidget {
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
                             colors: <Color>[
-                              StaticColors.gradientBlack1,
-                              StaticColors.gradientBlack2
+                              ColorManager.gradientBlack1,
+                              ColorManager.gradientBlack2
                             ],
                           ),
                         ),
@@ -97,7 +97,7 @@ class UsersCard extends StatelessWidget {
                         Text(
                           itemSubMenuHome.username!,
                           style: ThemeData().textTheme.headline1?.copyWith(
-                              color: StaticColors.white,
+                              color: ColorManager.white,
                               fontWeight: FontWeight.w500,
                               fontSize: 14),
                         ),
@@ -110,7 +110,7 @@ class UsersCard extends StatelessWidget {
                                     <MaterialState>{
                                   MaterialState.disabled,
                                 };
-                                return StaticColors.activeIcon;
+                                return ColorManager.activeIcon;
 
                                 //return  StaticColors.activeIcon;
                               }),
@@ -132,7 +132,7 @@ class UsersCard extends StatelessWidget {
                                     .textTheme
                                     .headline1
                                     ?.copyWith(
-                                        color: StaticColors.white,
+                                        color: ColorManager.white,
                                         fontWeight: FontWeight.w500,
                                         fontSize: 14),
                               ),
@@ -151,7 +151,7 @@ class UsersCard extends StatelessWidget {
                           child: Text(
                             itemSubMenuHome.username!,
                             style: ThemeData().textTheme.headline1?.copyWith(
-                                color: StaticColors.white,
+                                color: ColorManager.white,
                                 fontWeight: FontWeight.w500,
                                 fontSize: 14),
                           ),

@@ -76,6 +76,34 @@ class UiHelper {
       ),
     ],
   );
+  PreferredSize appBar(BuildContext context, {required String title}) {
+    return PreferredSize(
+      preferredSize: const Size.fromHeight(150),
+      child: Padding(
+        padding: const EdgeInsets.only(top: 80),
+        child: AppBar(
+          leading: IconButton(
+            onPressed: () => context.router.pop(),
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.white,
+            ),
+          ),
+          elevation: 0,
+          title: Text(
+            title,
+            style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 24,
+                ),
+          ),
+          centerTitle: false,
+          backgroundColor: Colors.transparent,
+        ),
+      ),
+    );
+  }
 
   //*Hiding keyboard
   hideKeyboard(BuildContext context) {

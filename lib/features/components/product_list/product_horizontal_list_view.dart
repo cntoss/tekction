@@ -65,11 +65,11 @@ class _ProductHorizontalLiveListViewState
         Row(
           mainAxisSize: MainAxisSize.max,
           children: [
-            SizedBox(width: 30),
+            const SizedBox(width: 30),
             Text(
               'Trending Products',
               style: ThemeData().textTheme.headline1?.copyWith(
-                  color: StaticColors.appColor,
+                  color: ColorManager.appColor,
                   fontWeight: FontWeight.w600,
                   fontSize: 20),
             ),
@@ -85,16 +85,16 @@ class _ProductHorizontalLiveListViewState
                 text: TextSpan(
                   children: [
                     TextSpan(
-                      text:'See More ',
+                      text: 'See More ',
                       style: ThemeData().textTheme.headline1?.copyWith(
-                          color: StaticColors.purple,
+                          color: ColorManager.purple,
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
                     ),
                     WidgetSpan(
                       child: SvgPicture.asset(
                         AssetsPath.seeMoreIcon,
-                        color: StaticColors.purple,
+                        color: ColorManager.purple,
                       ),
                     ),
                   ],

@@ -57,7 +57,7 @@ class ProductCard extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.only(left: 18),
         decoration: BoxDecoration(
-          color: StaticColors.white,
+          color: ColorManager.white,
           borderRadius: const BorderRadius.all(Radius.circular(8)),
           boxShadow: [
             BoxShadow(
@@ -93,7 +93,7 @@ class ProductCard extends StatelessWidget {
                 itemSubMenuHome.label ?? "",
                 maxLines: 1,
                 style: ThemeData().textTheme.headline1?.copyWith(
-                      color: StaticColors.appColor,
+                      color: ColorManager.appColor,
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
                     ),
@@ -104,7 +104,7 @@ class ProductCard extends StatelessWidget {
               child: Text(
                 '${itemSubMenuHome.price!} ${itemSubMenuHome.currency!}',
                 style: ThemeData().textTheme.headline1?.copyWith(
-                      color: StaticColors.priceGray,
+                      color: ColorManager.priceGray,
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
                     ),

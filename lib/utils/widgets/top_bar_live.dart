@@ -117,7 +117,7 @@ class TopBar extends StatelessWidget {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(15.0),
                             child: Container(
-                              color: StaticColors.appColor,
+                              color: ColorManager.appColor,
                               child: Column(children: [
                                 const SizedBox(
                                   height: 40,
@@ -142,7 +142,7 @@ class TopBar extends StatelessWidget {
                             width: 110,
                             height: 35,
                             decoration: BoxDecoration(
-                              color: StaticColors.purple,
+                              color: ColorManager.purple,
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: const Center(

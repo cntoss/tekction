@@ -16,7 +16,7 @@ class ItemLiveMenu extends StatelessWidget {
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(72)),
           gradient: LinearGradient(
-              colors: [StaticColors.activeIcon, StaticColors.gradient4])),
+              colors: [ColorManager.activeIcon, ColorManager.gradient4])),
       padding: const EdgeInsets.symmetric(horizontal: 23, vertical: 10),
       child: SvgPicture.asset(
         assetPath,

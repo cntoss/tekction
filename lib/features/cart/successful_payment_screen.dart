@@ -69,7 +69,7 @@ class _SuccessfulPaymentScreenState extends State<SuccessfulPaymentScreen> {
                           MaterialState.disabled,
                         };
                         if (states.any(interactiveStates.contains)) {
-                          return StaticColors.disableBtn;
+                          return ColorManager.disableBtn;
                         }
                         return Colors.white;
                       }),
@@ -87,7 +87,7 @@ class _SuccessfulPaymentScreenState extends State<SuccessfulPaymentScreen> {
                       child: Text(
                         'Go back',
                         style: ThemeData().textTheme.headline1?.copyWith(
-                              color: StaticColors.appColor,
+                              color: ColorManager.appColor,
                               fontSize: 20,
                               fontWeight: FontWeight.w700,
                             ),

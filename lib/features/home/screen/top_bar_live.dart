@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:preferences/preferences.dart';
 
 import '../../../utils/asset_manager.dart';
-import '../../../utils/color_manager.dart';
 import '../widget/live_info.dart';
 import '../widget/primary_button.dart';
 

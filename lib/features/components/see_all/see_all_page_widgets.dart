@@ -5,7 +5,7 @@ mixin _SeeAllPageWidgets {
       VoidCallback signupAction) {
     showModalBottomSheet<void>(
         context: context,
-        backgroundColor: StaticColors.appColor,
+        backgroundColor: ColorManager.appColor,
         builder: (BuildContext context) {
           return Column(
             mainAxisSize: MainAxisSize.min,
@@ -34,7 +34,7 @@ mixin _SeeAllPageWidgets {
                   style: ElevatedButton.styleFrom().copyWith(
                     backgroundColor: MaterialStateProperty.resolveWith<Color>(
                         (Set<MaterialState> states) {
-                      return StaticColors.activeIcon;
+                      return ColorManager.activeIcon;
                     }),
                     padding:
                         MaterialStateProperty.resolveWith<EdgeInsetsGeometry>(

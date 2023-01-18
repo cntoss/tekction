@@ -15,8 +15,8 @@ class OutlinedButtonGradient extends StatefulWidget {
     this.height,
     this.gradient = const LinearGradient(
       colors: [
-        StaticColors.gradient1,
-        StaticColors.gradient2,
+        ColorManager.gradient1,
+        ColorManager.gradient2,
       ],
       begin: Alignment.topCenter,
       end: Alignment(0, 3),

@@ -36,14 +36,14 @@ class _RecommendedCreatorsScreenState extends State<RecommendedCreatorsScreen> {
                       onPressed: () => context.router.pop(),
                       icon: const Icon(
                         Icons.arrow_back_ios,
-                        color: StaticColors.appColor,
+                        color: ColorManager.appColor,
                       ),
                     ),
                     const SizedBox(width: 16),
                     Text(
                       'Recommended Shops',
                       style: ThemeData().textTheme.headline1?.copyWith(
-                            color: StaticColors.appColor,
+                            color: ColorManager.appColor,
                             fontSize: 24,
                             fontWeight: FontWeight.w600,
                           ),
@@ -74,7 +74,7 @@ class _RecommendedCreatorsScreenState extends State<RecommendedCreatorsScreen> {
                                     .textTheme
                                     .subtitle1
                                     ?.copyWith(
-                                        color: StaticColors.appColor,
+                                        color: ColorManager.appColor,
                                         fontSize: 18,
                                         fontWeight: FontWeight.w400),
                               ),
@@ -132,7 +132,7 @@ class _RecommendedCreatorsScreenState extends State<RecommendedCreatorsScreen> {
                                                   .textTheme
                                                   .headline1
                                                   ?.copyWith(
-                                                      color: StaticColors.white,
+                                                      color: ColorManager.white,
                                                       fontWeight:
                                                           FontWeight.w500,
                                                       fontSize: 14),
@@ -150,7 +150,7 @@ class _RecommendedCreatorsScreenState extends State<RecommendedCreatorsScreen> {
                                                       <MaterialState>{
                                                     MaterialState.disabled,
                                                   };
-                                                  return StaticColors
+                                                  return ColorManager
                                                       .activeIcon;
 
                                                   //return  StaticColors.activeIcon;
@@ -177,7 +177,7 @@ class _RecommendedCreatorsScreenState extends State<RecommendedCreatorsScreen> {
                                                       .textTheme
                                                       .headline1
                                                       ?.copyWith(
-                                                          color: StaticColors
+                                                          color: ColorManager
                                                               .white,
                                                           fontWeight:
                                                               FontWeight.w500,
@@ -201,7 +201,7 @@ class _RecommendedCreatorsScreenState extends State<RecommendedCreatorsScreen> {
                                                 .textTheme
                                                 .headline1
                                                 ?.copyWith(
-                                                  color: StaticColors.white,
+                                                  color: ColorManager.white,
                                                   fontWeight: FontWeight.w500,
                                                   fontSize: 14,
                                                 ),

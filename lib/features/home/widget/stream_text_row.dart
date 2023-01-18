@@ -1,9 +1,9 @@
 import 'package:data_config/data_config.dart';
+import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:preferences/preferences.dart';
 import 'package:tekction/locator.dart';
 import 'package:tekction/utils/asset_manager.dart';
-import 'package:tekction/utils/color_manager.dart';
 
 class StreamTextRow extends StatelessWidget {
   StreamTextRow({super.key, this.onSendPressed, this.commentController});

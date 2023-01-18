@@ -50,7 +50,7 @@ class OrderProductCard extends StatelessWidget {
                 Text(
                   "${itemProduct.product!.label ?? ""} ${itemProduct.size!.name ?? ""} x${itemProduct.qte!}",
                   style: ThemeData().textTheme.headline1?.copyWith(
-                        color: StaticColors.appColor,
+                        color: ColorManager.appColor,
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
                       ),
@@ -58,7 +58,7 @@ class OrderProductCard extends StatelessWidget {
                 Text(
                   itemProduct.product!.brand ?? "",
                   style: ThemeData().textTheme.headline1?.copyWith(
-                        color: StaticColors.subGray,
+                        color: ColorManager.subGray,
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
                       ),
@@ -69,7 +69,7 @@ class OrderProductCard extends StatelessWidget {
           Text(
             '${itemProduct.product!.currency ?? ""} ${itemProduct.product!.price! * itemProduct.qte!}',
             style: ThemeData().textTheme.headline1?.copyWith(
-                  color: StaticColors.subGray,
+                  color: ColorManager.subGray,
                   fontSize: 14,
                   fontWeight: FontWeight.w500,
                 ),

@@ -50,11 +50,17 @@ class AppRoutes {
   static const String profilePath = 'Profile';
   static const String profileRouteName = 'ProfileRoute';
 
+  static const String settingsPath = 'Settings';
+  static const String settingsRouteName = 'SettingsRoute';
+
   static const String productPath = 'Product';
   static const String productRouteName = 'ProductRoute';
 
   static const String profileEditPath = 'ProfileEdit';
   static const String profileEditRouteName = 'ProfileEditRoute';
+
+  static const String changePasswordPath = 'ChangePassword';
+  static const String changePasswordRouteName = 'ChangePasswordRoute';
 
   static const String productDetailPath = 'ProductDetail';
   static const String productDetailRouteName = 'ProductDetailRoute';

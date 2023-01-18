@@ -22,7 +22,7 @@ class DropdownBorderInput extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
-        border: Border.all(color: StaticColors.borderGray, width: 1),
+        border: Border.all(color: ColorManager.borderGray, width: 1),
         borderRadius: const BorderRadius.all(
           Radius.circular(8),
         ),
@@ -36,7 +36,7 @@ class DropdownBorderInput extends StatelessWidget {
         hint: Text(
           hint ?? '',
           style: ThemeData().textTheme.headline1?.copyWith(
-                color: StaticColors.descColor,
+                color: ColorManager.descColor,
                 fontSize: 15,
                 fontWeight: FontWeight.w400,
               ),

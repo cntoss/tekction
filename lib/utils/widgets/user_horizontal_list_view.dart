@@ -73,7 +73,7 @@ class _UserHorizontalLiveListViewState
             Text(
               "Recommended Shops",
               style: ThemeData().textTheme.headline1?.copyWith(
-                  color: StaticColors.appColor,
+                  color: ColorManager.appColor,
                   fontWeight: FontWeight.w600,
                   fontSize: 20),
             ),
@@ -91,14 +91,14 @@ class _UserHorizontalLiveListViewState
                     TextSpan(
                       text: "See more  ",
                       style: ThemeData().textTheme.headline1?.copyWith(
-                          color: StaticColors.purple,
+                          color: ColorManager.purple,
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
                     ),
                     WidgetSpan(
                       child: SvgPicture.asset(
                         AssetsPath.seeMoreIcon,
-                        color: StaticColors.purple,
+                        color: ColorManager.purple,
                       ),
                     ),
                   ],

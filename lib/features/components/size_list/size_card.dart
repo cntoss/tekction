@@ -25,10 +25,10 @@ class SizeCard extends StatelessWidget {
         margin: const EdgeInsets.only(left: 18),
         decoration: BoxDecoration(
             color: sizeItem.qte == 0
-                ? StaticColors.black5
-                : (sizeItem.select! ? StaticColors.purple : StaticColors.white),
+                ? ColorManager.black5
+                : (sizeItem.select! ? ColorManager.purple : ColorManager.white),
             borderRadius: const BorderRadius.all(Radius.circular(6)),
-            border: Border.all(color: StaticColors.black5, width: 1)),
+            border: Border.all(color: ColorManager.black5, width: 1)),
         child: Center(
           child: Text(
             sizeItem.size!.name ?? "",
@@ -36,10 +36,10 @@ class SizeCard extends StatelessWidget {
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
                   color: sizeItem.qte == 0
-                      ? StaticColors.white
+                      ? ColorManager.white
                       : (sizeItem.select!
-                          ? StaticColors.white
-                          : StaticColors.appColor),
+                          ? ColorManager.white
+                          : ColorManager.appColor),
                 ),
           ),
         ),

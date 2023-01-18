@@ -15,7 +15,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
   Widget tapTwo(BuildContext context) {
     return EmptyView(
       image: AssetsPath.emptyOrder,
-      textColor: StaticColors.appColor,
+      textColor: ColorManager.appColor,
       titleText: 'No products added',
       supText: "No products added",
       width: 176,
@@ -191,7 +191,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
   Widget tapOne(BuildContext context) {
     return EmptyView(
       image: AssetsPath.emptyFollow,
-      textColor: StaticColors.appColor,
+      textColor: ColorManager.appColor,
       supText: "No live events scheduled",
       titleText: 'No live events scheduled',
       width: 176,

@@ -2,7 +2,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:preferences/preferences.dart';
 
-
 class CircleProgress extends CustomPainter {
   double currentProgress;
 
@@ -13,12 +12,12 @@ class CircleProgress extends CustomPainter {
     //this is base circle
     Paint outerCircle = Paint()
       ..strokeWidth = 2
-      ..color = StaticColors.gradient3
+      ..color = ColorManager.gradient3
       ..style = PaintingStyle.stroke;
 
     Paint completeArc = Paint()
       ..strokeWidth = 2
-      ..color = StaticColors.gradient1
+      ..color = ColorManager.gradient1
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
 

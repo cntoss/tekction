@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:dependencies/dependencies.dart';
+import 'package:preferences/preferences.dart';
 
 import '../navigation/router.gr.dart';
 
 class LogoutHelper {
-  void loggedOutAlert(context) {
+  Future loggedOutAlert(BuildContext context) {
     AlertDialog alertDialog = AlertDialog(
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(30.0))),
@@ -12,11 +13,11 @@ class LogoutHelper {
       actions: <Widget>[
         ElevatedButton(
           style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.pink),
+              backgroundColor: MaterialStateProperty.all(ColorManager.purple),
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(18.0),
-                      side: const BorderSide(color: Colors.pinkAccent)))),
+                      side: const BorderSide(color: ColorManager.purple)))),
           child: const Text(
             "Yes",
             style: TextStyle(color: Colors.white),
@@ -36,19 +37,21 @@ class LogoutHelper {
             'Cancel',
             style: TextStyle(color: Colors.pink),
           ),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () {
+            Navigator.of(context, rootNavigator: true).pop();
+          },
         ),
       ],
     );
 
-    showDialog(context: context, builder: (_) => alertDialog);
+    return showDialog(context: context, builder: (_) => alertDialog);
   }
 
-  logOuts(context) async {
+  logOuts(BuildContext context) async {
     await FirebaseAuth.instance.signOut();
-    final action = FlutterFireUIAction.ofType<SignedOutAction>(context);
-    action?.callback(context);
+    //final action = FlutterFireUIAction.ofType<SignedOutAction>(context);
+    //action?.callback(context);
     context.router.pop();
-    context.router.replace(const SplashRoute());
+    context.router.popAndPush(const SplashRoute());
   }
 }
