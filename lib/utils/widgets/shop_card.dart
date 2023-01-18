@@ -78,7 +78,7 @@ class ShopCard extends StatelessWidget {
                 Text(
                   "${itemProduct.product!.label ?? ""} ${itemProduct.size!.name ?? ""}",
                   style: ThemeData().textTheme.headline1!.copyWith(
-                      color: StaticColors.appColor,
+                      color: ColorManager.appColor,
                       fontSize: 16,
                       fontWeight: FontWeight.w600),
                 ),
@@ -86,7 +86,7 @@ class ShopCard extends StatelessWidget {
                 Text(
                   itemProduct.product!.brand ?? "",
                   style: ThemeData().textTheme.headline1!.copyWith(
-                      color: StaticColors.subGray,
+                      color: ColorManager.subGray,
                       fontSize: 14,
                       fontWeight: FontWeight.w400),
                 ),
@@ -96,7 +96,7 @@ class ShopCard extends StatelessWidget {
                 Text(
                   '${itemProduct.product!.currency} ${itemProduct.product!.price! * itemProduct.qte!}',
                   style: ThemeData().textTheme.headline1!.copyWith(
-                        color: StaticColors.appColor,
+                        color: ColorManager.appColor,
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
                       ),
@@ -127,7 +127,7 @@ class ShopCard extends StatelessWidget {
                     Text(
                       itemProduct.qte.toString(),
                       style: ThemeData().textTheme.titleMedium?.copyWith(
-                          color: StaticColors.appColor,
+                          color: ColorManager.appColor,
                           fontWeight: FontWeight.w600,
                           fontSize: 16),
                     ),
@@ -146,7 +146,7 @@ class ShopCard extends StatelessWidget {
                         width: 35,
                         child: IconButtonCircle(
                           padding: 8,
-                          bgColor: StaticColors.pink,
+                          bgColor: ColorManager.pink,
                           icon: AssetsPath.iconDelete,
                           onPressed: () => onTapDelete!(index),
                         ),

@@ -29,7 +29,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                     margin: const EdgeInsets.only(top: 8, bottom: 28),
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(1.5)),
-                      color: StaticColors.colorBg,
+                      color: ColorManager.colorBg,
                     ),
                   ),
                   Padding(
@@ -78,7 +78,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                                     .textTheme
                                     .headline1!
                                     .copyWith(
-                                        color: StaticColors.appColor,
+                                        color: ColorManager.appColor,
                                         fontSize: 16,
                                         fontWeight: FontWeight.w600),
                               ),
@@ -91,7 +91,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                                     .textTheme
                                     .headline1!
                                     .copyWith(
-                                        color: StaticColors.subGray,
+                                        color: ColorManager.subGray,
                                         fontSize: 14,
                                         fontWeight: FontWeight.w400),
                               ),
@@ -109,7 +109,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                                         .textTheme
                                         .headline1!
                                         .copyWith(
-                                            color: StaticColors.appColor,
+                                            color: ColorManager.appColor,
                                             fontSize: 18,
                                             fontWeight: FontWeight.w700),
                                   ),
@@ -130,7 +130,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                                                   const BorderRadius.all(
                                                       Radius.circular(5)),
                                               border: Border.all(
-                                                  color: StaticColors.black5,
+                                                  color: ColorManager.black5,
                                                   width: 1)),
                                           child: SvgPicture.asset(
                                             AssetsPath.iconRemove,
@@ -148,7 +148,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                                             .textTheme
                                             .titleMedium
                                             ?.copyWith(
-                                                color: StaticColors.appColor,
+                                                color: ColorManager.appColor,
                                                 fontWeight: FontWeight.w600,
                                                 fontSize: 16),
                                       ),
@@ -170,7 +170,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                                                   const BorderRadius.all(
                                                       Radius.circular(5)),
                                               border: Border.all(
-                                                  color: StaticColors.black5,
+                                                  color: ColorManager.black5,
                                                   width: 1)),
                                           child: SvgPicture.asset(
                                             AssetsPath.iconAdd,
@@ -202,7 +202,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                         ),
                         border: Border.all(
                           width: 1,
-                          color: StaticColors.borderGray,
+                          color: ColorManager.borderGray,
                         ),
                       ),
                       child: Column(
@@ -216,11 +216,11 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                               style: ThemeData().textTheme.headline1?.copyWith(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 16,
-                                  color: StaticColors.appColor),
+                                  color: ColorManager.appColor),
                             ),
                             trailing: SvgPicture.asset(
                               AssetsPath.check,
-                              color: type == 0 ? null : StaticColors.gray5,
+                              color: type == 0 ? null : ColorManager.gray5,
                             ),
                           ),
                           Visibility(
@@ -231,7 +231,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                               children: [
                                 const Divider(
                                   height: 1,
-                                  color: StaticColors.borderGray,
+                                  color: ColorManager.borderGray,
                                 ),
                                 const SizedBox(
                                   height: 12,
@@ -257,7 +257,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                                     padding: const EdgeInsets.all(8),
                                     decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
-                                        color: StaticColors.bgColor),
+                                        color: ColorManager.bgColor),
                                     child: SvgPicture.asset(AssetsPath.pin),
                                   ),
                                   title: Text(
@@ -272,14 +272,14 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                                             ?.copyWith(
                                                 fontWeight: FontWeight.w500,
                                                 fontSize: 12,
-                                                color: StaticColors.subGray)
+                                                color: ColorManager.subGray)
                                         : ThemeData()
                                             .textTheme
                                             .headline1
                                             ?.copyWith(
                                                 fontWeight: FontWeight.w600,
                                                 fontSize: 15,
-                                                color: StaticColors.appColor),
+                                                color: ColorManager.appColor),
                                   ),
                                   subtitle: (addresse != null)
                                       ? Text(
@@ -289,7 +289,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                                               .textTheme
                                               .headline1
                                               ?.copyWith(
-                                                  color: StaticColors.appColor,
+                                                  color: ColorManager.appColor,
                                                   fontSize: 15,
                                                   fontWeight: FontWeight.w400),
                                         )
@@ -299,11 +299,11 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                                     decoration: const BoxDecoration(
                                       borderRadius:
                                           BorderRadius.all(Radius.circular(6)),
-                                      color: StaticColors.nextBg,
+                                      color: ColorManager.nextBg,
                                     ),
                                     child: SvgPicture.asset(
                                       AssetsPath.iconNext,
-                                      color: StaticColors.blue4,
+                                      color: ColorManager.blue4,
                                     ),
                                   ),
                                 ),
@@ -330,7 +330,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                         ),
                         border: Border.all(
                           width: 1,
-                          color: StaticColors.borderGray,
+                          color: ColorManager.borderGray,
                         ),
                       ),
                       child: Column(
@@ -345,11 +345,11 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                               style: ThemeData().textTheme.headline1?.copyWith(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 16,
-                                  color: StaticColors.appColor),
+                                  color: ColorManager.appColor),
                             ),
                             trailing: SvgPicture.asset(
                               AssetsPath.check,
-                              color: type == 1 ? null : StaticColors.gray5,
+                              color: type == 1 ? null : ColorManager.gray5,
                             ),
                           ),
                           Visibility(
@@ -358,7 +358,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                               children: [
                                 const Divider(
                                   height: 1,
-                                  color: StaticColors.borderGray,
+                                  color: ColorManager.borderGray,
                                 ),
                                 const SizedBox(
                                   height: 12,
@@ -370,7 +370,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                                     padding: const EdgeInsets.all(8),
                                     decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
-                                        color: StaticColors.bgColor),
+                                        color: ColorManager.bgColor),
                                     child: SvgPicture.asset(AssetsPath.pin),
                                   ),
                                   title: Text(
@@ -381,7 +381,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                                         ?.copyWith(
                                             fontWeight: FontWeight.w500,
                                             fontSize: 12,
-                                            color: StaticColors.subGray),
+                                            color: ColorManager.subGray),
                                   ),
                                   subtitle: Text(
                                     productElement.address!.description!,
@@ -389,7 +389,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                                         .textTheme
                                         .headline1
                                         ?.copyWith(
-                                            color: StaticColors.appColor,
+                                            color: ColorManager.appColor,
                                             fontSize: 15,
                                             fontWeight: FontWeight.w400),
                                   ),
@@ -417,14 +417,14 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                             Text(
                               'Products price',
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.subGray,
+                                  color: ColorManager.subGray,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 14),
                             ),
                             Text(
                               "Rs. ${(productElement.price! * qte)}",
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.appColor,
+                                  color: ColorManager.appColor,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 12),
                             ),
@@ -439,14 +439,14 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                             Text(
                               'Delivery fee',
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.subGray,
+                                  color: ColorManager.subGray,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 14),
                             ),
                             Text(
                               ((type == 0) ? " Rs 100" : "Rs 0 "),
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.appColor,
+                                  color: ColorManager.appColor,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 12),
                             ),
@@ -461,14 +461,14 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                             Text(
                               'Total',
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.subGray,
+                                  color: ColorManager.subGray,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 14),
                             ),
                             Text(
                               'Rs ${productElement.price! * qte}',
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.appColor,
+                                  color: ColorManager.appColor,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 12),
                             ),
@@ -488,7 +488,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                             <MaterialState>{
                           MaterialState.disabled,
                         };
-                        return StaticColors.activeIcon;
+                        return ColorManager.activeIcon;
                       }),
                       padding:
                           MaterialStateProperty.resolveWith<EdgeInsetsGeometry>(
@@ -556,7 +556,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                     margin: const EdgeInsets.only(top: 8, bottom: 28),
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(1.5)),
-                      color: StaticColors.colorBg,
+                      color: ColorManager.colorBg,
                     ),
                   ),
                   const SizedBox(
@@ -566,7 +566,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                     child: Text(
                       "Delivery Address",
                       style: ThemeData().textTheme.headline1?.copyWith(
-                          color: StaticColors.appColor,
+                          color: ColorManager.appColor,
                           fontSize: 20,
                           fontWeight: FontWeight.w700),
                     ),
@@ -608,7 +608,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                             <MaterialState>{
                           MaterialState.disabled,
                         };
-                        return StaticColors.appColor;
+                        return ColorManager.appColor;
                       }),
                       padding:
                           MaterialStateProperty.resolveWith<EdgeInsetsGeometry>(
@@ -690,14 +690,14 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                     margin: const EdgeInsets.only(top: 8, bottom: 28),
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(1.5)),
-                      color: StaticColors.colorBg,
+                      color: ColorManager.colorBg,
                     ),
                   ),
                   Center(
                     child: Text(
                       'Payment',
                       style: ThemeData().textTheme.headline1?.copyWith(
-                          color: StaticColors.appColor,
+                          color: ColorManager.appColor,
                           fontSize: 20,
                           fontWeight: FontWeight.w700),
                     ),
@@ -713,7 +713,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                       ),
                       border: Border.all(
                         width: 1,
-                        color: StaticColors.borderGray,
+                        color: ColorManager.borderGray,
                       ),
                     ),
                     child: ListTile(
@@ -726,11 +726,11 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                         style: ThemeData().textTheme.headline1?.copyWith(
                             fontWeight: FontWeight.w600,
                             fontSize: 16,
-                            color: StaticColors.titleColor),
+                            color: ColorManager.titleColor),
                       ),
                       trailing: SvgPicture.asset(
                         AssetsPath.check,
-                        color: index == 0 ? null : StaticColors.gray5,
+                        color: index == 0 ? null : ColorManager.gray5,
                       ),
                     ),
                   ),
@@ -745,7 +745,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                       ),
                       border: Border.all(
                         width: 1,
-                        color: StaticColors.borderGray,
+                        color: ColorManager.borderGray,
                       ),
                     ),
                     child: ListTile(
@@ -761,7 +761,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                               style: ThemeData().textTheme.headline1?.copyWith(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 16,
-                                  color: StaticColors.appColor),
+                                  color: ColorManager.appColor),
                             ),
                           ),
                           const SizedBox(
@@ -773,7 +773,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                             decoration: const BoxDecoration(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(6)),
-                              color: StaticColors.nextBg,
+                              color: ColorManager.nextBg,
                             ),
                             child: Text(
                               '20.0'
@@ -784,14 +784,14 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                               style: ThemeData().textTheme.headline4?.copyWith(
                                   fontWeight: FontWeight.w700,
                                   fontSize: 16,
-                                  color: StaticColors.appColor),
+                                  color: ColorManager.appColor),
                             ),
                           ),
                         ],
                       ),
                       trailing: SvgPicture.asset(
                         AssetsPath.check,
-                        color: index == 1 ? null : StaticColors.gray5,
+                        color: index == 1 ? null : ColorManager.gray5,
                       ),
                     ),
                   ),
@@ -806,7 +806,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                       ),
                       border: Border.all(
                         width: 1,
-                        color: StaticColors.borderGray,
+                        color: ColorManager.borderGray,
                       ),
                     ),
                     child: ListTile(
@@ -819,11 +819,11 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                         style: ThemeData().textTheme.headline1?.copyWith(
                             fontWeight: FontWeight.w600,
                             fontSize: 16,
-                            color: StaticColors.appColor),
+                            color: ColorManager.appColor),
                       ),
                       trailing: SvgPicture.asset(
                         AssetsPath.check,
-                        color: index == 2 ? null : StaticColors.gray5,
+                        color: index == 2 ? null : ColorManager.gray5,
                       ),
                     ),
                   ),
@@ -843,14 +843,14 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                             Text(
                               'Products price',
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.subGray,
+                                  color: ColorManager.subGray,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 14),
                             ),
                             Text(
                               "Rs ${productElement.price! * qte}",
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.appColor,
+                                  color: ColorManager.appColor,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 12),
                             ),
@@ -865,14 +865,14 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                             Text(
                               'Delivery fees',
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.subGray,
+                                  color: ColorManager.subGray,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 14),
                             ),
                             Text(
                               ((type == 0) ? "Rs 100 " : "Rs 0 "),
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.appColor,
+                                  color: ColorManager.appColor,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 12),
                             ),
@@ -887,14 +887,14 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                             Text(
                               "Total",
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.subGray,
+                                  color: ColorManager.subGray,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 14),
                             ),
                             Text(
                               'Rs ${productElement.price! * qte}',
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.appColor,
+                                  color: ColorManager.appColor,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 12),
                             ),
@@ -914,7 +914,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                             <MaterialState>{
                           MaterialState.disabled,
                         };
-                        return StaticColors.activeIcon;
+                        return ColorManager.activeIcon;
                       }),
                       padding:
                           MaterialStateProperty.resolveWith<EdgeInsetsGeometry>(
@@ -964,7 +964,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
     showModalBottomSheet<void>(
         context: context,
         barrierColor: Colors.transparent,
-        backgroundColor: StaticColors.appColor,
+        backgroundColor: ColorManager.appColor,
         isScrollControlled: true,
         builder: (BuildContext context) {
           return SingleChildScrollView(
@@ -1020,7 +1020,7 @@ mixin _DetailsProductWidgets on _DetailsProductProps {
                           <MaterialState>{
                         MaterialState.disabled,
                       };
-                      return StaticColors.activeIcon;
+                      return ColorManager.activeIcon;
                     }),
                     padding:
                         MaterialStateProperty.resolveWith<EdgeInsetsGeometry>(

@@ -158,9 +158,9 @@ class _CartScreenState extends State<CartScreen> {
                       MaterialState.disabled,
                     };
                     if (states.any(interactiveStates.contains)) {
-                      return StaticColors.disableBtn;
+                      return ColorManager.disableBtn;
                     }
-                    return StaticColors.activeIcon;
+                    return ColorManager.activeIcon;
                   }),
                   padding:
                       MaterialStateProperty.resolveWith<EdgeInsetsGeometry>(

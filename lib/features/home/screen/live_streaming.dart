@@ -3,11 +3,11 @@ import 'package:data_config/data_config.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:agora_rtc_engine/agora_rtc_engine.dart';
+import 'package:preferences/preferences.dart';
 import 'package:tekction/features/home/widget/basket_widget.dart';
 import 'package:tekction/features/home/widget/chat_listview.dart';
 import 'package:tekction/features/home/widget/stream_text_row.dart';
 import 'package:tekction/locator.dart';
-import 'package:tekction/utils/color_manager.dart';
 
 import '../widget/live_product.dart';
 import 'top_bar_live.dart';
@@ -137,7 +137,7 @@ class _LiveStreamingState extends State<LiveStreaming> {
     return WillPopScope(
       onWillPop: () async => false,
       child: Scaffold(
-        backgroundColor: ColorManager.blue,
+        backgroundColor: ColorManager.appColor,
         body: Padding(
           padding:
               EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
@@ -291,7 +291,7 @@ class _LiveStreamingState extends State<LiveStreaming> {
               gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Colors.transparent, Color(0xff03174c)],
+            colors: [Colors.transparent, ColorManager.appColor],
           )),
         ),
       );

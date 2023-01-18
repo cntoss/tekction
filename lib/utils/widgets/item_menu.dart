@@ -36,7 +36,7 @@ class ItemMenu extends StatelessWidget {
               height: 4,
               width: 4,
               decoration: const BoxDecoration(
-                  shape: BoxShape.circle, color: StaticColors.activeIcon),
+                  shape: BoxShape.circle, color: ColorManager.activeIcon),
             ),
           ),
         ],

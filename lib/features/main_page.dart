@@ -37,7 +37,7 @@ class _MainPageState extends State<MainPage> {
     return AutoTabsScaffold(
       homeIndex: 0,
       extendBody: true,
-      routes: const [ HomeRoute(), ExploreRoute(), CartRoute(), ProfileRoute()],
+      routes: const [HomeRoute(), ExploreRoute(), CartRoute(), ProfileRoute()],
       builder: (context, child, animation) {
         final tabsRouter = AutoTabsRouter.of(context);
         bool hideToolbar =
@@ -98,7 +98,7 @@ class _MainPageState extends State<MainPage> {
                                 margin:
                                     const EdgeInsets.symmetric(vertical: 8.0),
                                 decoration: const BoxDecoration(
-                                  color: StaticColors.bgSetting,
+                                  color: ColorManager.bgSetting,
                                   borderRadius: BorderRadius.all(
                                     Radius.circular(40),
                                   ),

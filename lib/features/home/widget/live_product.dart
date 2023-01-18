@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:preferences/preferences.dart';
 import 'package:tekction/features/home/widget/basket_widget.dart';
 import 'package:tekction/features/home/widget/product_card.dart';
-import 'package:tekction/utils/color_manager.dart';
 
 class LiveProductWidget extends StatelessWidget {
   const LiveProductWidget({super.key});
@@ -11,7 +11,7 @@ class LiveProductWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(left: 15, right: 15, top: 16, bottom: 32),
       decoration: BoxDecoration(
-        color: ColorManager.blue.withOpacity(0.9),
+        color: ColorManager.appColor.withOpacity(0.9),
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(30),
           topRight: Radius.circular(30),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:preferences/preferences.dart';
 
 import 'primary_button_icon.dart';
 
@@ -48,7 +49,7 @@ class RsvpContainer extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(left: 40, right: 40, top: 16, bottom: 32),
       decoration: const BoxDecoration(
-        color: Color(0xff03174C),
+        color: ColorManager.appColor,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(30),
           topRight: Radius.circular(30),
@@ -128,10 +129,10 @@ class RsvpContainer extends StatelessWidget {
                         iconData: Icons.timer_outlined,
                         label: 'RSVPed',
                         buttonColor: Colors.white,
-                        iconColor: const Color(0xff03174C),
+                        iconColor: ColorManager.appColor,
                         textStyle: const TextStyle(
                           fontSize: 20,
-                          color: Color(0xff03174C),
+                          color: ColorManager.appColor,
                           fontWeight: FontWeight.w700,
                         ),
                       ),

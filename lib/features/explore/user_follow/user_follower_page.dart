@@ -34,7 +34,7 @@ class _UserFollowerPageState extends _UserFollowerPageProps
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(40),
                       bottomRight: Radius.circular(40)),
-                  color: StaticColors.appColor,
+                  color: ColorManager.appColor,
                 ),
                 padding: const EdgeInsets.only(
                     top: 14, left: 20, right: 20, bottom: 10),
@@ -75,7 +75,7 @@ class _UserFollowerPageState extends _UserFollowerPageProps
                               errorWidget: (_, __, ___) {
                                 return CircleAvatar(
                                   radius: 45,
-                                  backgroundColor: StaticColors.bgGray2,
+                                  backgroundColor: ColorManager.bgGray2,
                                   child: SvgPicture.asset(
                                     AssetsPath.placeholderProfile,
                                     width: 99,
@@ -122,7 +122,7 @@ class _UserFollowerPageState extends _UserFollowerPageProps
                       style: ThemeData().textTheme.headline1?.copyWith(
                           fontWeight: FontWeight.w400,
                           fontSize: 16,
-                          color: StaticColors.gradientName),
+                          color: ColorManager.gradientName),
                     ),
                     const SizedBox(
                       height: 8,
@@ -134,7 +134,7 @@ class _UserFollowerPageState extends _UserFollowerPageProps
                       style: ThemeData().textTheme.headline1?.copyWith(
                           fontWeight: FontWeight.w500,
                           fontSize: 14,
-                          color: StaticColors.white),
+                          color: ColorManager.white),
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -166,7 +166,7 @@ class _UserFollowerPageState extends _UserFollowerPageProps
                                     ?.copyWith(
                                         fontWeight: FontWeight.w400,
                                         fontSize: 16,
-                                        color: StaticColors.gradientName)),
+                                        color: ColorManager.gradientName)),
                           ),
                         ),
                         Container(
@@ -200,7 +200,7 @@ class _UserFollowerPageState extends _UserFollowerPageProps
                                     ?.copyWith(
                                         fontWeight: FontWeight.w400,
                                         fontSize: 16,
-                                        color: StaticColors.gradientName)),
+                                        color: ColorManager.gradientName)),
                           ),
                         ),
                       ],
@@ -220,7 +220,7 @@ class _UserFollowerPageState extends _UserFollowerPageProps
                             return /* state.followItem != null
                                 ? StaticColors.disableBtn
                                 : */
-                                StaticColors.activeIcon;
+                                ColorManager.activeIcon;
                           }),
                           padding: MaterialStateProperty.resolveWith<
                               EdgeInsetsGeometry>((Set<MaterialState> states) {
@@ -236,7 +236,7 @@ class _UserFollowerPageState extends _UserFollowerPageProps
                               :  */
                           "  Follow  ",
                           style: ThemeData().textTheme.headline1?.copyWith(
-                              color: StaticColors.white,
+                              color: ColorManager.white,
                               fontWeight: FontWeight.w600,
                               fontSize: 18),
                         ),

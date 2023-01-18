@@ -84,9 +84,9 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                           MaterialState.disabled,
                         };
                         if (states.any(interactiveStates.contains)) {
-                          return StaticColors.disableBtn;
+                          return ColorManager.disableBtn;
                         }
-                        return StaticColors.activeIcon;
+                        return ColorManager.activeIcon;
                       }),
                       padding:
                           MaterialStateProperty.resolveWith<EdgeInsetsGeometry>(

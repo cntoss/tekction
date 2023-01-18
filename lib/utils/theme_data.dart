@@ -4,20 +4,20 @@ import 'package:flutter/services.dart';
 import 'package:preferences/preferences.dart';
 import 'package:tekction/locator.dart';
 
-const Color primaryColor = StaticColors.appColor;
+const Color primaryColor = ColorManager.appColor;
 const Color disabledTextColor = Color(0xFF718096);
 
-const Color secondaryColor = StaticColors.appColor;
+const Color secondaryColor = ColorManager.appColor;
 const Color disabledColor = Color(0xFFCBD5E0);
 const Color textColor = Color(0xFFFFFFFF);
 const Color errorColor = Color(0xFFED7662);
-const Color backgroundColor = StaticColors.appColor;
+const Color backgroundColor = ColorManager.appColor;
 const Color secondaryBackgroundColor = Color(0xFFFFFFFF);
-const Color dividerColor = StaticColors.black5;
+const Color dividerColor = ColorManager.black5;
 // const Color inputBackgroundColor = Colors.white;
 const Color inputBackgroundColor = Color(0xFF354570);
-const Color checkboxColor = StaticColors.activeIcon;
-const Color inputBorderColor = StaticColors.gray5;
+const Color checkboxColor = ColorManager.activeIcon;
+const Color inputBorderColor = ColorManager.gray5;
 
 const Color cardColor = Color(0xFF32353c);
 const Color bottomNavColor = Color(0xFF1e1f23);
@@ -40,7 +40,7 @@ ThemeData getApplicationTheme(context) {
     cardTheme: card,
     appBarTheme: appBar,
     errorColor: errorColor,
-    dividerColor: StaticColors.black5,
+    dividerColor: ColorManager.black5,
     buttonTheme: button,
     chipTheme: chipTheme,
     inputDecorationTheme: inputDecoration,

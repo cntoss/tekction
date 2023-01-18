@@ -54,11 +54,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 padding: const EdgeInsets.all(8),
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(6)),
-                  color: StaticColors.nextBg,
+                  color: ColorManager.nextBg,
                 ),
                 child: SvgPicture.asset(
                   AssetsPath.iconNext,
-                  color: StaticColors.blue4,
+                  color: ColorManager.blue4,
                 ),
               ),
               onPressed: () {
@@ -76,7 +76,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
                 child: SvgPicture.asset(
                   AssetsPath.iconNext,
-                  color: StaticColors.blue4,
+                  color: ColorManager.blue4,
                 ),
               ),
               onPressed: () {
@@ -90,11 +90,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 padding: const EdgeInsets.all(8),
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(6)),
-                  color: StaticColors.nextBg,
+                  color: ColorManager.nextBg,
                 ),
                 child: SvgPicture.asset(
                   AssetsPath.iconNext,
-                  color: StaticColors.blue4,
+                  color: ColorManager.blue4,
                 ),
               ),
               onPressed: () {},
@@ -105,8 +105,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
               trailing: Transform.scale(
                 scale: 0.8,
                 child: CupertinoSwitch(
-                  activeColor: StaticColors.purple,
-                  thumbColor: StaticColors.profileCardColor,
+                  activeColor: ColorManager.purple,
+                  thumbColor: ColorManager.profileCardColor,
                   value: pushNotification,
                   onChanged: (value) {
                     setState(() {
@@ -126,7 +126,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   style: ElevatedButton.styleFrom().copyWith(
                     backgroundColor: MaterialStateProperty.resolveWith<Color>(
                         (Set<MaterialState> states) {
-                      return StaticColors.purple;
+                      return ColorManager.purple;
                     }),
                     padding:
                         MaterialStateProperty.resolveWith<EdgeInsetsGeometry>(

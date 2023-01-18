@@ -30,10 +30,10 @@ class StreamTextRow extends StatelessWidget {
               child: TextField(
                 controller: commentController,
                 decoration: InputDecoration(
-                  fillColor: StaticColors.appColor,
+                  fillColor: ColorManager.appColor,
                   filled: true,
                   hintText: 'Write a comment...',
-                  hintStyle: TextStyle(color: StaticColors.bgGray2),
+                  hintStyle: TextStyle(color: ColorManager.bgGray2),
                   suffixIconConstraints:
                       const BoxConstraints(minHeight: 19, minWidth: 19),
                   suffixIcon: GestureDetector(
@@ -58,7 +58,7 @@ class StreamTextRow extends StatelessWidget {
             width: 10,
           ),
           CircleAvatar(
-            backgroundColor: StaticColors.appColor,
+            backgroundColor: ColorManager.appColor,
             radius: 45 / 2,
             child: Center(
               child: SvgPicture.asset(
@@ -70,7 +70,7 @@ class StreamTextRow extends StatelessWidget {
             width: 10,
           ),
           CircleAvatar(
-            backgroundColor: StaticColors.appColor,
+            backgroundColor: ColorManager.appColor,
             radius: 45 / 2,
             child: Center(
               child: SvgPicture.asset(

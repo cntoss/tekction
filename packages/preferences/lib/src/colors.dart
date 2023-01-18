@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class StaticColors {
+class ColorManager {
   static const Color black1 = Color(0xFF25282B);
   static const Color black2 = Color(0xFF52575C);
   static const Color black3 = Color(0xFFA0A4A8);
@@ -115,7 +115,7 @@ class StaticColors {
   }
 
   //Gradient
-  static const Color gradient1 = StaticColors.activeIcon;
+  static const Color gradient1 = ColorManager.activeIcon;
   static const Color gradient2 = Color(0xFFFFBABA);
   static const Color gradient5 = Color(0xFFFFD9D9);
   static const Color gradient4 = Color(0x78FD6969);
@@ -129,4 +129,7 @@ class StaticColors {
   static const Color gradientWhite2 = Color(0xA3FFFFFF);
   static const Color live2 = Color(0x0003174c);
   static const Color dialogBg = Color(0x8A000000);
+
+  // static Color darkBlue = const Color(0xff354570);
+  static Color formTextColor = const Color(0xffA1A4B2);
 }

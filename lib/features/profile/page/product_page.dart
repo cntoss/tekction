@@ -139,138 +139,142 @@ class _ProductPageState extends State<ProductPage> {
                         _products.add(ProductModel.fromJson(element));
                       }
                     }
-                    return ListView.builder(
-                        itemCount: _products.length,
-                        shrinkWrap: true,
-                        itemBuilder: (BuildContext context, int index) {
-                          return ListTile(
-                            isThreeLine: true,
-                            leading: CachedNetworkImage(
-                              imageUrl: _products[index].imageUrl ?? rawImage,
-                              imageBuilder: (context, imageProvider) =>
-                                  Container(
-                                width: 70,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: imageProvider,
-                                    fit: BoxFit.cover,
+                    if (_products.isEmpty) {
+                      return const Center(child: Text("No product found"));
+                    } else {
+                      return ListView.builder(
+                          itemCount: _products.length,
+                          shrinkWrap: true,
+                          itemBuilder: (BuildContext context, int index) {
+                            return ListTile(
+                              isThreeLine: true,
+                              leading: CachedNetworkImage(
+                                imageUrl: _products[index].imageUrl ?? rawImage,
+                                imageBuilder: (context, imageProvider) =>
+                                    Container(
+                                  width: 70,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: imageProvider,
+                                      fit: BoxFit.cover,
+                                    ),
+                                    borderRadius: const BorderRadius.only(
+                                      topLeft: Radius.circular(8.0),
+                                      topRight: Radius.circular(8.0),
+                                    ),
                                   ),
-                                  borderRadius: const BorderRadius.only(
-                                    topLeft: Radius.circular(8.0),
-                                    topRight: Radius.circular(8.0),
+                                ),
+                                placeholder: (context, url) => Container(
+                                  width: 70,
+                                  decoration: BoxDecoration(
+                                    color: Theme.of(context).backgroundColor,
+                                    borderRadius: const BorderRadius.only(
+                                      topLeft: Radius.circular(8.0),
+                                      topRight: Radius.circular(8.0),
+                                    ),
+                                  ),
+                                ),
+                                errorWidget: (context, url, error) => Container(
+                                  width: 70,
+                                  child: const Center(child: Text('No Image')),
+                                  decoration: const BoxDecoration(
+                                    color: Colors.redAccent,
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(8.0),
+                                      topRight: Radius.circular(8.0),
+                                    ),
                                   ),
                                 ),
                               ),
-                              placeholder: (context, url) => Container(
-                                width: 70,
-                                decoration: BoxDecoration(
-                                  color: Theme.of(context).backgroundColor,
-                                  borderRadius: const BorderRadius.only(
-                                    topLeft: Radius.circular(8.0),
-                                    topRight: Radius.circular(8.0),
+                              title: _products[index].name != null
+                                  ? Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8.0),
+                                      child: Text(_products[index].name!),
+                                    )
+                                  : const Text("Unknown Name"),
+                              subtitle: _products[index].price != null
+                                  ? Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8.0, vertical: 4.0),
+                                      child: Text(
+                                          '$currency ${_products[index].price!}'),
+                                    )
+                                  : const Text('Unknown Amount'),
+                              trailing: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  InkWell(
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (_) => AddProduct(
+                                                      product: _products[index],
+                                                    )));
+                                      },
+                                      child: const Icon(Icons.edit)),
+                                  const SizedBox(
+                                    height: 8.0,
                                   ),
-                                ),
-                              ),
-                              errorWidget: (context, url, error) => Container(
-                                width: 70,
-                                child: const Center(child: Text('No Image')),
-                                decoration: const BoxDecoration(
-                                  color: Colors.redAccent,
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(8.0),
-                                    topRight: Radius.circular(8.0),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            title: _products[index].name != null
-                                ? Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 8.0),
-                                    child: Text(_products[index].name!),
-                                  )
-                                : const Text("Unknown Name"),
-                            subtitle: _products[index].price != null
-                                ? Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 8.0, vertical: 4.0),
-                                    child: Text(
-                                        '$currency ${_products[index].price!}'),
-                                  )
-                                : const Text('Unknown Amount'),
-                            trailing: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                InkWell(
-                                    onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (_) => AddProduct(
-                                                    product: _products[index],
-                                                  )));
-                                    },
-                                    child: const Icon(Icons.edit)),
-                                const SizedBox(
-                                  height: 8.0,
-                                ),
-                                InkWell(
-                                    onTap: () {
-                                      showDialog(
-                                          context: context,
-                                          builder: (_) => AlertDialog(
-                                                title: const Text('Delete'),
-                                                content: const Text(
-                                                    'Are you sure to delete this product'),
-                                                actions: [
-                                                  Row(
-                                                    children: [
-                                                      ElevatedButton(
-                                                          style: ElevatedButton
-                                                              .styleFrom(
-                                                                  primary:
-                                                                      Colors
-                                                                          .red),
-                                                          onPressed: () {
-                                                            if (_products[index]
-                                                                    .id !=
-                                                                null) {
-                                                              FirebaseHelper()
-                                                                  .removeFile(_products[
+                                  InkWell(
+                                      onTap: () {
+                                        showDialog(
+                                            context: context,
+                                            builder: (_) => AlertDialog(
+                                                  title: const Text('Delete'),
+                                                  content: const Text(
+                                                      'Are you sure to delete this product'),
+                                                  actions: [
+                                                    Row(
+                                                      children: [
+                                                        ElevatedButton(
+                                                            style: ElevatedButton
+                                                                .styleFrom(
+                                                                    primary:
+                                                                        Colors
+                                                                            .red),
+                                                            onPressed: () {
+                                                              if (_products[
                                                                           index]
-                                                                      .imageUrl);
-                                                              FirebaseHelper()
-                                                                  .deleteProduct(
-                                                                      _products[
-                                                                              index]
-                                                                          .id!);
-                                                            }
-                                                            Navigator.pop(
-                                                                context);
-                                                          },
-                                                          child: const Text(
-                                                              'Okay')),
-                                                      const Spacer(),
-                                                      ElevatedButton(
-                                                          onPressed: () {
-                                                            Navigator.pop(
-                                                                context);
-                                                          },
-                                                          child: const Text(
-                                                              'Cancel'))
-                                                    ],
-                                                  ),
-                                                ],
-                                              ));
-                                    },
-                                    child: const Icon(
-                                      Icons.delete,
-                                      color: Colors.red,
-                                    ))
-                              ],
-                            ),
-                          );
-                        });
+                                                                      .id !=
+                                                                  null) {
+                                                                FirebaseHelper()
+                                                                    .removeFile(
+                                                                        _products[index]
+                                                                            .imageUrl);
+                                                                FirebaseHelper()
+                                                                    .deleteProduct(
+                                                                        _products[index]
+                                                                            .id!);
+                                                              }
+                                                              Navigator.pop(
+                                                                  context);
+                                                            },
+                                                            child: const Text(
+                                                                'Okay')),
+                                                        const Spacer(),
+                                                        ElevatedButton(
+                                                            onPressed: () {
+                                                              Navigator.pop(
+                                                                  context);
+                                                            },
+                                                            child: const Text(
+                                                                'Cancel'))
+                                                      ],
+                                                    ),
+                                                  ],
+                                                ));
+                                      },
+                                      child: const Icon(
+                                        Icons.delete,
+                                        color: Colors.red,
+                                      ))
+                                ],
+                              ),
+                            );
+                          });
+                    }
                   }
                 } else if (snapshot.hasError) {
                   return Text(snapshot.error.toString());

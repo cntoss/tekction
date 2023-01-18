@@ -12,7 +12,7 @@ class LiveProductWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.only(left: 15, right: 15, top: 16, bottom: 32),
       decoration: const BoxDecoration(
-        color: StaticColors.appColor,
+        color: ColorManager.appColor,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(30),
           topRight: Radius.circular(30),
@@ -36,7 +36,7 @@ class LiveProductWidget extends StatelessWidget {
                     padding:
                         EdgeInsets.symmetric(horizontal: 20, vertical: 8.0),
                     decoration: BoxDecoration(
-                        color: StaticColors.darkBlue,
+                        color: ColorManager.darkBlue,
                         borderRadius: BorderRadius.circular(30)),
                     child: RichText(
                         text: TextSpan(

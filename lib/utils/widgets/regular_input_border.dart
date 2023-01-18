@@ -111,7 +111,7 @@ class RegularInputBorder extends StatelessWidget {
                         fontSize: 15,
                         fontWeight: FontWeight.w400)
                     : Theme.of(context).textTheme.subtitle1!.copyWith(
-                        color: StaticColors.appColor,
+                        color: ColorManager.appColor,
                         fontSize: 15,
                         fontWeight: FontWeight.w400)),
             keyboardType: inputType,
@@ -145,42 +145,42 @@ class RegularInputBorder extends StatelessWidget {
               enabledBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(10)),
                 borderSide: BorderSide(
-                  color: StaticColors.borderGray,
+                  color: ColorManager.borderGray,
                   width: 1,
                 ),
               ),
               disabledBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(10)),
                 borderSide: BorderSide(
-                  color: StaticColors.borderGray,
+                  color: ColorManager.borderGray,
                   width: 1,
                 ),
               ),
               focusedBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(10)),
                 borderSide: BorderSide(
-                  color: StaticColors.borderGray,
+                  color: ColorManager.borderGray,
                   width: 1,
                 ),
               ),
               border: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(10)),
                 borderSide: BorderSide(
-                  color: StaticColors.borderGray,
+                  color: ColorManager.borderGray,
                   width: 1,
                 ),
               ),
               focusedErrorBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(10)),
                 borderSide: BorderSide(
-                  color: StaticColors.errorColor,
+                  color: ColorManager.errorColor,
                   width: 1,
                 ),
               ),
               errorBorder: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(10)),
                 borderSide: BorderSide(
-                  color: StaticColors.errorColor,
+                  color: ColorManager.errorColor,
                   width: 1,
                 ),
               ),
@@ -188,7 +188,7 @@ class RegularInputBorder extends StatelessWidget {
                   ? Theme.of(context).textTheme.subtitle1!.copyWith(
                       color: textHintColor, fontWeight: FontWeight.w400)
                   : Theme.of(context).textTheme.subtitle1!.copyWith(
-                      color: StaticColors.descColor,
+                      color: ColorManager.descColor,
                       fontWeight: FontWeight.w400)),
             ),
           ),

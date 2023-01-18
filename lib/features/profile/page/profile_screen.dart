@@ -43,7 +43,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(40),
                       bottomRight: Radius.circular(40)),
-                  color: StaticColors.appColor,
+                  color: ColorManager.appColor,
                 ),
                 padding: const EdgeInsets.all(Dimens.dp40),
                 child: Column(
@@ -72,7 +72,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             errorWidget: (_, __, ___) {
                               return CircleAvatar(
                                 radius: 45,
-                                backgroundColor: StaticColors.bgGray2,
+                                backgroundColor: ColorManager.bgGray2,
                                 child: SvgPicture.asset(
                                   AssetsPath.placeholderProfile,
                                   width: 99,
@@ -95,7 +95,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   decoration: const BoxDecoration(
                                       borderRadius:
                                           BorderRadius.all(Radius.circular(12)),
-                                      color: StaticColors.bgSetting),
+                                      color: ColorManager.bgSetting),
                                   child:
                                       SvgPicture.asset(AssetsPath.iconSettings),
                                 )),
@@ -117,7 +117,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       style: ThemeData().textTheme.headline1?.copyWith(
                           fontWeight: FontWeight.w400,
                           fontSize: 16,
-                          color: StaticColors.gradientName),
+                          color: ColorManager.gradientName),
                     ),
                     const SizedBox(height: 8),
                   ],
@@ -134,14 +134,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(6)),
-                    color: StaticColors.nextBg,
+                    color: ColorManager.nextBg,
                   ),
                   child: Text(
                     "\$ 500",
                     style: ThemeData().textTheme.headline4?.copyWith(
                         fontWeight: FontWeight.w700,
                         fontSize: 16,
-                        color: StaticColors.appColor),
+                        color: ColorManager.appColor),
                   ),
                 ),
                 leadingIcon: AssetsPath.myWallet,
@@ -154,12 +154,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     padding: const EdgeInsets.all(8),
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(6)),
-                      color: StaticColors.nextBg,
+                      color: ColorManager.nextBg,
                     ),
                     child: Text(
                       '12',
                       style: ThemeData().textTheme.headline1?.copyWith(
-                          color: StaticColors.appColor,
+                          color: ColorManager.appColor,
                           fontWeight: FontWeight.w700,
                           fontSize: 16),
                     )),
@@ -173,11 +173,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   padding: const EdgeInsets.all(8),
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(6)),
-                    color: StaticColors.nextBg,
+                    color: ColorManager.nextBg,
                   ),
                   child: SvgPicture.asset(
                     AssetsPath.iconNext,
-                    color: StaticColors.blue4,
+                    color: ColorManager.blue4,
                   ),
                 ),
                 leadingIcon: AssetsPath.following,
@@ -192,11 +192,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   padding: const EdgeInsets.all(8),
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(6)),
-                    color: StaticColors.nextBg,
+                    color: ColorManager.nextBg,
                   ),
                   child: SvgPicture.asset(
                     AssetsPath.iconNext,
-                    color: StaticColors.blue4,
+                    color: ColorManager.blue4,
                   ),
                 ),
                 leadingIcon: AssetsPath.iconNotification,
@@ -209,11 +209,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   padding: const EdgeInsets.all(8),
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(6)),
-                    color: StaticColors.nextBg,
+                    color: ColorManager.nextBg,
                   ),
                   child: SvgPicture.asset(
                     AssetsPath.iconNext,
-                    color: StaticColors.blue4,
+                    color: ColorManager.blue4,
                   ),
                 ),
                 leadingIcon: AssetsPath.orderHis,
@@ -227,7 +227,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 height: 170,
                 margin: const EdgeInsets.only(bottom: 17),
                 padding: const EdgeInsets.all(8),
-                color: StaticColors.bgColor,
+                color: ColorManager.bgColor,
                 child: Row(
                   children: [
                     Expanded(
@@ -254,7 +254,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       <MaterialState>{
                                     MaterialState.disabled,
                                   };
-                                  return StaticColors.purple;
+                                  return ColorManager.purple;
                                 }),
                               ),
                               child: RichText(
@@ -324,7 +324,7 @@ class _ProfileCard extends State<ProfileCard> {
           bottom: 8),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(8)),
-        color: StaticColors.profileCardColor,
+        color: ColorManager.profileCardColor,
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.05),
@@ -343,11 +343,11 @@ class _ProfileCard extends State<ProfileCard> {
                   width: 44,
                   padding: const EdgeInsets.all(8),
                   decoration: const BoxDecoration(
-                      shape: BoxShape.circle, color: StaticColors.bgColor),
+                      shape: BoxShape.circle, color: ColorManager.bgColor),
                   child: SvgPicture.asset(
                     widget.leadingIcon ?? "",
                     color: (widget.leadingIcon == AssetsPath.iconNotification)
-                        ? StaticColors.purple
+                        ? ColorManager.purple
                         : null,
                   ),
                 )
@@ -357,7 +357,7 @@ class _ProfileCard extends State<ProfileCard> {
             style: ThemeData().textTheme.headline1?.copyWith(
                 fontWeight: FontWeight.w600,
                 fontSize: 16,
-                color: StaticColors.titleColor),
+                color: ColorManager.titleColor),
           ),
           trailing: widget.trailing),
     );

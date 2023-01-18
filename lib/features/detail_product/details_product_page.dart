@@ -57,8 +57,8 @@ class _DetailsProductState extends _DetailsProductProps
                           begin: Alignment.bottomCenter,
                           end: Alignment.topCenter,
                           colors: <Color>[
-                            StaticColors.gradientBlack1,
-                            StaticColors.gradientBlack2
+                            ColorManager.gradientBlack1,
+                            ColorManager.gradientBlack2
                           ],
                         ),
                       ),
@@ -81,7 +81,7 @@ class _DetailsProductState extends _DetailsProductProps
                           backgroundColor:
                               MaterialStateProperty.resolveWith<Color>(
                                   (Set<MaterialState> states) {
-                            return StaticColors.errorOutOfStock;
+                            return ColorManager.errorOutOfStock;
                           }),
                           padding: MaterialStateProperty.resolveWith<
                               EdgeInsetsGeometry>((Set<MaterialState> states) {
@@ -93,7 +93,7 @@ class _DetailsProductState extends _DetailsProductProps
                         child: Text(
                           'Out of stock',
                           style: ThemeData().textTheme.headline1?.copyWith(
-                              color: StaticColors.white,
+                              color: ColorManager.white,
                               fontSize: 16,
                               fontWeight: FontWeight.w500),
                         ),
@@ -108,7 +108,7 @@ class _DetailsProductState extends _DetailsProductProps
               child: Text(
                 widget.product.brand ?? "",
                 style: ThemeData().textTheme.headline1?.copyWith(
-                    color: StaticColors.appColor,
+                    color: ColorManager.appColor,
                     fontSize: 16,
                     fontWeight: FontWeight.w400),
               ),
@@ -118,7 +118,7 @@ class _DetailsProductState extends _DetailsProductProps
               child: Text(
                 widget.product.label ?? "",
                 style: ThemeData().textTheme.headline1?.copyWith(
-                    color: StaticColors.appColor,
+                    color: ColorManager.appColor,
                     fontSize: 24,
                     fontWeight: FontWeight.w700),
               ),
@@ -128,7 +128,7 @@ class _DetailsProductState extends _DetailsProductProps
               child: Text(
                 'Rs. ${widget.product.price!}',
                 style: ThemeData().textTheme.headline1?.copyWith(
-                    color: StaticColors.appColor,
+                    color: ColorManager.appColor,
                     fontSize: 22,
                     fontWeight: FontWeight.w500),
               ),
@@ -148,7 +148,7 @@ class _DetailsProductState extends _DetailsProductProps
               child: Text(
                 widget.product.description ?? "",
                 style: ThemeData().textTheme.headline1?.copyWith(
-                    color: StaticColors.subGray,
+                    color: ColorManager.subGray,
                     fontSize: 16,
                     fontWeight: FontWeight.w400),
               ),
@@ -165,7 +165,7 @@ class _DetailsProductState extends _DetailsProductProps
                         backgroundColor:
                             MaterialStateProperty.resolveWith<Color>(
                                 (Set<MaterialState> states) {
-                          return StaticColors.appColor;
+                          return ColorManager.appColor;
                         }),
                         padding: MaterialStateProperty.resolveWith<
                             EdgeInsetsGeometry>((Set<MaterialState> states) {
@@ -216,7 +216,7 @@ class _DetailsProductState extends _DetailsProductProps
                         backgroundColor:
                             MaterialStateProperty.resolveWith<Color>(
                                 (Set<MaterialState> states) {
-                          return StaticColors.activeIcon;
+                          return ColorManager.activeIcon;
                         }),
                         padding: MaterialStateProperty.resolveWith<
                             EdgeInsetsGeometry>((Set<MaterialState> states) {

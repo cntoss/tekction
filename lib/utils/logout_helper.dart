@@ -13,11 +13,11 @@ class LogoutHelper {
       actions: <Widget>[
         ElevatedButton(
           style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(StaticColors.purple),
+              backgroundColor: MaterialStateProperty.all(ColorManager.purple),
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(18.0),
-                      side: const BorderSide(color: StaticColors.purple)))),
+                      side: const BorderSide(color: ColorManager.purple)))),
           child: const Text(
             "Yes",
             style: TextStyle(color: Colors.white),

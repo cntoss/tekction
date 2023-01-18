@@ -26,13 +26,13 @@ class SearchTextInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RegularInput(
-      textHintColor: StaticColors.inactiveIcon,
+      textHintColor: ColorManager.inactiveIcon,
       hintText: hint,
       focusNode: focusNode,
       controller: controller,
       prefix: const Icon(
         Icons.search,
-        color: StaticColors.inactiveIcon,
+        color: ColorManager.inactiveIcon,
       ),
       onChange: onChanged,
       onTap: onTap,

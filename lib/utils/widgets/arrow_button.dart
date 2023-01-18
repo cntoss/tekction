@@ -27,11 +27,11 @@ class _ArrowButtonState extends State<ArrowButton> {
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(6)),
-        color: widget.color ?? StaticColors.nextBg,
+        color: widget.color ?? ColorManager.nextBg,
       ),
       child: SvgPicture.asset(
         AssetsPath.iconNext,
-        color: StaticColors.blue4,
+        color: ColorManager.blue4,
       ),
     );
   }

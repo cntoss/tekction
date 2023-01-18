@@ -32,7 +32,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
               borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(40),
                   bottomRight: Radius.circular(40)),
-              color: StaticColors.appColor,
+              color: ColorManager.appColor,
             ),
             padding: const EdgeInsets.all(40),
             child: Column(
@@ -64,7 +64,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
             child: false
                 ? EmptyView(
                     image: AssetsPath.emptyFollow,
-                    textColor: StaticColors.appColor,
+                    textColor: ColorManager.appColor,
                     supText: 'empty_order',
                     titleText: 'start_shopping_favorite_products',
                     width: 270,

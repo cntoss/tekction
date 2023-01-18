@@ -28,7 +28,7 @@ Widget showPickUp(List<CartDetailsItem> listPickUp) {
             ),
             border: Border.all(
               width: 1,
-              color: StaticColors.borderGray,
+              color: ColorManager.borderGray,
             ),
           ),
           child: Column(
@@ -39,14 +39,14 @@ Widget showPickUp(List<CartDetailsItem> listPickUp) {
                   style: ThemeData().textTheme.headline1?.copyWith(
                       fontWeight: FontWeight.w600,
                       fontSize: 16,
-                      color: StaticColors.appColor),
+                      color: ColorManager.appColor),
                 ),
               ),
               Column(
                 children: [
                   const Divider(
                     height: 1,
-                    color: StaticColors.borderGray,
+                    color: ColorManager.borderGray,
                   ),
                   const SizedBox(
                     height: 12,
@@ -57,7 +57,7 @@ Widget showPickUp(List<CartDetailsItem> listPickUp) {
                       width: 44,
                       padding: const EdgeInsets.all(8),
                       decoration: const BoxDecoration(
-                          shape: BoxShape.circle, color: StaticColors.bgColor),
+                          shape: BoxShape.circle, color: ColorManager.bgColor),
                       child: SvgPicture.asset(AssetsPath.pin),
                     ),
                     title: Text(
@@ -65,12 +65,12 @@ Widget showPickUp(List<CartDetailsItem> listPickUp) {
                       style: ThemeData().textTheme.headline1?.copyWith(
                           fontWeight: FontWeight.w500,
                           fontSize: 12,
-                          color: StaticColors.subGray),
+                          color: ColorManager.subGray),
                     ),
                     subtitle: Text(
                       listPickUp.first.product!.address!.description!,
                       style: ThemeData().textTheme.headline1?.copyWith(
-                          color: StaticColors.appColor,
+                          color: ColorManager.appColor,
                           fontSize: 15,
                           fontWeight: FontWeight.w400),
                     ),
@@ -109,7 +109,7 @@ Widget showDelivery(List<CartDetailsItem> listDelivery) {
             ),
             border: Border.all(
               width: 1,
-              color: StaticColors.borderGray,
+              color: ColorManager.borderGray,
             ),
           ),
           child: Column(
@@ -120,7 +120,7 @@ Widget showDelivery(List<CartDetailsItem> listDelivery) {
                   style: ThemeData().textTheme.headline1?.copyWith(
                       fontWeight: FontWeight.w600,
                       fontSize: 16,
-                      color: StaticColors.appColor),
+                      color: ColorManager.appColor),
                 ),
               ),
               Column(
@@ -129,7 +129,7 @@ Widget showDelivery(List<CartDetailsItem> listDelivery) {
                 children: [
                   const Divider(
                     height: 1,
-                    color: StaticColors.borderGray,
+                    color: ColorManager.borderGray,
                   ),
                   const SizedBox(
                     height: 12,
@@ -141,7 +141,7 @@ Widget showDelivery(List<CartDetailsItem> listDelivery) {
                       width: 44,
                       padding: const EdgeInsets.all(8),
                       decoration: const BoxDecoration(
-                          shape: BoxShape.circle, color: StaticColors.bgColor),
+                          shape: BoxShape.circle, color: ColorManager.bgColor),
                       child: SvgPicture.asset(AssetsPath.pin),
                     ),
                     title: Text(
@@ -150,13 +150,13 @@ Widget showDelivery(List<CartDetailsItem> listDelivery) {
                       style: ThemeData().textTheme.headline1?.copyWith(
                           fontWeight: FontWeight.w500,
                           fontSize: 12,
-                          color: StaticColors.subGray),
+                          color: ColorManager.subGray),
                     ),
                     subtitle: Text(
                       "Delivery address",
                       maxLines: 2,
                       style: ThemeData().textTheme.headline1?.copyWith(
-                          color: StaticColors.appColor,
+                          color: ColorManager.appColor,
                           fontSize: 15,
                           fontWeight: FontWeight.w400),
                     ),
@@ -164,11 +164,11 @@ Widget showDelivery(List<CartDetailsItem> listDelivery) {
                       padding: const EdgeInsets.all(8),
                       decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(6)),
-                        color: StaticColors.nextBg,
+                        color: ColorManager.nextBg,
                       ),
                       child: SvgPicture.asset(
                         AssetsPath.iconNext,
-                        color: StaticColors.blue4,
+                        color: ColorManager.blue4,
                       ),
                     ),
                   ),
@@ -206,7 +206,7 @@ Widget showBoth(bool showShipping, List<CartDetailsItem> listBoth) {
             ),
             border: Border.all(
               width: 1,
-              color: StaticColors.borderGray,
+              color: ColorManager.borderGray,
             ),
           ),
           child: Column(
@@ -218,11 +218,11 @@ Widget showBoth(bool showShipping, List<CartDetailsItem> listBoth) {
                   style: ThemeData().textTheme.headline1?.copyWith(
                       fontWeight: FontWeight.w600,
                       fontSize: 16,
-                      color: StaticColors.appColor),
+                      color: ColorManager.appColor),
                 ),
                 trailing: SvgPicture.asset(
                   AssetsPath.check,
-                  color: showShipping ? null : StaticColors.gray5,
+                  color: showShipping ? null : ColorManager.gray5,
                 ),
               ),
               Visibility(
@@ -233,7 +233,7 @@ Widget showBoth(bool showShipping, List<CartDetailsItem> listBoth) {
                   children: [
                     const Divider(
                       height: 1,
-                      color: StaticColors.borderGray,
+                      color: ColorManager.borderGray,
                     ),
                     const SizedBox(
                       height: 12,
@@ -246,7 +246,7 @@ Widget showBoth(bool showShipping, List<CartDetailsItem> listBoth) {
                         padding: const EdgeInsets.all(8),
                         decoration: const BoxDecoration(
                             shape: BoxShape.circle,
-                            color: StaticColors.bgColor),
+                            color: ColorManager.bgColor),
                         child: SvgPicture.asset(AssetsPath.pin),
                       ),
                       title: Text(
@@ -255,13 +255,13 @@ Widget showBoth(bool showShipping, List<CartDetailsItem> listBoth) {
                         style: ThemeData().textTheme.headline1?.copyWith(
                             fontWeight: FontWeight.w600,
                             fontSize: 15,
-                            color: StaticColors.appColor),
+                            color: ColorManager.appColor),
                       ),
                       subtitle: Text(
                         'description',
                         maxLines: 2,
                         style: ThemeData().textTheme.headline1?.copyWith(
-                            color: StaticColors.appColor,
+                            color: ColorManager.appColor,
                             fontSize: 15,
                             fontWeight: FontWeight.w400),
                       ),
@@ -269,11 +269,11 @@ Widget showBoth(bool showShipping, List<CartDetailsItem> listBoth) {
                         padding: const EdgeInsets.all(8),
                         decoration: const BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(6)),
-                          color: StaticColors.nextBg,
+                          color: ColorManager.nextBg,
                         ),
                         child: SvgPicture.asset(
                           AssetsPath.iconNext,
-                          color: StaticColors.blue4,
+                          color: ColorManager.blue4,
                         ),
                       ),
                     ),
@@ -292,7 +292,7 @@ Widget showBoth(bool showShipping, List<CartDetailsItem> listBoth) {
             ),
             border: Border.all(
               width: 1,
-              color: StaticColors.borderGray,
+              color: ColorManager.borderGray,
             ),
           ),
           child: Column(
@@ -304,10 +304,10 @@ Widget showBoth(bool showShipping, List<CartDetailsItem> listBoth) {
                   style: ThemeData().textTheme.headline1?.copyWith(
                       fontWeight: FontWeight.w600,
                       fontSize: 16,
-                      color: StaticColors.appColor),
+                      color: ColorManager.appColor),
                 ),
                 trailing: SvgPicture.asset(AssetsPath.check,
-                    color: !showShipping ? null : StaticColors.gray5),
+                    color: !showShipping ? null : ColorManager.gray5),
               ),
               Visibility(
                 visible: !showShipping,
@@ -315,7 +315,7 @@ Widget showBoth(bool showShipping, List<CartDetailsItem> listBoth) {
                   children: [
                     const Divider(
                       height: 1,
-                      color: StaticColors.borderGray,
+                      color: ColorManager.borderGray,
                     ),
                     const SizedBox(height: 12),
                     ListTile(
@@ -325,7 +325,7 @@ Widget showBoth(bool showShipping, List<CartDetailsItem> listBoth) {
                         padding: const EdgeInsets.all(8),
                         decoration: const BoxDecoration(
                             shape: BoxShape.circle,
-                            color: StaticColors.bgColor),
+                            color: ColorManager.bgColor),
                         child: SvgPicture.asset(AssetsPath.pin),
                       ),
                       title: Text(
@@ -333,12 +333,12 @@ Widget showBoth(bool showShipping, List<CartDetailsItem> listBoth) {
                         style: ThemeData().textTheme.headline1?.copyWith(
                             fontWeight: FontWeight.w500,
                             fontSize: 12,
-                            color: StaticColors.subGray),
+                            color: ColorManager.subGray),
                       ),
                       subtitle: Text(
                         listBoth.first.product!.address!.description!,
                         style: ThemeData().textTheme.headline1?.copyWith(
-                            color: StaticColors.appColor,
+                            color: ColorManager.appColor,
                             fontSize: 15,
                             fontWeight: FontWeight.w400),
                       ),
