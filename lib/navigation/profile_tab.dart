@@ -1,5 +1,6 @@
 import 'package:data_config/data_config.dart';
 import 'package:dependencies/dependencies.dart' hide ProfileScreen;
+import 'package:tekction/features/order/order_screen.dart';
 import 'package:tekction/features/profile/profile.dart';
 
 import 'arguments_route.dart';
@@ -19,6 +20,12 @@ const profileTab = AutoRoute(
     AutoRoute(
       path: AppRoutes.productPath,
       page: ProductPage,
+      meta: {ArgumentsRoute.hideToolbar: true},
+    ),
+    AutoRoute(
+      path: AppRoutes.orderHistoryPath,
+      page: OrderHistoryScreen,
+      name: AppRoutes.orderHistoryRouteName,
       meta: {ArgumentsRoute.hideToolbar: true},
     ),
     AutoRoute(

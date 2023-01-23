@@ -218,8 +218,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 leadingIcon: AssetsPath.orderHis,
                 onPressed: () {
-                  //TODO:REMOVE ASMITCODE
-                  //  context.router.pushNamed(AppRoutes.profileOrderPath);
+                  context.router.pushNamed(AppRoutes.orderHistoryPath);
                 },
               ),
               const SizedBox(height: 8),

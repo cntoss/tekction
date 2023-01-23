@@ -56,6 +56,9 @@ class AppRoutes {
   static const String productPath = 'Product';
   static const String productRouteName = 'ProductRoute';
 
+  static const String orderHistoryPath = 'OrderHistory';
+  static const String orderHistoryRouteName = 'OrderHistoryRoute';
+
   static const String profileEditPath = 'ProfileEdit';
   static const String profileEditRouteName = 'ProfileEditRoute';
 

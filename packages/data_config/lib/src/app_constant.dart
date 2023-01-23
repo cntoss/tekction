@@ -9,7 +9,7 @@ const phoneNumberKey = "phoneNumber";
 const horizontalPadding = 30.0;
 const appID = '7be8c92885c4450fad47f796f95be65d';
 const token =
-    '007eJxTYKi+qv/+sk255aWzy0wCfusp8P/lN16fXLixcdr0j399Q/YpMJgnpVokWxpZWJgmm5iYGqQlppiYp5lbmqVZmialmpmmSMzbndwQyMiwOfI7AyMUgvicDMUlRamJuZl56QwMAGIjIzQ=';
+    '007eJxTYNjg8f7HzQ08JXN2MbGYL2/8NJWLi1F6w3sDsbu3og1eFyooMJgnpVokWxpZWJgmm5iYGqQlppiYp5lbmqVZmialmpmmHDl9IrkhkJHh61IeJkYGCATxORmKS4pSE3Mz89IZGAD1gSIA';
 const channel = 'streaming';
 const broadcasterKey = 'isBroadcaster';
 const currency = 'Rs';
