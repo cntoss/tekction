@@ -102,7 +102,7 @@ class _SeeAllPageState extends _SeeAllPageProps with _SeeAllPageWidgets {
                                   supText: S.current.no_results_were_found,
                                   width: 265.85,
                                   height: 216,
-                                  textColor: StaticColors.appColor,
+                                  textColor: ColorManager.appColor,
                                   onRefresh: () {
                                     context
                                         .read<SeeAllBloc>()

@@ -33,7 +33,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
     return (emptyList(state.productList))
         ? EmptyView(
             image: AssetsPath.emptyOrder,
-            textColor: StaticColors.appColor,
+            textColor: ColorManager.appColor,
             titleText: S.current.products_title,
             supText: S.current.products_desc,
             width: 176,
@@ -209,7 +209,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
     return (emptyList(state.liveList))
         ? EmptyView(
             image: AssetsPath.emptyFollow,
-            textColor: StaticColors.appColor,
+            textColor: ColorManager.appColor,
             supText: S.current.empty_event_desc,
             titleText: S.current.empty_event_title,
             width: 176,
@@ -304,7 +304,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                     margin: EdgeInsets.only(top: 8, bottom: 28),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(1.5)),
-                      color: StaticColors.colorBg,
+                      color: ColorManager.colorBg,
                     ),
                   ),
                   Padding(
@@ -354,7 +354,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                                     .textTheme
                                     .headline1!
                                     .copyWith(
-                                        color: StaticColors.appColor,
+                                        color: ColorManager.appColor,
                                         fontSize: 16,
                                         fontWeight: FontWeight.w600),
                               ),
@@ -367,7 +367,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                                     .textTheme
                                     .headline1!
                                     .copyWith(
-                                        color: StaticColors.subGray,
+                                        color: ColorManager.subGray,
                                         fontSize: 14,
                                         fontWeight: FontWeight.w400),
                               ),
@@ -386,7 +386,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                                         .textTheme
                                         .headline1!
                                         .copyWith(
-                                            color: StaticColors.appColor,
+                                            color: ColorManager.appColor,
                                             fontSize: 18,
                                             fontWeight: FontWeight.w700),
                                   ),
@@ -406,7 +406,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                                               borderRadius: BorderRadius.all(
                                                   Radius.circular(5)),
                                               border: Border.all(
-                                                  color: StaticColors.black5,
+                                                  color: ColorManager.black5,
                                                   width: 1)),
                                           child: SvgPicture.asset(
                                             AssetsPath.iconRemove,
@@ -424,7 +424,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                                             .textTheme
                                             .titleMedium
                                             ?.copyWith(
-                                                color: StaticColors.appColor,
+                                                color: ColorManager.appColor,
                                                 fontWeight: FontWeight.w600,
                                                 fontSize: 16),
                                       ),
@@ -445,7 +445,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                                               borderRadius: BorderRadius.all(
                                                   Radius.circular(5)),
                                               border: Border.all(
-                                                  color: StaticColors.black5,
+                                                  color: ColorManager.black5,
                                                   width: 1)),
                                           child: SvgPicture.asset(
                                             AssetsPath.iconAdd,
@@ -477,7 +477,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                         ),
                         border: Border.all(
                           width: 1,
-                          color: StaticColors.borderGray,
+                          color: ColorManager.borderGray,
                         ),
                       ),
                       child: Column(
@@ -491,11 +491,11 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                               style: ThemeData().textTheme.headline1?.copyWith(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 16,
-                                  color: StaticColors.appColor),
+                                  color: ColorManager.appColor),
                             ),
                             trailing: SvgPicture.asset(
                               AssetsPath.check,
-                              color: type == 0 ? null : StaticColors.gray5,
+                              color: type == 0 ? null : ColorManager.gray5,
                             ),
                           ),
                           Visibility(
@@ -506,7 +506,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                               children: [
                                 Divider(
                                   height: 1,
-                                  color: StaticColors.borderGray,
+                                  color: ColorManager.borderGray,
                                 ),
                                 SizedBox(
                                   height: 12,
@@ -536,7 +536,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                                     padding: const EdgeInsets.all(8),
                                     decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
-                                        color: StaticColors.bgColor),
+                                        color: ColorManager.bgColor),
                                     child: SvgPicture.asset(AssetsPath.pin),
                                   ),
                                   title: Text(
@@ -548,7 +548,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                                         ?.copyWith(
                                             fontWeight: FontWeight.w500,
                                             fontSize: 12,
-                                            color: StaticColors.subGray),
+                                            color: ColorManager.subGray),
                                   ),
                                   subtitle: Text(
                                     (addresse != null)
@@ -559,7 +559,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                                         .textTheme
                                         .headline1
                                         ?.copyWith(
-                                            color: StaticColors.appColor,
+                                            color: ColorManager.appColor,
                                             fontSize: 15,
                                             fontWeight: FontWeight.w400),
                                   ),
@@ -568,11 +568,11 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(6)),
-                                      color: StaticColors.nextBg,
+                                      color: ColorManager.nextBg,
                                     ),
                                     child: SvgPicture.asset(
                                       AssetsPath.iconNext,
-                                      color: StaticColors.blue4,
+                                      color: ColorManager.blue4,
                                     ),
                                   ),
                                 ),
@@ -599,7 +599,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                         ),
                         border: Border.all(
                           width: 1,
-                          color: StaticColors.borderGray,
+                          color: ColorManager.borderGray,
                         ),
                       ),
                       child: Column(
@@ -617,11 +617,11 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                               style: ThemeData().textTheme.headline1?.copyWith(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 16,
-                                  color: StaticColors.appColor),
+                                  color: ColorManager.appColor),
                             ),
                             trailing: SvgPicture.asset(
                               AssetsPath.check,
-                              color: type == 1 ? null : StaticColors.gray5,
+                              color: type == 1 ? null : ColorManager.gray5,
                             ),
                           ),
                           Visibility(
@@ -630,7 +630,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                               children: [
                                 Divider(
                                   height: 1,
-                                  color: StaticColors.borderGray,
+                                  color: ColorManager.borderGray,
                                 ),
                                 SizedBox(
                                   height: 12,
@@ -642,7 +642,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                                     padding: const EdgeInsets.all(8),
                                     decoration: const BoxDecoration(
                                         shape: BoxShape.circle,
-                                        color: StaticColors.bgColor),
+                                        color: ColorManager.bgColor),
                                     child: SvgPicture.asset(AssetsPath.pin),
                                   ),
                                   title: Text(
@@ -653,7 +653,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                                         ?.copyWith(
                                             fontWeight: FontWeight.w500,
                                             fontSize: 12,
-                                            color: StaticColors.subGray),
+                                            color: ColorManager.subGray),
                                   ),
                                   subtitle: Text(
                                     productElement.address!.description!,
@@ -661,7 +661,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                                         .textTheme
                                         .headline1
                                         ?.copyWith(
-                                            color: StaticColors.appColor,
+                                            color: ColorManager.appColor,
                                             fontSize: 15,
                                             fontWeight: FontWeight.w400),
                                   ),
@@ -689,7 +689,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                             Text(
                               S.current.products_price,
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.subGray,
+                                  color: ColorManager.subGray,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 14),
                             ),
@@ -701,7 +701,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                                   " " +
                                   productElement.currency!,
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.appColor,
+                                  color: ColorManager.appColor,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 12),
                             ),
@@ -716,7 +716,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                             Text(
                               S.current.delivery_fees,
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.subGray,
+                                  color: ColorManager.subGray,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 14),
                             ),
@@ -726,7 +726,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                                       : "0 ") +
                                   (ConnectedRate().rateItem.base!),
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.appColor,
+                                  color: ColorManager.appColor,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 12),
                             ),
@@ -741,7 +741,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                             Text(
                               S.current.total,
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.subGray,
+                                  color: ColorManager.subGray,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 14),
                             ),
@@ -751,7 +751,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                                       ((type == 0) ? deliveryFees() : 0)),
                                   user.currency ?? ""),
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.appColor,
+                                  color: ColorManager.appColor,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 12),
                             ),
@@ -771,7 +771,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                             <MaterialState>{
                           MaterialState.disabled,
                         };
-                        return StaticColors.activeIcon;
+                        return ColorManager.activeIcon;
                       }),
                       padding:
                           MaterialStateProperty.resolveWith<EdgeInsetsGeometry>(
@@ -840,7 +840,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                 margin: EdgeInsets.only(top: 8, bottom: 28),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(1.5)),
-                  color: StaticColors.colorBg,
+                  color: ColorManager.colorBg,
                 ),
               ),
               Row(
@@ -887,7 +887,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                         Text(
                           productElement.brand ?? "",
                           style: ThemeData().textTheme.headline1!.copyWith(
-                              color: StaticColors.subGray,
+                              color: ColorManager.subGray,
                               fontSize: 14,
                               fontWeight: FontWeight.w400),
                         ),
@@ -897,7 +897,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                         Text(
                           productElement.label ?? "",
                           style: ThemeData().textTheme.headline1!.copyWith(
-                              color: StaticColors.appColor,
+                              color: ColorManager.appColor,
                               fontSize: 16,
                               fontWeight: FontWeight.w600),
                         ),
@@ -907,7 +907,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                         Text(
                           priceProd(productElement.price!, user.currency ?? ""),
                           style: ThemeData().textTheme.headline1!.copyWith(
-                              color: StaticColors.appColor,
+                              color: ColorManager.appColor,
                               fontSize: 18,
                               fontWeight: FontWeight.w500),
                         ),
@@ -937,7 +937,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                   style: ThemeData().textTheme.subtitle1?.copyWith(
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
-                      color: StaticColors.subGray),
+                      color: ColorManager.subGray),
                 ),
               ),
               SizedBox(
@@ -951,7 +951,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                         backgroundColor:
                             MaterialStateProperty.resolveWith<Color>(
                                 (Set<MaterialState> states) {
-                          return StaticColors.appColor;
+                          return ColorManager.appColor;
                         }),
                         padding: MaterialStateProperty.resolveWith<
                             EdgeInsetsGeometry>((Set<MaterialState> states) {
@@ -979,7 +979,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                         backgroundColor:
                             MaterialStateProperty.resolveWith<Color>(
                                 (Set<MaterialState> states) {
-                          return StaticColors.activeIcon;
+                          return ColorManager.activeIcon;
                         }),
                         padding: MaterialStateProperty.resolveWith<
                             EdgeInsetsGeometry>((Set<MaterialState> states) {
@@ -1037,7 +1037,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                     margin: EdgeInsets.only(top: 8, bottom: 28),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(1.5)),
-                      color: StaticColors.colorBg,
+                      color: ColorManager.colorBg,
                     ),
                   ),
                   SizedBox(
@@ -1047,7 +1047,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                     child: Text(
                       S.current.delivery + " " + S.current.addresses,
                       style: ThemeData().textTheme.headline1?.copyWith(
-                          color: StaticColors.appColor,
+                          color: ColorManager.appColor,
                           fontSize: 20,
                           fontWeight: FontWeight.w700),
                     ),
@@ -1091,7 +1091,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                             <MaterialState>{
                           MaterialState.disabled,
                         };
-                        return StaticColors.appColor;
+                        return ColorManager.appColor;
                       }),
                       padding:
                           MaterialStateProperty.resolveWith<EdgeInsetsGeometry>(
@@ -1176,14 +1176,14 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                     margin: EdgeInsets.only(top: 8, bottom: 28),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(1.5)),
-                      color: StaticColors.colorBg,
+                      color: ColorManager.colorBg,
                     ),
                   ),
                   Center(
                     child: Text(
                       S.current.payment,
                       style: ThemeData().textTheme.headline1?.copyWith(
-                          color: StaticColors.appColor,
+                          color: ColorManager.appColor,
                           fontSize: 20,
                           fontWeight: FontWeight.w700),
                     ),
@@ -1199,7 +1199,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                       ),
                       border: Border.all(
                         width: 1,
-                        color: StaticColors.borderGray,
+                        color: ColorManager.borderGray,
                       ),
                     ),
                     child: ListTile(
@@ -1212,11 +1212,11 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                         style: ThemeData().textTheme.headline1?.copyWith(
                             fontWeight: FontWeight.w600,
                             fontSize: 16,
-                            color: StaticColors.titleColor),
+                            color: ColorManager.titleColor),
                       ),
                       trailing: SvgPicture.asset(
                         AssetsPath.check,
-                        color: index == 0 ? null : StaticColors.gray5,
+                        color: index == 0 ? null : ColorManager.gray5,
                       ),
                     ),
                   ),
@@ -1231,7 +1231,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                       ),
                       border: Border.all(
                         width: 1,
-                        color: StaticColors.borderGray,
+                        color: ColorManager.borderGray,
                       ),
                     ),
                     child: ListTile(
@@ -1246,7 +1246,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                             style: ThemeData().textTheme.headline1?.copyWith(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 16,
-                                color: StaticColors.appColor),
+                                color: ColorManager.appColor),
                           ),
                           SizedBox(
                             width: 24,
@@ -1257,7 +1257,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                             decoration: BoxDecoration(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(6)),
-                              color: StaticColors.nextBg,
+                              color: ColorManager.nextBg,
                             ),
                             child: Text(
                               doubleToStringCurrency(userEntity.wallet!) +
@@ -1266,14 +1266,14 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                               style: ThemeData().textTheme.headline4?.copyWith(
                                   fontWeight: FontWeight.w700,
                                   fontSize: 16,
-                                  color: StaticColors.appColor),
+                                  color: ColorManager.appColor),
                             ),
                           ),
                         ],
                       ),
                       trailing: SvgPicture.asset(
                         AssetsPath.check,
-                        color: index == 1 ? null : StaticColors.gray5,
+                        color: index == 1 ? null : ColorManager.gray5,
                       ),
                     ),
                   ),
@@ -1288,7 +1288,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                       ),
                       border: Border.all(
                         width: 1,
-                        color: StaticColors.borderGray,
+                        color: ColorManager.borderGray,
                       ),
                     ),
                     child: ListTile(
@@ -1301,11 +1301,11 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                         style: ThemeData().textTheme.headline1?.copyWith(
                             fontWeight: FontWeight.w600,
                             fontSize: 16,
-                            color: StaticColors.appColor),
+                            color: ColorManager.appColor),
                       ),
                       trailing: SvgPicture.asset(
                         AssetsPath.check,
-                        color: index == 2 ? null : StaticColors.gray5,
+                        color: index == 2 ? null : ColorManager.gray5,
                       ),
                     ),
                   ),
@@ -1325,7 +1325,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                             Text(
                               S.current.products_price,
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.subGray,
+                                  color: ColorManager.subGray,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 14),
                             ),
@@ -1337,7 +1337,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                                   " " +
                                   productElement.currency!,
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.appColor,
+                                  color: ColorManager.appColor,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 12),
                             ),
@@ -1352,7 +1352,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                             Text(
                               S.current.delivery_fees,
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.subGray,
+                                  color: ColorManager.subGray,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 14),
                             ),
@@ -1362,7 +1362,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                                       : "0 ") +
                                   (ConnectedRate().rateItem.base!),
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.appColor,
+                                  color: ColorManager.appColor,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 12),
                             ),
@@ -1377,7 +1377,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                             Text(
                               S.current.total,
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.subGray,
+                                  color: ColorManager.subGray,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 14),
                             ),
@@ -1387,7 +1387,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                                       ((type == 0) ? deliveryFees() : 0)),
                                   user.currency ?? ""),
                               style: ThemeData().textTheme.subtitle1?.copyWith(
-                                  color: StaticColors.appColor,
+                                  color: ColorManager.appColor,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 12),
                             ),
@@ -1407,7 +1407,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                             <MaterialState>{
                           MaterialState.disabled,
                         };
-                        return StaticColors.activeIcon;
+                        return ColorManager.activeIcon;
                       }),
                       padding:
                           MaterialStateProperty.resolveWith<EdgeInsetsGeometry>(
@@ -1457,7 +1457,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
     showModalBottomSheet<void>(
         context: context,
         barrierColor: Colors.transparent,
-        backgroundColor: StaticColors.appColor,
+        backgroundColor: ColorManager.appColor,
         isScrollControlled: true,
         builder: (BuildContext context) {
           return SingleChildScrollView(
@@ -1513,7 +1513,7 @@ mixin _UserFollowerPageWidgets on _UserFollowerPageProps {
                           <MaterialState>{
                         MaterialState.disabled,
                       };
-                      return StaticColors.activeIcon;
+                      return ColorManager.activeIcon;
                     }),
                     padding:
                         MaterialStateProperty.resolveWith<EdgeInsetsGeometry>(

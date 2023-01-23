@@ -2,7 +2,7 @@ part of 'see_all_page.dart';
 
 abstract class _SeeAllPageProps extends State<SeeAllPage> {
   final ScrollController _searchListScrollController = ScrollController();
-  late final TextEditingController _searchTextController = TextEditingController();
+  // late final TextEditingController _searchTextController = TextEditingController();
   /* FirebaseDynamicLinks dynamicLinks = FirebaseDynamicLinks.instance;
 
   @override

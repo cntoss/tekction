@@ -2,9 +2,11 @@ import 'package:dependencies/dependencies.dart';
 import 'package:flutter/material.dart';
 import 'package:preferences/preferences.dart';
 import 'package:tekction/data/model/mode.dart';
+import 'package:tekction/navigation/router.gr.dart';
+import 'package:tekction/utils/widgets/arrow_button.dart';
 
-import '../../locator.dart';
-import '../../utils/ui_helper.dart';
+import '../../../locator.dart';
+import '../../../utils/ui_helper.dart';
 
 class OrderHistoryScreen extends StatefulWidget {
   const OrderHistoryScreen({super.key});
@@ -16,7 +18,7 @@ class OrderHistoryScreen extends StatefulWidget {
 class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
   OrderDetails orders = OrderDetails(
     id: '01',
-    status: 1,
+    status: 4,
     payment: 123,
     collect: 1,
     priceProd: 1234,
@@ -182,11 +184,12 @@ class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
               topRight: Radius.circular(30),
             )),
         child: ListView(
-          children: List.generate(
-            5,
-            (index) => Container(
+          children: List.generate(5, (index) {
+            orders.status = index % 5 + 1;
+            return Container(
               padding: const EdgeInsets.all(16.0),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
@@ -239,23 +242,55 @@ class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
                             fontWeight: FontWeight.w600),
                       ),
                       const SizedBox(height: 8),
-                      Text(
-                        index % 2 == 0
-                            ? "Status:  On delivery"
-                            : "Status:  Confirming",
-                        style: ThemeData().textTheme.headline1!.copyWith(
-                            color: Colors.blueGrey,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600),
-                      ),
+                      orderType(orders.status)
                     ],
-                  )
+                  ),
+                  InkWell(
+                      onTap: () {
+                        context.router
+                            .push(OrderDetailsRoute(orderHistory: orders));
+                      },
+                      child: const ArrowButton()),
                 ],
               ),
-            ),
-          ),
+            );
+          }),
         ),
       ),
+    );
+  }
+
+  Widget orderType(int? status) {
+    Color? color;
+    String? type;
+    switch (status) {
+      case 1:
+        color = ColorManager.appColor;
+        type = "• Processing";
+        break;
+      case 2:
+        color = ColorManager.purple;
+        type = "• Confirmed";
+        break;
+      case 3:
+        color = ColorManager.orange;
+        type = "• Shipped";
+        break;
+      case 4:
+        color = ColorManager.green;
+        type = "• Delivered";
+        break;
+      case 5:
+        color = ColorManager.gray;
+        type = "• Cancelled";
+        break;
+    }
+    return Text(
+      type ?? '',
+      style: ThemeData()
+          .textTheme
+          .headline1!
+          .copyWith(color: color, fontSize: 16, fontWeight: FontWeight.w600),
     );
   }
 }

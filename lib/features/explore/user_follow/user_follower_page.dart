@@ -218,7 +218,7 @@ class _UserFollowerPageState extends _UserFollowerPageProps
                               MaterialState.disabled,
                             };
                             return /* state.followItem != null
-                                ? StaticColors.disableBtn
+                                ? ColorManager.disableBtn
                                 : */
                                 ColorManager.activeIcon;
                           }),

@@ -55,7 +55,7 @@ class EmptyView extends StatelessWidget {
     //                         S.current.empty_no_internet,
     //                         textAlign: TextAlign.center,
     //                         style: ThemeData().textTheme.subtitle1?.copyWith(
-    //                             color: textColor ?? StaticColors.white,
+    //                             color: textColor ?? ColorManager.white,
     //                             fontSize: 21,
     //                             fontWeight: FontWeight.w500),
     //                       ),
