@@ -251,7 +251,7 @@ mixin _OrderDetailsPageWidgets on _OrderDetailsPageProps {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        'Issue Complaint',
+                        'Issue Complaint & feedback',
                         style: ThemeData().textTheme.headline1?.copyWith(
                               color: Colors.white,
                               fontSize: 16,

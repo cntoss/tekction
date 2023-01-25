@@ -46,7 +46,7 @@ class _IssueComplaintPageState extends _IssueComplaintPageProps
           child: AppBar(
             elevation: 0,
             leading: const AutoBackCustom(),
-            title: Text('Issue Complaint',
+            title: Text('Issue Complaint & Feedback',
                 style: Theme.of(context).textTheme.subtitle1!.copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.w600,
@@ -122,7 +122,7 @@ class _IssueComplaintPageState extends _IssueComplaintPageProps
               Padding(
                 padding: const EdgeInsets.only(left: 38, top: 35),
                 child: Text(
-                  'Message',
+                  'Complaint',
                   style: ThemeData().textTheme.headline1?.copyWith(
                       fontWeight: FontWeight.w600,
                       fontSize: 18,
@@ -133,7 +133,31 @@ class _IssueComplaintPageState extends _IssueComplaintPageProps
                 padding: const EdgeInsets.only(left: 37, top: 11, right: 38),
                 child: RegularInputBorder(
                   contentPadding: true,
-                  hintText: 'Type in your message',
+                  hintText: 'Type in your complaint',
+                  maxLine: 8,
+                  minLine: 8,
+                  controller: _messageController,
+                  inputType: TextInputType.text,
+                  /*  errorText:
+                      state.message.invalid ? S.current.required_input : null, */
+                  focusNode: focusMessage,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 38, top: 35),
+                child: Text(
+                  'Feedback',
+                  style: ThemeData().textTheme.headline1?.copyWith(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 18,
+                      color: ColorManager.titleColor),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 37, top: 11, right: 38),
+                child: RegularInputBorder(
+                  contentPadding: true,
+                  hintText: 'Type in your feedback',
                   maxLine: 8,
                   minLine: 8,
                   controller: _messageController,
