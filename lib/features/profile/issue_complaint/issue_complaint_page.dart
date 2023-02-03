@@ -23,10 +23,10 @@ class _IssueComplaintPageState extends _IssueComplaintPageProps
     with _IssueComplaintPageWidgets {
   ComplaintType? _value;
   final List<ComplaintType> _complaint = [
-    ComplaintType(id: '123', name: 'Frud', status: 1, createdAt: "date1"),
-    ComplaintType(id: '123', name: 'Name1', status: 2, createdAt: "date1"),
-    ComplaintType(id: '123', name: 'Name2', status: 3, createdAt: "date1"),
-    ComplaintType(id: '123', name: 'name3', status: 4, createdAt: "date1")
+    ComplaintType(id: '123', name: 'Name1', status: 1, createdAt: "date1"),
+    ComplaintType(id: '123', name: 'Name2', status: 2, createdAt: "date1"),
+    ComplaintType(id: '123', name: 'Name3', status: 3, createdAt: "date1"),
+    ComplaintType(id: '123', name: 'name4', status: 4, createdAt: "date1")
   ];
   @override
   void initState() {
@@ -62,26 +62,41 @@ class _IssueComplaintPageState extends _IssueComplaintPageProps
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              /* EmptyView(
-                          image: AssetsPath.emptyNotif,
-                          textColor: ColorManager.white,
-                          supText: "Follow creators and save events so you don’t miss out on anything.",
-                          titleText: "You don’t have any notifications",
-
-                        )*/
-              Center(
+              Padding(
+                padding: const EdgeInsets.only(left: 38, top: 35),
                 child: Text(
-                  'Order',
+                  'Type',
                   style: ThemeData().textTheme.headline1?.copyWith(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 18,
                       color: ColorManager.titleColor),
                 ),
               ),
               Padding(
+                  padding: const EdgeInsets.only(left: 37, top: 11, right: 38),
+                  child: DropdownBorderInput(
+                    value: type,
+                    onChange: (value) {
+                      setFeedback(isFeedback: value == "Feedback");
+                    },
+                    customItems: ["Feedback", "Complaint"]
+                        .map((e) => DropdownMenuItem<String>(
+                              value: e,
+                              child: Container(
+                                margin: const EdgeInsets.all(8),
+                                child: Text(
+                                  e,
+                                  //style: AppTheme.info_general_text,
+                                ),
+                              ),
+                            ))
+                        .toList(),
+                    hint: 'Select type',
+                  )),
+              Padding(
                 padding: const EdgeInsets.only(left: 38, top: 35),
                 child: Text(
-                  'Complaint type',
+                  '$type type',
                   style: ThemeData().textTheme.headline1?.copyWith(
                       fontWeight: FontWeight.w600,
                       fontSize: 18,
@@ -112,7 +127,7 @@ class _IssueComplaintPageState extends _IssueComplaintPageProps
                   padding: const EdgeInsets.only(left: 37, top: 11, right: 38),
                   child: RegularInputBorder(
                     contentPadding: true,
-                    hintText: 'Type in the complaint subject',
+                    hintText: 'Type in the ${type.toLowerCase()} subject',
                     controller: _subjectController,
                     inputType: TextInputType.text,
                     /* errorText:
@@ -122,7 +137,7 @@ class _IssueComplaintPageState extends _IssueComplaintPageProps
               Padding(
                 padding: const EdgeInsets.only(left: 38, top: 35),
                 child: Text(
-                  'Complaint',
+                  type,
                   style: ThemeData().textTheme.headline1?.copyWith(
                       fontWeight: FontWeight.w600,
                       fontSize: 18,
@@ -133,31 +148,7 @@ class _IssueComplaintPageState extends _IssueComplaintPageProps
                 padding: const EdgeInsets.only(left: 37, top: 11, right: 38),
                 child: RegularInputBorder(
                   contentPadding: true,
-                  hintText: 'Type in your complaint',
-                  maxLine: 8,
-                  minLine: 8,
-                  controller: _messageController,
-                  inputType: TextInputType.text,
-                  /*  errorText:
-                      state.message.invalid ? S.current.required_input : null, */
-                  focusNode: focusMessage,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 38, top: 35),
-                child: Text(
-                  'Feedback',
-                  style: ThemeData().textTheme.headline1?.copyWith(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18,
-                      color: ColorManager.titleColor),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 37, top: 11, right: 38),
-                child: RegularInputBorder(
-                  contentPadding: true,
-                  hintText: 'Type in your feedback',
+                  hintText: 'Type in your ${type.toLowerCase()}',
                   maxLine: 8,
                   minLine: 8,
                   controller: _messageController,

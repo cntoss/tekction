@@ -11,6 +11,8 @@ abstract class _IssueComplaintPageProps extends State<IssueComplaintPage> {
   late FocusNode focusSubject;
   late FocusNode focusMessage;
 
+  String type = 'Feedback';
+
   List<DropdownMenuItem<ComplaintType>> buildDropDownMenuItems(List listItems) {
     List<DropdownMenuItem<ComplaintType>> items = [];
     for (ComplaintType listItem in listItems) {
@@ -48,6 +50,12 @@ abstract class _IssueComplaintPageProps extends State<IssueComplaintPage> {
 
   void initDropDown(List<ComplaintType> list) {
     _dropdownMenuItemsTags = buildDropDownMenuItems(list);
+  }
+
+  setFeedback({required bool isFeedback}) {
+    setState(() {
+      type = isFeedback ? "Feedback" : 'Complaint';
+    });
   }
 
   @override
