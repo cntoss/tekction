@@ -5,13 +5,14 @@ import '../../../utils/asset_manager.dart';
 import '../widget/live_info.dart';
 import '../widget/primary_button.dart';
 
-class TopBar extends StatelessWidget {
+class TopBar extends StatefulWidget {
   const TopBar({
     super.key,
     required this.showLiveInfo,
     this.showGlass = false,
     this.showReport = false,
     required this.onBackPressed,
+    this.onBuyPressed,
   });
 
   /// Live info.
@@ -20,7 +21,13 @@ class TopBar extends StatelessWidget {
   final bool showReport;
 
   final VoidCallback onBackPressed;
+  final VoidCallback? onBuyPressed;
 
+  @override
+  State<TopBar> createState() => _TopBarState();
+}
+
+class _TopBarState extends State<TopBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,7 +40,7 @@ class TopBar extends StatelessWidget {
           Row(
             children: [
               InkWell(
-                onTap: onBackPressed,
+                onTap: widget.onBackPressed,
                 child: const Icon(
                   Icons.arrow_back_ios,
                   color: Colors.white,
@@ -64,7 +71,7 @@ class TopBar extends StatelessWidget {
               )
             ],
           ),
-          showLiveInfo
+          widget.showLiveInfo
               ? Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
@@ -81,8 +88,8 @@ class TopBar extends StatelessWidget {
                         ),
                       ],
                     ),
-                    if (showReport) const SizedBox(height: 15),
-                    if (showReport)
+                    if (widget.showReport) const SizedBox(height: 15),
+                    if (widget.showReport)
                       Container(
                         padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
@@ -108,7 +115,7 @@ class TopBar extends StatelessWidget {
                           ],
                         ),
                       ),
-                    if (showGlass)
+                    if (widget.showGlass)
                       Column(
                         children: [
                           const SizedBox(
@@ -138,21 +145,24 @@ class TopBar extends StatelessWidget {
                           const SizedBox(
                             height: 10,
                           ),
-                          Container(
-                            width: 110,
-                            height: 35,
-                            decoration: BoxDecoration(
-                              color: ColorManager.purple,
-                              borderRadius: BorderRadius.circular(20),
+                          InkWell(
+                            onTap: widget.onBuyPressed,
+                            child: Container(
+                              width: 110,
+                              height: 35,
+                              decoration: BoxDecoration(
+                                color: ColorManager.purple,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: const Center(
+                                  child: Text(
+                                'Buy',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14.0),
+                              )),
                             ),
-                            child: const Center(
-                                child: Text(
-                              'Buy',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 14.0),
-                            )),
                           )
                         ],
                       )
